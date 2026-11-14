@@ -1,6 +1,7 @@
 import hashlib
 import json
 import re
+import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from time import mktime
@@ -9,6 +10,7 @@ from zoneinfo import ZoneInfo
 import feedparser
 import requests
 from bs4 import BeautifulSoup
+from deep_translator import GoogleTranslator
 
 ROME_TZ = ZoneInfo("Europe/Rome")
 DATA_DIR = Path("data")
@@ -99,9 +101,50 @@ def save_json(path: Path, payload) -> None:
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
+def translate_text(translator: GoogleTranslator, text: str) -> tuple[str, bool]:
+    if not text:
+        return "", True
+    try:
+        res = translator.translate(text)
+        time.sleep(0.1)
+        if res and res.strip():
+            return res.strip(), True
+    except Exception as exc:
+        print(f"  [!] Errore traduzione: {exc}")
+    return text, False
+
+
+def ensure_translated(translator: GoogleTranslator, art: dict) -> dict:
+    if art.get("translated") and art.get("title_en"):
+        return art
+
+    orig_title = art.get("title_en") or art.get("title", "")
+    orig_summary = art.get("summary_en") or art.get("summary", "")
+
+    it_title, ok_t = translate_text(translator, orig_title)
+    it_summary, ok_s = translate_text(translator, orig_summary)
+
+    art["title_en"] = orig_title
+    art["summary_en"] = orig_summary
+    art["title"] = it_title
+    art["summary"] = it_summary
+    art["translated"] = bool(ok_t and ok_s)
+    return art
+
+
 def main():
     ARCHIVE_DIR.mkdir(parents=True, exist_ok=True)
     now_rome = datetime.now(ROME_TZ)
+    translator = GoogleTranslator(source="auto", target="it")
+
+    # Cache articoli gia tradotti nei giorni recenti
+    known_cache = {}
+    for fpath in sorted(ARCHIVE_DIR.glob("*.json"), reverse=True)[:7]:
+        day_data = load_json(fpath, {})
+        for item in day_data.get("articles", []):
+            if item.get("translated") and item.get("title_en"):
+                known_cache[item["id"]] = item
+
     fetched_articles = []
 
     for feed_cfg in FEEDS:
@@ -119,18 +162,18 @@ def main():
             if count >= feed_cfg["max_items"]:
                 break
 
-            title = clean_html(entry.get("title", ""), max_len=200)
+            title_en = clean_html(entry.get("title", ""), max_len=200)
             link = (entry.get("link") or "").strip()
-            if not title or not link:
+            if not title_en or not link:
                 continue
 
             raw_summary = entry.get("summary") or ""
             if not raw_summary and entry.get("content"):
                 raw_summary = entry["content"][0].get("value", "")
-            summary = clean_html(raw_summary, max_len=240)
+            summary_en = clean_html(raw_summary, max_len=240)
 
             if feed_cfg.get("ai_filter"):
-                haystack = f"{title} {summary}"
+                haystack = f"{title_en} {summary_en}"
                 if not AI_KEYWORDS.search(haystack):
                     continue
 
@@ -138,17 +181,32 @@ def main():
             if pub_dt > now_rome + timedelta(hours=2):
                 pub_dt = now_rome
 
-            article = {
-                "id": make_id(link, title),
-                "title": title,
-                "url": link,
-                "summary": summary,
-                "image": extract_image(entry),
-                "source": feed_cfg["name"],
-                "category": feed_cfg["category"],
-                "published_at": pub_dt.isoformat(),
-                "date": pub_dt.strftime("%Y-%m-%d"),
-            }
+            art_id = make_id(link, title_en)
+            if art_id in known_cache:
+                cached = known_cache[art_id]
+                article = {
+                    **cached,
+                    "image": extract_image(entry) or cached.get("image", ""),
+                    "published_at": pub_dt.isoformat(),
+                    "date": pub_dt.strftime("%Y-%m-%d"),
+                }
+            else:
+                article = {
+                    "id": art_id,
+                    "title": title_en,
+                    "title_en": title_en,
+                    "url": link,
+                    "summary": summary_en,
+                    "summary_en": summary_en,
+                    "image": extract_image(entry),
+                    "source": feed_cfg["name"],
+                    "category": feed_cfg["category"],
+                    "published_at": pub_dt.isoformat(),
+                    "date": pub_dt.strftime("%Y-%m-%d"),
+                    "translated": False,
+                }
+                article = ensure_translated(translator, article)
+
             fetched_articles.append(article)
             count += 1
 
@@ -174,6 +232,7 @@ def main():
             },
         )
 
+    # Traduci eventuali articoli degli ultimi 3 giorni salvati in precedenza solo in inglese
     archive_files = sorted(ARCHIVE_DIR.glob("*.json"), reverse=True)
     dates_index = []
     all_recent = []
@@ -184,9 +243,20 @@ def main():
         arts = day_data.get("articles", [])
         if not arts:
             continue
-        dates_index.append({"date": d_str, "count": len(arts)})
+
         if idx < 3:
+            changed = False
+            for i, art in enumerate(arts):
+                if not art.get("translated"):
+                    arts[i] = ensure_translated(translator, art)
+                    changed = True
+            if changed:
+                day_data["articles"] = arts
+                day_data["updated_at"] = now_rome.isoformat()
+                save_json(fpath, day_data)
             all_recent.extend(arts)
+
+        dates_index.append({"date": d_str, "count": len(arts)})
 
     unique_recent = {a["id"]: a for a in all_recent}
     latest_sorted = sorted(unique_recent.values(), key=lambda x: x["published_at"], reverse=True)[:80]
