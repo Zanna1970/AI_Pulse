@@ -21,10 +21,9 @@ const els = {
   langToggle: document.getElementById("lang-toggle"),
 };
 
-function initHeaderParticles() {
-  const canvas = document.getElementById("header-canvas");
-  const header = document.querySelector(".site-header");
-  if (!canvas || !header) return;
+function initAmbientParticles() {
+  const canvas = document.getElementById("bg-canvas");
+  if (!canvas) return;
 
   const ctx = canvas.getContext("2d");
   if (!ctx) return;
@@ -35,36 +34,44 @@ function initHeaderParticles() {
   let particles = [];
   const mouse = { x: -999, y: -999 };
 
+  function buildParticles() {
+    const targetCount = Math.max(32, Math.min(70, Math.floor((width * height) / 22000)));
+    particles = [];
+    for (let i = 0; i < targetCount; i++) {
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.36,
+        vy: (Math.random() - 0.5) * 0.36,
+        r: 1.3 + Math.random() * 1.9,
+      });
+    }
+  }
+
   function resize() {
-    const rect = header.getBoundingClientRect();
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    width = rect.width;
-    height = rect.height;
+    width = window.innerWidth;
+    height = window.innerHeight;
     canvas.width = Math.floor(width * dpr);
     canvas.height = Math.floor(height * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-    const targetCount = Math.max(22, Math.min(44, Math.floor(width / 28)));
     if (particles.length === 0) {
-      for (let i = 0; i < targetCount; i++) {
-        particles.push({
-          x: Math.random() * width,
-          y: Math.random() * height,
-          vx: (Math.random() - 0.5) * 0.45,
-          vy: (Math.random() - 0.5) * 0.35,
-          r: 1.4 + Math.random() * 1.8,
-        });
-      }
+      buildParticles();
+    } else {
+      particles.forEach((p) => {
+        p.x = Math.min(width, p.x);
+        p.y = Math.min(height, p.y);
+      });
     }
   }
 
-  header.addEventListener("mousemove", (e) => {
-    const rect = header.getBoundingClientRect();
-    mouse.x = e.clientX - rect.left;
-    mouse.y = e.clientY - rect.top;
+  window.addEventListener("mousemove", (e) => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
   });
 
-  header.addEventListener("mouseleave", () => {
+  document.addEventListener("mouseleave", () => {
     mouse.x = -999;
     mouse.y = -999;
   });
@@ -94,7 +101,7 @@ function initHeaderParticles() {
 
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${dotColor}, ${isDark ? 0.55 : 0.38})`;
+      ctx.fillStyle = `rgba(${dotColor}, ${isDark ? 0.42 : 0.3})`;
       ctx.fill();
 
       for (let j = i + 1; j < particles.length; j++) {
@@ -102,8 +109,8 @@ function initHeaderParticles() {
         const dx = p.x - q.x;
         const dy = p.y - q.y;
         const dist = Math.hypot(dx, dy);
-        if (dist < 115) {
-          const alpha = (1 - dist / 115) * (isDark ? 0.25 : 0.16);
+        if (dist < 145) {
+          const alpha = (1 - dist / 145) * (isDark ? 0.18 : 0.12);
           ctx.beginPath();
           ctx.moveTo(p.x, p.y);
           ctx.lineTo(q.x, q.y);
@@ -116,8 +123,8 @@ function initHeaderParticles() {
       const mdx = p.x - mouse.x;
       const mdy = p.y - mouse.y;
       const mdist = Math.hypot(mdx, mdy);
-      if (mdist < 130) {
-        const mAlpha = (1 - mdist / 130) * (isDark ? 0.42 : 0.28);
+      if (mdist < 160) {
+        const mAlpha = (1 - mdist / 160) * (isDark ? 0.34 : 0.24);
         ctx.beginPath();
         ctx.moveTo(p.x, p.y);
         ctx.lineTo(mouse.x, mouse.y);
@@ -298,7 +305,7 @@ function updateLangUI(lang) {
 }
 
 async function init() {
-  initHeaderParticles();
+  initAmbientParticles();
 
   const savedTheme = localStorage.getItem("ai-pulse-theme") || "dark";
   updateThemeUI(savedTheme);
