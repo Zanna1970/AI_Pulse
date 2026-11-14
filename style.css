@@ -1,10 +1,10 @@
 :root[data-theme="dark"] {
   --bg: #070b14;
-  --header-bg: rgba(11, 17, 30, 0.72);
+  --header-bg: rgba(11, 17, 30, 0.35);
   --surface: rgba(17, 24, 39, 0.76);
   --surface-hover: rgba(23, 33, 54, 0.88);
   --control-bg: rgba(17, 24, 39, 0.82);
-  --menu-bg: rgba(24, 34, 53, 0.82);
+  --menu-bg: rgba(24, 34, 53, 0.55);
   --border: rgba(56, 78, 114, 0.45);
   --text: #f1f5f9;
   --text-muted: #94a3b8;
@@ -16,11 +16,11 @@
 
 :root[data-theme="light"] {
   --bg: #f1f5fb;
-  --header-bg: rgba(255, 255, 255, 0.75);
+  --header-bg: rgba(255, 255, 255, 0.42);
   --surface: rgba(255, 255, 255, 0.78);
   --surface-hover: rgba(255, 255, 255, 0.94);
   --control-bg: rgba(255, 255, 255, 0.86);
-  --menu-bg: rgba(238, 242, 248, 0.88);
+  --menu-bg: rgba(238, 242, 248, 0.62);
   --border: rgba(186, 199, 220, 0.65);
   --text: #0f172a;
   --text-muted: #526176;
@@ -80,12 +80,12 @@ body {
   height: 100%;
 }
 
-/* Header vetro */
+/* Header vetro piu trasparente */
 .site-header {
   border-bottom: 1px solid var(--border);
   background: var(--header-bg);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   padding: 22px 0;
   position: sticky;
   top: 0;
@@ -143,7 +143,7 @@ body {
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 3px;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
 }
 
 .menu-item {
@@ -364,7 +364,7 @@ select:focus, input[type="search"]:focus { border-color: var(--accent); }
   z-index: 1;
   border-top: 1px solid var(--border);
   background: var(--header-bg);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(8px);
   padding: 22px 0;
   font-size: 0.82rem;
   color: var(--text-muted);
