@@ -18,6 +18,7 @@ const els = {
   dateTabs: document.getElementById("date-tabs"),
   categoryPills: document.getElementById("category-pills"),
   themeToggle: document.getElementById("theme-toggle"),
+  langToggle: document.getElementById("lang-toggle"),
 };
 
 function formatItalianDateTime(iso) {
@@ -130,8 +131,7 @@ function renderArticles() {
 
     const summary = document.createElement("p");
     summary.className = "card-summary";
-    summary.textContent =
-      displaySummary || "Clicca per leggere l'articolo completo.";
+    summary.textContent = displaySummary || "Clicca per leggere l'articolo completo.";
 
     const actions = document.createElement("div");
     actions.className = "card-actions";
@@ -170,35 +170,36 @@ async function loadArchiveDate(dateStr) {
   renderArticles();
 }
 
+function updateThemeUI(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  els.themeToggle.textContent = theme === "dark" ? "Dark" : "Light";
+}
+
+function updateLangUI(lang) {
+  if (els.langToggle) {
+    els.langToggle.textContent = lang === "en" ? "EN" : "IT";
+  }
+}
+
 async function init() {
   const savedTheme = localStorage.getItem("ai-pulse-theme") || "dark";
-  document.documentElement.setAttribute("data-theme", savedTheme);
+  updateThemeUI(savedTheme);
+  updateLangUI(state.lang);
 
   els.themeToggle.addEventListener("click", () => {
     const curr = document.documentElement.getAttribute("data-theme");
     const next = curr === "dark" ? "light" : "dark";
-    document.documentElement.setAttribute("data-theme", next);
     localStorage.setItem("ai-pulse-theme", next);
+    updateThemeUI(next);
   });
 
-  // Pulsante rapido IT / EN nell'header
-  const headerActions = document.querySelector(".header-actions");
-  if (headerActions) {
-    const langBtn = document.createElement("button");
-    langBtn.id = "lang-toggle";
-    langBtn.className = "btn-icon";
-    langBtn.title = "Mostra titoli in Italiano o Inglese";
-    const updateLangLabel = () => {
-      langBtn.textContent = state.lang === "it" ? "Lingua: IT" : "Lingua: EN";
-    };
-    updateLangLabel();
-    langBtn.addEventListener("click", () => {
+  if (els.langToggle) {
+    els.langToggle.addEventListener("click", () => {
       state.lang = state.lang === "it" ? "en" : "it";
       localStorage.setItem("ai-pulse-lang", state.lang);
-      updateLangLabel();
+      updateLangUI(state.lang);
       renderArticles();
     });
-    headerActions.insertBefore(langBtn, els.themeToggle);
   }
 
   try {
