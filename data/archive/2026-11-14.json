@@ -1,20 +1,20 @@
 {
   "date": "2026-11-14",
-  "updated_at": "2026-11-14T17:27:10.330901+01:00",
+  "updated_at": "2026-11-14T17:29:41.287463+01:00",
   "count": 3,
   "articles": [
     {
       "id": "6c2539c06ead4df2",
       "title": "The OpenAI board member who fired Sam Altman says we still can’t trust AI CEOs",
+      "title_en": "The OpenAI board member who fired Sam Altman says we still can’t trust AI CEOs",
       "url": "https://www.theverge.com/podcast/1032907/helen-toner-openai-cset-ai-safety-policy-interview",
       "summary": "Today, I’m talking with Helen Toner, the executive director of the Center for Security and Emerging Technology at Georgetown University. This episode is part two of our series on AI in real life. Helen is a well-known figure in the AI...",
+      "summary_en": "Today, I’m talking with Helen Toner, the executive director of the Center for Security and Emerging Technology at Georgetown University. This episode is part two of our series on AI in real life. Helen is a well-known figure in the AI...",
       "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/DCD-Helen-Toner.jpg?quality=90&strip=all&crop=0,0,100,100",
       "source": "The Verge AI",
       "category": "Media & Tech",
       "published_at": "2026-11-14T16:00:00+01:00",
       "date": "2026-11-14",
-      "title_en": "The OpenAI board member who fired Sam Altman says we still can’t trust AI CEOs",
-      "summary_en": "Today, I’m talking with Helen Toner, the executive director of the Center for Security and Emerging Technology at Georgetown University. This episode is part two of our series on AI in real life. Helen is a well-known figure in the AI...",
       "translated": false
     },
     {
