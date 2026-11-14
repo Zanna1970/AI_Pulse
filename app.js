@@ -21,6 +21,122 @@ const els = {
   langToggle: document.getElementById("lang-toggle"),
 };
 
+function initHeaderParticles() {
+  const canvas = document.getElementById("header-canvas");
+  const header = document.querySelector(".site-header");
+  if (!canvas || !header) return;
+
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return;
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let width = 0;
+  let height = 0;
+  let particles = [];
+  const mouse = { x: -999, y: -999 };
+
+  function resize() {
+    const rect = header.getBoundingClientRect();
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    width = rect.width;
+    height = rect.height;
+    canvas.width = Math.floor(width * dpr);
+    canvas.height = Math.floor(height * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    const targetCount = Math.max(22, Math.min(44, Math.floor(width / 28)));
+    if (particles.length === 0) {
+      for (let i = 0; i < targetCount; i++) {
+        particles.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          vx: (Math.random() - 0.5) * 0.45,
+          vy: (Math.random() - 0.5) * 0.35,
+          r: 1.4 + Math.random() * 1.8,
+        });
+      }
+    }
+  }
+
+  header.addEventListener("mousemove", (e) => {
+    const rect = header.getBoundingClientRect();
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
+  });
+
+  header.addEventListener("mouseleave", () => {
+    mouse.x = -999;
+    mouse.y = -999;
+  });
+
+  function draw() {
+    if (width === 0 || height === 0) {
+      requestAnimationFrame(draw);
+      return;
+    }
+
+    ctx.clearRect(0, 0, width, height);
+    const isDark = document.documentElement.getAttribute("data-theme") !== "light";
+    const dotColor = isDark ? "96, 165, 250" : "37, 99, 235";
+    const lineColor = isDark ? "56, 189, 248" : "59, 130, 246";
+
+    for (let i = 0; i < particles.length; i++) {
+      const p = particles[i];
+      if (!reduceMotion) {
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.x < 0 || p.x > width) p.vx *= -1;
+        if (p.y < 0 || p.y > height) p.vy *= -1;
+        p.x = Math.max(0, Math.min(width, p.x));
+        p.y = Math.max(0, Math.min(height, p.y));
+      }
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${dotColor}, ${isDark ? 0.55 : 0.38})`;
+      ctx.fill();
+
+      for (let j = i + 1; j < particles.length; j++) {
+        const q = particles[j];
+        const dx = p.x - q.x;
+        const dy = p.y - q.y;
+        const dist = Math.hypot(dx, dy);
+        if (dist < 115) {
+          const alpha = (1 - dist / 115) * (isDark ? 0.25 : 0.16);
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(q.x, q.y);
+          ctx.strokeStyle = `rgba(${lineColor}, ${alpha})`;
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+      }
+
+      const mdx = p.x - mouse.x;
+      const mdy = p.y - mouse.y;
+      const mdist = Math.hypot(mdx, mdy);
+      if (mdist < 130) {
+        const mAlpha = (1 - mdist / 130) * (isDark ? 0.42 : 0.28);
+        ctx.beginPath();
+        ctx.moveTo(p.x, p.y);
+        ctx.lineTo(mouse.x, mouse.y);
+        ctx.strokeStyle = `rgba(16, 185, 129, ${mAlpha})`;
+        ctx.lineWidth = 1.1;
+        ctx.stroke();
+      }
+    }
+
+    if (!reduceMotion) {
+      requestAnimationFrame(draw);
+    }
+  }
+
+  resize();
+  window.addEventListener("resize", resize);
+  draw();
+}
+
 function formatItalianDateTime(iso) {
   if (!iso) return "";
   const d = new Date(iso);
@@ -182,6 +298,8 @@ function updateLangUI(lang) {
 }
 
 async function init() {
+  initHeaderParticles();
+
   const savedTheme = localStorage.getItem("ai-pulse-theme") || "dark";
   updateThemeUI(savedTheme);
   updateLangUI(state.lang);
