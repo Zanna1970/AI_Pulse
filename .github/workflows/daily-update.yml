@@ -12,6 +12,10 @@ permissions:
   pages: write
   id-token: write
 
+concurrency:
+  group: ai-pulse-deploy
+  cancel-in-progress: false
+
 jobs:
   update-and-deploy:
     runs-on: ubuntu-latest
@@ -37,6 +41,7 @@ jobs:
           git add data/
           if ! git diff --staged --quiet; then
             git commit -m "Aggiornamento automatico notizie AI ($(date +'%Y-%m-%d'))"
+            git pull --rebase -X theirs origin main
             git push
           fi
 
