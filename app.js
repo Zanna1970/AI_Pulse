@@ -4,6 +4,7 @@ const state = {
   selectedCategory: "Tutte",
   selectedSource: "Tutte",
   searchQuery: "",
+  lang: localStorage.getItem("ai-pulse-lang") || "it",
 };
 
 const els = {
@@ -61,13 +62,17 @@ function populateSourceFilter(articles) {
   state.selectedSource = els.sourceFilter.value;
 }
 
+function getTranslatedUrl(originalUrl) {
+  return `https://translate.google.com/translate?sl=auto&tl=it&u=${encodeURIComponent(originalUrl)}`;
+}
+
 function renderArticles() {
   const q = state.searchQuery.trim().toLowerCase();
   const filtered = state.articles.filter((art) => {
     if (state.selectedCategory !== "Tutte" && art.category !== state.selectedCategory) return false;
     if (state.selectedSource !== "Tutte" && art.source !== state.selectedSource) return false;
     if (q) {
-      const hay = `${art.title} ${art.summary} ${art.source}`.toLowerCase();
+      const hay = `${art.title} ${art.title_en || ""} ${art.summary} ${art.summary_en || ""} ${art.source}`.toLowerCase();
       if (!hay.includes(q)) return false;
     }
     return true;
@@ -110,34 +115,40 @@ function renderArticles() {
     time.textContent = formatItalianDateTime(art.published_at);
     meta.append(badge, time);
 
+    const displayTitle = state.lang === "en" && art.title_en ? art.title_en : art.title;
+    const displaySummary = state.lang === "en" && art.summary_en ? art.summary_en : art.summary;
+    const itUrl = getTranslatedUrl(art.url);
+
     const h2 = document.createElement("h2");
     h2.className = "card-title";
     const link = document.createElement("a");
-    link.href = art.url;
+    link.href = state.lang === "en" ? art.url : itUrl;
     link.target = "_blank";
     link.rel = "noopener noreferrer";
-    link.textContent = art.title;
+    link.textContent = displayTitle;
     h2.appendChild(link);
 
     const summary = document.createElement("p");
     summary.className = "card-summary";
-    summary.textContent = art.summary || "Clicca per leggere l'articolo completo sulla fonte originale.";
+    summary.textContent =
+      displaySummary || "Clicca per leggere l'articolo completo.";
 
     const actions = document.createElement("div");
     actions.className = "card-actions";
-    const readLink = document.createElement("a");
-    readLink.href = art.url;
-    readLink.target = "_blank";
-    readLink.rel = "noopener noreferrer";
-    readLink.textContent = "Leggi articolo →";
 
-    const translateLink = document.createElement("a");
-    translateLink.href = `https://translate.google.com/translate?sl=auto&tl=it&u=${encodeURIComponent(art.url)}`;
-    translateLink.target = "_blank";
-    translateLink.rel = "noopener noreferrer";
-    translateLink.textContent = "Traduci in IT ↗";
+    const readItLink = document.createElement("a");
+    readItLink.href = itUrl;
+    readItLink.target = "_blank";
+    readItLink.rel = "noopener noreferrer";
+    readItLink.textContent = "Leggi in Italiano →";
 
-    actions.append(readLink, translateLink);
+    const readEnLink = document.createElement("a");
+    readEnLink.href = art.url;
+    readEnLink.target = "_blank";
+    readEnLink.rel = "noopener noreferrer";
+    readEnLink.textContent = "Originale (EN) ↗";
+
+    actions.append(readItLink, readEnLink);
     body.append(meta, h2, summary, actions);
     card.appendChild(body);
     els.grid.appendChild(card);
@@ -169,6 +180,26 @@ async function init() {
     document.documentElement.setAttribute("data-theme", next);
     localStorage.setItem("ai-pulse-theme", next);
   });
+
+  // Pulsante rapido IT / EN nell'header
+  const headerActions = document.querySelector(".header-actions");
+  if (headerActions) {
+    const langBtn = document.createElement("button");
+    langBtn.id = "lang-toggle";
+    langBtn.className = "btn-icon";
+    langBtn.title = "Mostra titoli in Italiano o Inglese";
+    const updateLangLabel = () => {
+      langBtn.textContent = state.lang === "it" ? "Lingua: IT" : "Lingua: EN";
+    };
+    updateLangLabel();
+    langBtn.addEventListener("click", () => {
+      state.lang = state.lang === "it" ? "en" : "it";
+      localStorage.setItem("ai-pulse-lang", state.lang);
+      updateLangLabel();
+      renderArticles();
+    });
+    headerActions.insertBefore(langBtn, els.themeToggle);
+  }
 
   try {
     const datesData = await fetchJson("data/dates.json");
