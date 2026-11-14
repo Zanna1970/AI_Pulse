@@ -1,6 +1,6 @@
 {
   "date": "2026-11-14",
-  "updated_at": "2026-11-14T17:26:04.080061+01:00",
+  "updated_at": "2026-11-14T17:27:10.330901+01:00",
   "count": 3,
   "articles": [
     {
@@ -12,29 +12,38 @@
       "source": "The Verge AI",
       "category": "Media & Tech",
       "published_at": "2026-11-14T16:00:00+01:00",
-      "date": "2026-11-14"
+      "date": "2026-11-14",
+      "title_en": "The OpenAI board member who fired Sam Altman says we still can’t trust AI CEOs",
+      "summary_en": "Today, I’m talking with Helen Toner, the executive director of the Center for Security and Emerging Technology at Georgetown University. This episode is part two of our series on AI in real life. Helen is a well-known figure in the AI...",
+      "translated": false
     },
     {
       "id": "f88fcfa12fe4eda6",
       "title": "Jensen Huang and the decline of the visionary showman founder CEO",
+      "title_en": "Jensen Huang and the decline of the visionary showman founder CEO",
       "url": "https://www.theverge.com/tech/1033781/nvidia-jensen-huang-last-visionary-showman-founder-ceo",
       "summary": "On January 6th, 2025, Nvidia CEO Jensen Huang got his rockstar moment at last. He strode triumphantly onstage, hand raised in the air, to the claps and cheers of a 14,000-person arena absolutely packed with influencers and fans, their...",
+      "summary_en": "On January 6th, 2025, Nvidia CEO Jensen Huang got his rockstar moment at last. He strode triumphantly onstage, hand raised in the air, to the claps and cheers of a 14,000-person arena absolutely packed with influencers and fans, their...",
       "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/gettyimages-2194622930.jpg?quality=90&strip=all&crop=0,0,100,100",
       "source": "The Verge AI",
       "category": "Media & Tech",
       "published_at": "2026-11-14T13:00:00+01:00",
-      "date": "2026-11-14"
+      "date": "2026-11-14",
+      "translated": false
     },
     {
       "id": "96048276e5de0ccf",
       "title": "Amazon has a plan to index the world’s online shopping data",
+      "title_en": "Amazon has a plan to index the world’s online shopping data",
       "url": "https://www.theverge.com/tech/1033697/amazon-world-product-graph-ai-search",
       "summary": "Amazon has plans to build a vault of data on every product sold anywhere on the internet, even products Amazon doesn't sell, and make the information available through its own site, according to Reuters. The project, called the \"World...",
+      "summary_en": "Amazon has plans to build a vault of data on every product sold anywhere on the internet, even products Amazon doesn't sell, and make the information available through its own site, according to Reuters. The project, called the \"World...",
       "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/09/acastro_STK103__03.jpg?quality=90&strip=all&crop=0,0,100,100",
       "source": "The Verge AI",
       "category": "Media & Tech",
       "published_at": "2026-11-14T00:49:11+01:00",
-      "date": "2026-11-14"
+      "date": "2026-11-14",
+      "translated": false
     }
   ]
 }

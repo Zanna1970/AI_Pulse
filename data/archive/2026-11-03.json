@@ -1,18 +1,21 @@
 {
   "date": "2026-11-03",
-  "updated_at": "2026-11-14T17:26:04.080061+01:00",
+  "updated_at": "2026-11-14T17:27:10.330901+01:00",
   "count": 1,
   "articles": [
     {
       "id": "da38bc697163569b",
       "title": "Agentic cheminformatics with Google Antigravity",
+      "title_en": "Agentic cheminformatics with Google Antigravity",
       "url": "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity/",
       "summary": "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles.",
+      "summary_en": "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles.",
       "image": "https://lh3.googleusercontent.com/UFTBrp1IrRBrc6_f4ibNgtV35iY8F2iTYaqOb1lzR-qZNy-Mb5726xrLKTozohfdZ_3quHe50uyn8z-Wh_Eril_8CVh7py7gH0188sl_EXkoJknlqg=w528-h297-n-nu-rw-lo",
       "source": "Google DeepMind",
       "category": "Laboratori",
       "published_at": "2026-11-03T18:01:49+01:00",
-      "date": "2026-11-03"
+      "date": "2026-11-03",
+      "translated": false
     }
   ]
 }

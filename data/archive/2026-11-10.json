@@ -1,139 +1,175 @@
 {
   "date": "2026-11-10",
-  "updated_at": "2026-11-14T17:26:04.080061+01:00",
+  "updated_at": "2026-11-14T17:27:10.330901+01:00",
   "count": 12,
   "articles": [
     {
       "id": "d949e6f92cd9d416",
       "title": "Ring cameras go mobile as Amazon debuts AI-powered security drone and robot",
+      "title_en": "Ring cameras go mobile as Amazon debuts AI-powered security drone and robot",
       "url": "https://arstechnica.com/ai/2026/11/ring-cameras-go-mobile-as-amazon-debuts-ai-powered-security-drone-and-robot/",
       "summary": "Amazon's roaming Ring Robotics devices will debut in late 2026 and early 2027.",
+      "summary_en": "Amazon's roaming Ring Robotics devices will debut in late 2026 and early 2027.",
       "image": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/Ring-Drone-1152x648.jpeg",
       "source": "Ars Technica AI",
       "category": "Media & Tech",
       "published_at": "2026-11-10T23:35:01+01:00",
-      "date": "2026-11-10"
+      "date": "2026-11-10",
+      "translated": false
     },
     {
       "id": "c0101f36ad82bf91",
       "title": "Gemini Intelligence: New features, on more devices",
+      "title_en": "Gemini Intelligence: New features, on more devices",
       "url": "https://blog.google/products-and-platforms/platforms/android/gemini-intelligence-november-features-devices/",
       "summary": "A man speaks into a phone. Text on the screen reads 'Gemini Intelligence'",
+      "summary_en": "A man speaks into a phone. Text on the screen reads 'Gemini Intelligence'",
       "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_Intelligence_Signature27.max-600x600.format-webp.webp",
       "source": "Google AI Blog",
       "category": "Laboratori",
       "published_at": "2026-11-10T20:00:00+01:00",
-      "date": "2026-11-10"
+      "date": "2026-11-10",
+      "translated": false
     },
     {
       "id": "6d8eb3bcd497222d",
       "title": "Gemini 4 Carbon is now available",
+      "title_en": "Gemini 4 Carbon is now available",
       "url": "https://deepmind.google/blog/gemini-4-carbon-is-now-available/",
       "summary": "",
+      "summary_en": "",
       "image": "",
       "source": "Google DeepMind",
       "category": "Laboratori",
       "published_at": "2026-11-10T17:03:47+01:00",
-      "date": "2026-11-10"
+      "date": "2026-11-10",
+      "translated": false
     },
     {
       "id": "59a8a5dd3afc5312",
       "title": "We’re bringing Adobe’s creative and productivity tools closer to your everyday Google apps.",
+      "title_en": "We’re bringing Adobe’s creative and productivity tools closer to your everyday Google apps.",
       "url": "https://blog.google/company-news/inside-google/company-announcements/adobe-google-partnership-integration/",
       "summary": "Google and Adobe are integrating creative and productivity tools. Edit PDFs in Drive and use Adobe AI in Gemini. See what’s new in this partnership.",
+      "summary_en": "Google and Adobe are integrating creative and productivity tools. Edit PDFs in Drive and use Adobe AI in Gemini. See what’s new in this partnership.",
       "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Adobe_snippet_hero.max-600x600.format-webp.webp",
       "source": "Google AI Blog",
       "category": "Laboratori",
       "published_at": "2026-11-10T15:00:00+01:00",
-      "date": "2026-11-10"
+      "date": "2026-11-10",
+      "translated": false
     },
     {
       "id": "4c3c56a1a61aaf31",
       "title": "The Download: Pelosi’s successor targets AI and data centers face power woes",
+      "title_en": "The Download: Pelosi’s successor targets AI and data centers face power woes",
       "url": "https://www.technologyreview.com/2026/11/10/1148150/the-download-pelosi-successor-ai-regulation-data-center-backlash/",
       "summary": "This is today’s edition of The Download, our weekday newsletter that provides a daily dose of what’s going on in the world of technology. Nancy Pelosi’s replacement is ready to regulate AI —Grace Huckins As a California state senator,...",
+      "summary_en": "This is today’s edition of The Download, our weekday newsletter that provides a daily dose of what’s going on in the world of technology. Nancy Pelosi’s replacement is ready to regulate AI —Grace Huckins As a California state senator,...",
       "image": "https://wp.technologyreview.com/wp-content/uploads/2024/12/GettyImages-1252251768-SA.jpg?fit=1920,1280",
       "source": "MIT Tech Review",
       "category": "Media & Tech",
       "published_at": "2026-11-10T14:10:00+01:00",
-      "date": "2026-11-10"
+      "date": "2026-11-10",
+      "translated": false
     },
     {
       "id": "ef83b8dc18b1604d",
       "title": "Google Cloud launches Gemini for healthcare.",
+      "title_en": "Google Cloud launches Gemini for healthcare.",
       "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/gemini-for-healthcare/",
       "summary": "Google Cloud launches Gemini for healthcare to unify clinical data and automate workflows. Reduce administrative burnout. See how it works.",
+      "summary_en": "Google Cloud launches Gemini for healthcare to unify clinical data and automate workflows. Reduce administrative burnout. See how it works.",
       "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/social_share_NWQpgus.max-600x600.format-webp.webp",
       "source": "Google AI Blog",
       "category": "Laboratori",
       "published_at": "2026-11-10T14:00:00+01:00",
-      "date": "2026-11-10"
+      "date": "2026-11-10",
+      "translated": false
     },
     {
       "id": "f321c904268bcef2",
       "title": "Introducing AlphaProof Code: a breakthrough in verifying complex software at depth",
+      "title_en": "Introducing AlphaProof Code: a breakthrough in verifying complex software at depth",
       "url": "https://deepmind.google/blog/introducing-alphaproof-code/",
       "summary": "AlphaProof Code agents wrote three million lines of proofs in Lean to verify Signal’s core encryption.",
+      "summary_en": "AlphaProof Code agents wrote three million lines of proofs in Lean to verify Signal’s core encryption.",
       "image": "https://lh3.googleusercontent.com/hn6AiI6lYFo6chi1mL6uJ9nOW9UXfsAKnSyOApiie2urHNU2tmSPUmGn0hNfWyYLRcsWCGjCIrBZSCt1ihZmvW-LDJPfyolsr5w-yvzlknZVzmaH=w528-h297-n-nu-rw-lo",
       "source": "Google DeepMind",
       "category": "Laboratori",
       "published_at": "2026-11-10T13:02:28+01:00",
-      "date": "2026-11-10"
+      "date": "2026-11-10",
+      "translated": false
     },
     {
       "id": "0f0020abcf733229",
       "title": "Helping caregivers use AI in everyday life",
+      "title_en": "Helping caregivers use AI in everyday life",
       "url": "https://openai.com/index/helping-caregivers-use-ai-in-everyday-life",
       "summary": "OpenAI Academy is bringing free, hands-on ChatGPT workshops to caregivers in five U.S. cities, helping them build practical AI skills for everyday life.",
+      "summary_en": "OpenAI Academy is bringing free, hands-on ChatGPT workshops to caregivers in five U.S. cities, helping them build practical AI skills for everyday life.",
       "image": "",
       "source": "OpenAI News",
       "category": "Laboratori",
       "published_at": "2026-11-10T13:00:00+01:00",
-      "date": "2026-11-10"
+      "date": "2026-11-10",
+      "translated": false
     },
     {
       "id": "d0f9bf46fa9dba7c",
       "title": "Opening the datasets behind our AI weather models",
+      "title_en": "Opening the datasets behind our AI weather models",
       "url": "https://deepmind.google/blog/opening-the-datasets-behind-our-ai-weather-models/",
       "summary": "Foundational precipitation and geostationary satellite datasets to observe the planet clearly.",
+      "summary_en": "Foundational precipitation and geostationary satellite datasets to observe the planet clearly.",
       "image": "https://lh3.googleusercontent.com/ggsqfaBnOayx-i7z9Kj8AeZruz8BSo0N7tsnqwH8Z3REnHcDKBt-QSA3DR4UUM8lcwklWihSARoEN2AyQFhoRFGFlk2-0-xGuKt_rtGoFwpJg8LHVQ=w528-h297-n-nu-rw-lo",
       "source": "Google DeepMind",
       "category": "Laboratori",
       "published_at": "2026-11-10T12:13:04+01:00",
-      "date": "2026-11-10"
+      "date": "2026-11-10",
+      "translated": false
     },
     {
       "id": "ec52a02e1b50c5bf",
       "title": "MIT-led team receives funding to develop next-generation alternatives to modern weed killers",
+      "title_en": "MIT-led team receives funding to develop next-generation alternatives to modern weed killers",
       "url": "https://news.mit.edu/2026/mit-led-team-receives-funding-next-generation-alternatives-modern-weed-killers-1110",
       "summary": "With up to $53 million from ARPA-H, the researchers will use AI to generate safer herbicides that reduce dependence on imports and improve the security of the U.S. food supply.",
+      "summary_en": "With up to $53 million from ARPA-H, the researchers will use AI to generate safer herbicides that reduce dependence on imports and improve the security of the U.S. food supply.",
       "image": "https://news.mit.edu/sites/default/files/styles/news_article__cover_image__original/public/images/202611/MIT-VoigtGrant-01-Press.jpg?itok=qhs4y2eX",
       "source": "MIT News AI",
       "category": "Ricerca",
       "published_at": "2026-11-10T06:00:00+01:00",
-      "date": "2026-11-10"
+      "date": "2026-11-10",
+      "translated": false
     },
     {
       "id": "cb93d68b445c05b0",
       "title": "Pay for Hugging Face Hub with your Google Cloud Account",
+      "title_en": "Pay for Hugging Face Hub with your Google Cloud Account",
       "url": "https://huggingface.co/blog/hub-gcp-marketplace",
       "summary": "",
+      "summary_en": "",
       "image": "",
       "source": "Hugging Face",
       "category": "Laboratori",
       "published_at": "2026-11-10T01:00:00+01:00",
-      "date": "2026-11-10"
+      "date": "2026-11-10",
+      "translated": false
     },
     {
       "id": "5f3963726dbe36e6",
       "title": "Decision Models in Hugging Face",
+      "title_en": "Decision Models in Hugging Face",
       "url": "https://huggingface.co/blog/decision",
       "summary": "",
+      "summary_en": "",
       "image": "",
       "source": "Hugging Face",
       "category": "Laboratori",
       "published_at": "2026-11-10T01:00:00+01:00",
-      "date": "2026-11-10"
+      "date": "2026-11-10",
+      "translated": false
     }
   ]
 }

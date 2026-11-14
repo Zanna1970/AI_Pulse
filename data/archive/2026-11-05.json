@@ -1,29 +1,35 @@
 {
   "date": "2026-11-05",
-  "updated_at": "2026-11-14T17:26:04.080061+01:00",
+  "updated_at": "2026-11-14T17:27:10.330901+01:00",
   "count": 2,
   "articles": [
     {
       "id": "f09d7876c1e95fca",
       "title": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips",
+      "title_en": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips",
       "url": "https://deepmind.google/blog/gemini-omni-12-flash-fast-and-cost-effective-with-longer-clips/",
       "summary": "",
+      "summary_en": "",
       "image": "",
       "source": "Google DeepMind",
       "category": "Laboratori",
       "published_at": "2026-11-05T18:05:16+01:00",
-      "date": "2026-11-05"
+      "date": "2026-11-05",
+      "translated": false
     },
     {
       "id": "27b87d65d3f99406",
       "title": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips",
+      "title_en": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips",
       "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
       "summary": "Text \"Gemini Introducing Gemini Omni 1.2 Flash\" surroudned by images of a beehive, animals in conversation, a squid, and a woman walking down a street",
+      "summary_en": "Text \"Gemini Introducing Gemini Omni 1.2 Flash\" surroudned by images of a beehive, animals in conversation, a squid, and a woman walking down a street",
       "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-omni-1.2_FZLql41.max-600x600.format-webp.webp",
       "source": "Google AI Blog",
       "category": "Laboratori",
       "published_at": "2026-11-05T18:00:00+01:00",
-      "date": "2026-11-05"
+      "date": "2026-11-05",
+      "translated": false
     }
   ]
 }
