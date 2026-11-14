@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="it" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Pulse — Notizie quotidiane sull'Intelligenza Artificiale</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <div>
+          <h1>AI Pulse</h1>
+          <p class="subtitle">Rassegna automatica quotidiana dai migliori siti di Intelligenza Artificiale</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <span id="last-updated" class="update-badge">Caricamento...</span>
+        <button id="theme-toggle" class="btn-icon" title="Cambia tema" aria-label="Cambia tema">🌓</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="controls-bar">
+      <div class="date-tabs" id="date-tabs">
+        <button class="tab-btn active" data-mode="latest">Ultime Notizie</button>
+        <button class="tab-btn" id="btn-yesterday" data-mode="yesterday" disabled>Notizie di Ieri</button>
+        <label class="archive-select-wrap">
+          <span>Archivio:</span>
+          <select id="archive-select">
+            <option value="">Seleziona una data...</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="filters-row">
+        <div class="category-pills" id="category-pills">
+          <button class="pill active" data-category="Tutte">Tutte</button>
+          <button class="pill" data-category="Laboratori">Laboratori AI</button>
+          <button class="pill" data-category="Media & Tech">Media & Tech</button>
+          <button class="pill" data-category="Ricerca">Ricerca</button>
+        </div>
+
+        <div class="search-source">
+          <select id="source-filter">
+            <option value="Tutte">Tutte le fonti</option>
+          </select>
+          <input type="search" id="search-input" placeholder="Cerca (es. OpenAI, Gemini, agent...)" />
+        </div>
+      </div>
+    </section>
+
+    <div id="status-bar" class="status-bar"></div>
+    <section id="news-grid" class="news-grid"></section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Aggiornamento automatico ogni giorno alle 07:00 (ora italiana) con archivio storico salvato. I titoli e i link rimandano alle testate originali.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
