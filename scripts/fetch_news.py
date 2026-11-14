@@ -10,7 +10,6 @@ from zoneinfo import ZoneInfo
 import feedparser
 import requests
 from bs4 import BeautifulSoup
-from deep_translator import GoogleTranslator
 
 ROME_TZ = ZoneInfo("Europe/Rome")
 DATA_DIR = Path("data")
@@ -36,7 +35,8 @@ AI_KEYWORDS = re.compile(
     re.IGNORECASE,
 )
 
-HEADERS = {"User-Agent": "AI-News-Hub-Bot/1.0 (+https://github.com/)"}
+HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; AI-News-Hub-Bot/1.0)"}
+GTX_URL = "https://translate.googleapis.com/translate_a/single"
 
 
 def clean_html(raw_html: str, max_len: int = 260) -> str:
@@ -101,43 +101,82 @@ def save_json(path: Path, payload) -> None:
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
-def translate_text(translator: GoogleTranslator, text: str) -> tuple[str, bool]:
+def gtx_translate(text: str) -> str | None:
     if not text:
-        return "", True
+        return ""
     try:
-        res = translator.translate(text)
-        time.sleep(0.1)
-        if res and res.strip():
-            return res.strip(), True
+        resp = requests.post(
+            GTX_URL,
+            params={"client": "gtx", "sl": "en", "tl": "it", "dt": "t"},
+            data={"q": text},
+            headers=HEADERS,
+            timeout=12,
+        )
+        if resp.status_code != 200:
+            print(f"  [!] HTTP {resp.status_code} da traduttore")
+            return None
+        data = resp.json()
+        return "".join(seg[0] for seg in data[0] if seg and seg[0]).strip()
     except Exception as exc:
         print(f"  [!] Errore traduzione: {exc}")
-    return text, False
+        return None
 
 
-def ensure_translated(translator: GoogleTranslator, art: dict) -> dict:
-    if art.get("translated") and art.get("title_en"):
-        return art
+def translate_articles_batch(articles: list[dict]) -> int:
+    pending = [a for a in articles if not a.get("translated")]
+    if not pending:
+        return 0
 
-    orig_title = art.get("title_en") or art.get("title", "")
-    orig_summary = art.get("summary_en") or art.get("summary", "")
+    translated_count = 0
+    chunk_size = 8
 
-    it_title, ok_t = translate_text(translator, orig_title)
-    it_summary, ok_s = translate_text(translator, orig_summary)
+    for start in range(0, len(pending), chunk_size):
+        chunk = pending[start : start + chunk_size]
+        lines = []
+        for art in chunk:
+            t = (art.get("title_en") or art.get("title") or "").replace("\n", " ").strip()
+            s = (art.get("summary_en") or art.get("summary") or "").replace("\n", " ").strip()
+            art["title_en"] = t
+            art["summary_en"] = s
+            lines.append(t or "-")
+            lines.append(s or "-")
 
-    art["title_en"] = orig_title
-    art["summary_en"] = orig_summary
-    art["title"] = it_title
-    art["summary"] = it_summary
-    art["translated"] = bool(ok_t and ok_s)
-    return art
+        joined = "\n".join(lines)
+        res = gtx_translate(joined)
+        time.sleep(0.25)
+
+        if res:
+            out_lines = [ln.strip() for ln in res.split("\n")]
+            if len(out_lines) == len(lines):
+                for idx, art in enumerate(chunk):
+                    it_t = out_lines[idx * 2]
+                    it_s = out_lines[idx * 2 + 1]
+                    if art["title_en"]:
+                        art["title"] = it_t
+                    if art["summary_en"]:
+                        art["summary"] = it_s
+                    art["translated"] = True
+                    translated_count += 1
+                continue
+
+        # Fallback singolo se le righe del blocco non combaciano
+        for art in chunk:
+            it_t = gtx_translate(art["title_en"]) if art["title_en"] else ""
+            it_s = gtx_translate(art["summary_en"]) if art["summary_en"] else ""
+            time.sleep(0.15)
+            if it_t is not None and (it_s is not None or not art["summary_en"]):
+                art["title"] = it_t or art["title_en"]
+                art["summary"] = it_s if art["summary_en"] else ""
+                art["translated"] = True
+                translated_count += 1
+
+    return translated_count
 
 
 def main():
     ARCHIVE_DIR.mkdir(parents=True, exist_ok=True)
     now_rome = datetime.now(ROME_TZ)
-    translator = GoogleTranslator(source="auto", target="it")
 
-    # Cache articoli gia tradotti nei giorni recenti
     known_cache = {}
     for fpath in sorted(ARCHIVE_DIR.glob("*.json"), reverse=True)[:7]:
         day_data = load_json(fpath, {})
@@ -205,10 +244,12 @@ def main():
                     "date": pub_dt.strftime("%Y-%m-%d"),
                     "translated": False,
                 }
-                article = ensure_translated(translator, article)
 
             fetched_articles.append(article)
             count += 1
+
+    tr_new = translate_articles_batch(fetched_articles)
+    print(f"Nuovi articoli tradotti in italiano: {tr_new}")
 
     by_date = {}
     for art in fetched_articles:
@@ -232,7 +273,6 @@ def main():
             },
         )
 
-    # Traduci eventuali articoli degli ultimi 3 giorni salvati in precedenza solo in inglese
     archive_files = sorted(ARCHIVE_DIR.glob("*.json"), reverse=True)
     dates_index = []
     all_recent = []
@@ -245,12 +285,9 @@ def main():
             continue
 
         if idx < 3:
-            changed = False
-            for i, art in enumerate(arts):
-                if not art.get("translated"):
-                    arts[i] = ensure_translated(translator, art)
-                    changed = True
-            if changed:
+            tr_old = translate_articles_batch(arts)
+            if tr_old > 0:
+                print(f"Tradotti {tr_old} articoli in archivio per {d_str}")
                 day_data["articles"] = arts
                 day_data["updated_at"] = now_rome.isoformat()
                 save_json(fpath, day_data)
