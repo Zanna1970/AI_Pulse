@@ -1,0 +1,49 @@
+name: Aggiorna Notizie AI e Pubblica
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Scarica repository
+        uses: actions/checkout@v4
+
+      - name: Configura Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Installa dipendenze
+        run: pip install -r requirements.txt
+
+      - name: Estrai notizie AI e aggiorna archivio
+        run: python scripts/fetch_news.py
+
+      - name: Salva nuove notizie e archivio nel repository
+        run: |
+          git config user.name "AI News Bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data/
+          if ! git diff --staged --quiet; then
+            git commit -m "Aggiornamento automatico notizie AI ($(date +'%Y-%m-%d'))"
+            git push
+          fi
+
+      - name: Prepara artifact per GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "."
+
+      - name: Pubblica su GitHub Pages
+        uses: actions/deploy-pages@v4
