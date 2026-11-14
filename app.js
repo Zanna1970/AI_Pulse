@@ -32,18 +32,24 @@ function initAmbientParticles() {
   let width = 0;
   let height = 0;
   let particles = [];
+  let pulses = [];
+  let ripples = [];
   const mouse = { x: -999, y: -999 };
 
   function buildParticles() {
-    const targetCount = Math.max(32, Math.min(70, Math.floor((width * height) / 22000)));
+    // Densita molto piu alta e uniforme su tutto lo schermo
+    const targetCount = Math.max(70, Math.min(170, Math.floor((width * height) / 10500)));
     particles = [];
     for (let i = 0; i < targetCount; i++) {
+      const depth = 0.5 + Math.random() * 0.9; // profondita per effetto 3D
       particles.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.36,
-        vy: (Math.random() - 0.5) * 0.36,
-        r: 1.3 + Math.random() * 1.9,
+        vx: (Math.random() - 0.5) * 0.45 * depth,
+        vy: (Math.random() - 0.5) * 0.45 * depth,
+        r: (1.1 + Math.random() * 1.8) * depth,
+        depth,
+        phase: Math.random() * Math.PI * 2,
       });
     }
   }
@@ -55,15 +61,7 @@ function initAmbientParticles() {
     canvas.width = Math.floor(width * dpr);
     canvas.height = Math.floor(height * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-
-    if (particles.length === 0) {
-      buildParticles();
-    } else {
-      particles.forEach((p) => {
-        p.x = Math.min(width, p.x);
-        p.y = Math.min(height, p.y);
-      });
-    }
+    buildParticles();
   }
 
   window.addEventListener("mousemove", (e) => {
@@ -76,6 +74,17 @@ function initAmbientParticles() {
     mouse.y = -999;
   });
 
+  window.addEventListener("click", (e) => {
+    if (reduceMotion) return;
+    ripples.push({
+      x: e.clientX,
+      y: e.clientY,
+      r: 4,
+      maxR: 240,
+      alpha: 0.45,
+    });
+  });
+
   function draw() {
     if (width === 0 || height === 0) {
       requestAnimationFrame(draw);
@@ -86,12 +95,69 @@ function initAmbientParticles() {
     const isDark = document.documentElement.getAttribute("data-theme") !== "light";
     const dotColor = isDark ? "96, 165, 250" : "37, 99, 235";
     const lineColor = isDark ? "56, 189, 248" : "59, 130, 246";
+    const pulseColor = isDark ? "52, 211, 153" : "5, 150, 105";
+    const maxDist = 145;
+    const maxDistSq = maxDist * maxDist;
 
+    // 1. Alone luminoso intorno al mouse
+    if (mouse.x > 0 && mouse.y > 0) {
+      const grad = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 220);
+      grad.addColorStop(0, isDark ? "rgba(59, 130, 246, 0.14)" : "rgba(37, 99, 235, 0.10)");
+      grad.addColorStop(0.5, isDark ? "rgba(16, 185, 129, 0.05)" : "rgba(5, 150, 105, 0.04)");
+      grad.addColorStop(1, "rgba(0, 0, 0, 0)");
+      ctx.fillStyle = grad;
+      ctx.beginPath();
+      ctx.arc(mouse.x, mouse.y, 220, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    // 2. Aggiorna e disegna onde al clic (ripples)
+    for (let k = ripples.length - 1; k >= 0; k--) {
+      const rp = ripples[k];
+      rp.r += 5.5;
+      rp.alpha *= 0.96;
+
+      ctx.beginPath();
+      ctx.arc(rp.x, rp.y, rp.r, 0, Math.PI * 2);
+      ctx.strokeStyle = `rgba(${pulseColor}, ${rp.alpha})`;
+      ctx.lineWidth = 1.6;
+      ctx.stroke();
+
+      // Spinge leggermente le particelle lungo il fronte dell'onda
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+        const dx = p.x - rp.x;
+        const dy = p.y - rp.y;
+        const d = Math.hypot(dx, dy);
+        if (Math.abs(d - rp.r) < 18 && d > 1) {
+          p.x += (dx / d) * 1.4;
+          p.y += (dy / d) * 1.4;
+        }
+      }
+
+      if (rp.r >= rp.maxR || rp.alpha < 0.02) {
+        ripples.splice(k, 1);
+      }
+    }
+
+    // 3. Particelle e connessioni
     for (let i = 0; i < particles.length; i++) {
       const p = particles[i];
       if (!reduceMotion) {
+        p.phase += 0.025;
         p.x += p.vx;
         p.y += p.vy;
+
+        // Attrazione leggera verso il cursore
+        if (mouse.x > 0) {
+          const mdx = mouse.x - p.x;
+          const mdy = mouse.y - p.y;
+          const mDistSq = mdx * mdx + mdy * mdy;
+          if (mDistSq > 900 && mDistSq < 32400) {
+            p.x += mdx * 0.0045;
+            p.y += mdy * 0.0045;
+          }
+        }
 
         if (p.x < 0 || p.x > width) p.vx *= -1;
         if (p.y < 0 || p.y > height) p.vy *= -1;
@@ -99,39 +165,74 @@ function initAmbientParticles() {
         p.y = Math.max(0, Math.min(height, p.y));
       }
 
+      const twinkle = 0.78 + 0.22 * Math.sin(p.phase);
+      const baseAlpha = (isDark ? 0.55 : 0.38) * twinkle;
+
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${dotColor}, ${isDark ? 0.42 : 0.3})`;
+      ctx.fillStyle = `rgba(${dotColor}, ${baseAlpha})`;
       ctx.fill();
 
       for (let j = i + 1; j < particles.length; j++) {
         const q = particles[j];
         const dx = p.x - q.x;
         const dy = p.y - q.y;
-        const dist = Math.hypot(dx, dy);
-        if (dist < 145) {
-          const alpha = (1 - dist / 145) * (isDark ? 0.18 : 0.12);
+        const distSq = dx * dx + dy * dy;
+        if (distSq < maxDistSq) {
+          const dist = Math.sqrt(distSq);
+          const alpha = (1 - dist / maxDist) * (isDark ? 0.24 : 0.16);
           ctx.beginPath();
           ctx.moveTo(p.x, p.y);
           ctx.lineTo(q.x, q.y);
           ctx.strokeStyle = `rgba(${lineColor}, ${alpha})`;
-          ctx.lineWidth = 1;
+          ctx.lineWidth = 0.9;
           ctx.stroke();
+
+          // Genera occasionalmente un impulso luminoso (sinapsi) lungo il collegamento
+          if (!reduceMotion && pulses.length < 20 && Math.random() < 0.0018) {
+            pulses.push({
+              from: p,
+              to: q,
+              t: 0,
+              speed: 0.022 + Math.random() * 0.025,
+            });
+          }
         }
       }
 
-      const mdx = p.x - mouse.x;
-      const mdy = p.y - mouse.y;
-      const mdist = Math.hypot(mdx, mdy);
-      if (mdist < 160) {
-        const mAlpha = (1 - mdist / 160) * (isDark ? 0.34 : 0.24);
-        ctx.beginPath();
-        ctx.moveTo(p.x, p.y);
-        ctx.lineTo(mouse.x, mouse.y);
-        ctx.strokeStyle = `rgba(16, 185, 129, ${mAlpha})`;
-        ctx.lineWidth = 1.1;
-        ctx.stroke();
+      // Linee verdi verso il mouse
+      if (mouse.x > 0) {
+        const mdx = p.x - mouse.x;
+        const mdy = p.y - mouse.y;
+        const mDistSq = mdx * mdx + mdy * mdy;
+        if (mDistSq < 25600) {
+          const mDist = Math.sqrt(mDistSq);
+          const mAlpha = (1 - mDist / 160) * (isDark ? 0.42 : 0.28);
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.strokeStyle = `rgba(${pulseColor}, ${mAlpha})`;
+          ctx.lineWidth = 1.1;
+          ctx.stroke();
+        }
       }
+    }
+
+    // 4. Disegna gli impulsi sinapsi lungo le connessioni
+    for (let m = pulses.length - 1; m >= 0; m--) {
+      const pl = pulses[m];
+      pl.t += pl.speed;
+      if (pl.t >= 1) {
+        pulses.splice(m, 1);
+        continue;
+      }
+      const px = pl.from.x + (pl.to.x - pl.from.x) * pl.t;
+      const py = pl.from.y + (pl.to.y - pl.from.y) * pl.t;
+
+      ctx.beginPath();
+      ctx.arc(px, py, 2.2, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${pulseColor}, ${isDark ? 0.9 : 0.75})`;
+      ctx.fill();
     }
 
     if (!reduceMotion) {
