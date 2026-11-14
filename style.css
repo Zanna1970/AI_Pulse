@@ -22,6 +22,7 @@
   --green: #059669;
 }
 
+html { scroll-behavior: smooth; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
@@ -50,10 +51,25 @@ body {
 .brand-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--green); box-shadow: 0 0 12px var(--green); flex-shrink: 0; }
 .brand h1 { font-size: 1.45rem; letter-spacing: -0.02em; }
 .subtitle { font-size: 0.85rem; color: var(--text-muted); }
-.header-actions { display: flex; align-items: center; gap: 10px; }
+.subtitle strong { color: var(--text); }
+.header-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+
+.btn-about {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn-about:hover { border-color: var(--accent); color: var(--accent); }
 
 .update-badge { font-size: 0.8rem; background: var(--accent-soft); color: var(--accent); padding: 6px 12px; border-radius: 999px; font-weight: 600; }
-.btn-icon { background: var(--bg); border: 1px solid var(--border); color: var(--text); border-radius: 8px; padding: 6px 10px; cursor: pointer; font-size: 1rem; }
+.btn-icon { background: var(--bg); border: 1px solid var(--border); color: var(--text); border-radius: 8px; padding: 6px 10px; cursor: pointer; font-size: 0.9rem; font-weight: 600; }
 
 main { flex: 1; padding: 24px 0 48px; }
 .controls-bar { display: flex; flex-direction: column; gap: 14px; margin-bottom: 20px; }
@@ -110,4 +126,60 @@ select:focus, input[type="search"]:focus { border-color: var(--accent); }
 .card-actions a { color: var(--accent); text-decoration: none; font-weight: 600; }
 .card-actions a:hover { text-decoration: underline; }
 .empty-state { grid-column: 1 / -1; text-align: center; padding: 48px 20px; background: var(--surface); border: 1px dashed var(--border); border-radius: 14px; color: var(--text-muted); }
+
+/* Sezione Chi sono */
+.about-section { margin-top: 48px; scroll-margin-top: 90px; }
+
+.about-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.about-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--accent), var(--green));
+  color: #fff;
+  font-size: 1.75rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.about-content { display: flex; flex-direction: column; gap: 8px; }
+
+.about-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.about-header h2 { font-size: 1.2rem; }
+
+.about-tag {
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: var(--accent-soft);
+  color: var(--accent);
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.about-content p { font-size: 0.92rem; color: var(--text-muted); }
+.about-content strong { color: var(--text); }
+
+@media (max-width: 600px) {
+  .about-card { flex-direction: column; align-items: flex-start; }
+}
+
 .site-footer { border-top: 1px solid var(--border); padding: 20px 0; text-align: center; font-size: 0.82rem; color: var(--text-muted); }
+.site-footer strong { color: var(--text); }
