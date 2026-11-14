@@ -10,16 +10,22 @@
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand">
-        <span class="brand-dot"></span>
+        <span class="brand-dot" aria-hidden="true"></span>
         <div>
           <h1>AI Pulse</h1>
-          <p class="subtitle">Rassegna automatica quotidiana sull'Intelligenza Artificiale &middot; a cura di <strong>ErreZeta</strong></p>
+          <p class="subtitle">Rassegna AI quotidiana &middot; a cura di <strong>Zanna</strong></p>
         </div>
       </div>
-      <div class="header-actions">
-        <a href="#chi-sono" class="btn-about">Chi sono</a>
-        <span id="last-updated" class="update-badge">Caricamento...</span>
-        <button id="theme-toggle" class="btn-icon" title="Cambia tema" aria-label="Cambia tema">&#127763;</button>
+
+      <div class="header-right">
+        <span id="last-updated" class="update-status">Caricamento...</span>
+        <nav class="header-menu" aria-label="Menu principale">
+          <a href="#chi-sono" class="menu-item">Chi sono</a>
+          <span class="menu-sep" aria-hidden="true"></span>
+          <button id="lang-toggle" class="menu-item" type="button" title="Passa tra Italiano e Inglese">IT</button>
+          <span class="menu-sep" aria-hidden="true"></span>
+          <button id="theme-toggle" class="menu-item" type="button" title="Passa tra Dark e Light">Dark</button>
+        </nav>
       </div>
     </div>
   </header>
@@ -30,7 +36,7 @@
         <button class="tab-btn active" data-mode="latest">Ultime Notizie</button>
         <button class="tab-btn" id="btn-yesterday" data-mode="yesterday" disabled>Notizie di Ieri</button>
         <label class="archive-select-wrap">
-          <span>Archivio:</span>
+          <span>Archivio</span>
           <select id="archive-select">
             <option value="">Seleziona una data...</option>
           </select>
@@ -41,7 +47,7 @@
         <div class="category-pills" id="category-pills">
           <button class="pill active" data-category="Tutte">Tutte</button>
           <button class="pill" data-category="Laboratori">Laboratori AI</button>
-          <button class="pill" data-category="Media & Tech">Media & Tech</button>
+          <button class="pill" data-category="Media & Tech">Media &amp; Tech</button>
           <button class="pill" data-category="Ricerca">Ricerca</button>
         </div>
 
@@ -62,7 +68,7 @@
         <div class="about-avatar" aria-hidden="true">Z</div>
         <div class="about-content">
           <div class="about-header">
-            <h2>Ciao, sono Roberto</h2>
+            <h2>Ciao, sono Zanna</h2>
             <span class="about-tag">Appassionato di tecnologia &amp; AI</span>
           </div>
           <p>
@@ -78,7 +84,7 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>Creato e curato da <strong>ErreZeta - beta1_2026</strong> &middot; Aggiornamento automatico ogni giorno alle 07:00 con archivio storico.</p>
+      <p>Creato e curato da <strong>Zanna</strong> &middot; Aggiornamento automatico ogni giorno alle 07:00 con archivio storico.</p>
     </div>
   </footer>
 
