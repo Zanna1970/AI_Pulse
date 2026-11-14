@@ -1,31 +1,33 @@
 :root[data-theme="dark"] {
-  --bg: #090d16;
-  --header-bg: rgba(11, 17, 30, 0.88);
-  --surface: #111827;
-  --surface-hover: #172033;
-  --menu-bg: rgba(24, 34, 53, 0.85);
-  --border: #233048;
+  --bg: #070b14;
+  --header-bg: rgba(11, 17, 30, 0.72);
+  --surface: rgba(17, 24, 39, 0.76);
+  --surface-hover: rgba(23, 33, 54, 0.88);
+  --control-bg: rgba(17, 24, 39, 0.82);
+  --menu-bg: rgba(24, 34, 53, 0.82);
+  --border: rgba(56, 78, 114, 0.45);
   --text: #f1f5f9;
   --text-muted: #94a3b8;
   --accent: #3b82f6;
-  --accent-soft: rgba(59, 130, 246, 0.14);
+  --accent-soft: rgba(59, 130, 246, 0.16);
   --green: #10b981;
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
 }
 
 :root[data-theme="light"] {
-  --bg: #f5f7fb;
-  --header-bg: rgba(248, 250, 255, 0.88);
-  --surface: #ffffff;
-  --surface-hover: #f8fafc;
+  --bg: #f1f5fb;
+  --header-bg: rgba(255, 255, 255, 0.75);
+  --surface: rgba(255, 255, 255, 0.78);
+  --surface-hover: rgba(255, 255, 255, 0.94);
+  --control-bg: rgba(255, 255, 255, 0.86);
   --menu-bg: rgba(238, 242, 248, 0.88);
-  --border: #dde4ef;
+  --border: rgba(186, 199, 220, 0.65);
   --text: #0f172a;
-  --text-muted: #64748b;
+  --text-muted: #526176;
   --accent: #2563eb;
-  --accent-soft: rgba(37, 99, 235, 0.1);
+  --accent-soft: rgba(37, 99, 235, 0.11);
   --green: #059669;
-  --shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  --shadow: 0 8px 26px rgba(15, 23, 42, 0.07);
 }
 
 html { scroll-behavior: smooth; }
@@ -44,50 +46,53 @@ body {
 
 .container { width: 100%; max-width: 1220px; margin: 0 auto; padding: 0 20px; }
 
-/* Header con sfondo liquido + particelle animato */
-.site-header {
-  border-bottom: 1px solid var(--border);
-  background: var(--header-bg);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  padding: 22px 0;
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  overflow: hidden;
-}
-
-.header-liquid-bg {
-  position: absolute;
-  inset: -40%;
+/* Sfondo dinamico a tutto schermo (liquido + particelle) */
+.ambient-layer {
+  position: fixed;
+  inset: 0;
   z-index: 0;
+  overflow: hidden;
   pointer-events: none;
+}
+
+.ambient-liquid {
+  position: absolute;
+  inset: -25%;
   background:
-    radial-gradient(circle at 18% 45%, rgba(59, 130, 246, 0.24), transparent 42%),
-    radial-gradient(circle at 52% 25%, rgba(16, 185, 129, 0.18), transparent 40%),
-    radial-gradient(circle at 82% 60%, rgba(139, 92, 246, 0.22), transparent 44%);
-  filter: blur(26px);
-  animation: liquidFlow 14s ease-in-out infinite alternate;
+    radial-gradient(circle at 15% 20%, rgba(59, 130, 246, 0.22), transparent 38%),
+    radial-gradient(circle at 82% 18%, rgba(139, 92, 246, 0.18), transparent 40%),
+    radial-gradient(circle at 70% 78%, rgba(16, 185, 129, 0.16), transparent 42%),
+    radial-gradient(circle at 22% 82%, rgba(14, 165, 233, 0.16), transparent 40%);
+  filter: blur(48px);
+  animation: liquidDrift 20s ease-in-out infinite alternate;
 }
 
-@keyframes liquidFlow {
-  0% { transform: translate3d(-4%, -3%, 0) scale(1); }
-  50% { transform: translate3d(3%, 4%, 0) scale(1.06); }
-  100% { transform: translate3d(-2%, 2%, 0) scale(1.02); }
+@keyframes liquidDrift {
+  0% { transform: translate3d(-3%, -2%, 0) scale(1); }
+  50% { transform: translate3d(3%, 3%, 0) scale(1.07); }
+  100% { transform: translate3d(-2%, 4%, 0) scale(1.03); }
 }
 
-#header-canvas {
+#bg-canvas {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
-  pointer-events: none;
+}
+
+/* Header vetro */
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--header-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 22px 0;
+  position: sticky;
+  top: 0;
+  z-index: 20;
 }
 
 .header-inner {
-  position: relative;
-  z-index: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -138,7 +143,7 @@ body {
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 3px;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
 }
 
 .menu-item {
@@ -159,7 +164,7 @@ body {
 }
 
 .menu-item:hover {
-  background: var(--surface);
+  background: var(--surface-hover);
   color: var(--accent);
 }
 
@@ -170,8 +175,10 @@ body {
   flex-shrink: 0;
 }
 
-/* Spazio corretto sopra il menu Ultime Notizie */
+/* Contenuto sopra lo sfondo animato */
 main.container {
+  position: relative;
+  z-index: 1;
   flex: 1;
   padding: 44px 20px 64px;
 }
@@ -180,9 +187,10 @@ main.container {
 .date-tabs { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 
 .tab-btn, .pill {
-  background: var(--surface);
+  background: var(--control-bg);
   border: 1px solid var(--border);
   color: var(--text-muted);
+  backdrop-filter: blur(10px);
   padding: 8px 15px;
   border-radius: 10px;
   cursor: pointer;
@@ -215,9 +223,10 @@ main.container {
 }
 
 select, input[type="search"] {
-  background: var(--surface);
+  background: var(--control-bg);
   border: 1px solid var(--border);
   color: var(--text);
+  backdrop-filter: blur(10px);
   font-family: inherit;
   padding: 8px 12px;
   border-radius: 10px;
@@ -235,12 +244,14 @@ select:focus, input[type="search"]:focus { border-color: var(--accent); }
 .search-source input { min-width: 240px; }
 .status-bar { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px; }
 
-/* Card notizie */
+/* Card notizie effetto vetro */
 .news-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
 
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-radius: 16px;
   overflow: hidden;
   display: flex;
@@ -289,6 +300,7 @@ select:focus, input[type="search"]:focus { border-color: var(--accent); }
   text-align: center;
   padding: 48px 20px;
   background: var(--surface);
+  backdrop-filter: blur(12px);
   border: 1px dashed var(--border);
   border-radius: 16px;
   color: var(--text-muted);
@@ -300,6 +312,8 @@ select:focus, input[type="search"]:focus { border-color: var(--accent); }
 .about-card {
   background: var(--surface);
   border: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-radius: 18px;
   padding: 26px;
   display: flex;
@@ -346,7 +360,11 @@ select:focus, input[type="search"]:focus { border-color: var(--accent); }
 
 /* Footer */
 .site-footer {
+  position: relative;
+  z-index: 1;
   border-top: 1px solid var(--border);
+  background: var(--header-bg);
+  backdrop-filter: blur(12px);
   padding: 22px 0;
   font-size: 0.82rem;
   color: var(--text-muted);
