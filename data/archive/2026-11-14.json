@@ -1,49 +1,63 @@
 {
   "date": "2026-11-14",
-  "updated_at": "2026-11-14T17:29:41.287463+01:00",
-  "count": 3,
+  "updated_at": "2026-11-14T17:35:50.276924+01:00",
+  "count": 4,
   "articles": [
     {
+      "id": "8097820885cc543d",
+      "title": "I governi asiatici reagiscono all’uscita del CEO di Nvidia Jensen Huang",
+      "title_en": "Asian governments react to Nvidia CEO Jensen Huang’s exit",
+      "url": "https://techcrunch.com/2026/11/14/asian-governments-react-to-nvidia-ceo-jensen-huangs-exit/",
+      "summary": "Alcuni governi si sono mossi per confermare gli impegni di fornitura di chip, mentre altri stanno monitorando l’impatto sui progetti locali o affrontando le indagini in corso.",
+      "summary_en": "Some governments moved to confirm chip supply commitments, while others are monitoring the impact on local projects or addressing ongoing investigations.",
+      "image": "",
+      "source": "TechCrunch AI",
+      "category": "Media & Tech",
+      "published_at": "2026-11-14T17:34:15+01:00",
+      "date": "2026-11-14",
+      "translated": true
+    },
+    {
       "id": "6c2539c06ead4df2",
-      "title": "The OpenAI board member who fired Sam Altman says we still can’t trust AI CEOs",
+      "title": "Il membro del consiglio di amministrazione di OpenAI che ha licenziato Sam Altman afferma che non possiamo ancora fidarci dei CEO dell’IA",
       "title_en": "The OpenAI board member who fired Sam Altman says we still can’t trust AI CEOs",
       "url": "https://www.theverge.com/podcast/1032907/helen-toner-openai-cset-ai-safety-policy-interview",
-      "summary": "Today, I’m talking with Helen Toner, the executive director of the Center for Security and Emerging Technology at Georgetown University. This episode is part two of our series on AI in real life. Helen is a well-known figure in the AI...",
+      "summary": "Oggi parlo con Helen Toner, direttrice esecutiva del Center for Security and Emerging Technology della Georgetown University. Questo episodio è la seconda parte della nostra serie sull'intelligenza artificiale nella vita reale. Helen è una figura ben nota nell'IA...",
       "summary_en": "Today, I’m talking with Helen Toner, the executive director of the Center for Security and Emerging Technology at Georgetown University. This episode is part two of our series on AI in real life. Helen is a well-known figure in the AI...",
       "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/DCD-Helen-Toner.jpg?quality=90&strip=all&crop=0,0,100,100",
       "source": "The Verge AI",
       "category": "Media & Tech",
       "published_at": "2026-11-14T16:00:00+01:00",
       "date": "2026-11-14",
-      "translated": false
+      "translated": true
     },
     {
       "id": "f88fcfa12fe4eda6",
-      "title": "Jensen Huang and the decline of the visionary showman founder CEO",
+      "title": "Jensen Huang e il declino del visionario showman fondatore CEO",
       "title_en": "Jensen Huang and the decline of the visionary showman founder CEO",
       "url": "https://www.theverge.com/tech/1033781/nvidia-jensen-huang-last-visionary-showman-founder-ceo",
-      "summary": "On January 6th, 2025, Nvidia CEO Jensen Huang got his rockstar moment at last. He strode triumphantly onstage, hand raised in the air, to the claps and cheers of a 14,000-person arena absolutely packed with influencers and fans, their...",
+      "summary": "Il 6 gennaio 2025, il CEO di Nvidia Jensen Huang ha finalmente ottenuto il suo momento da rockstar. Ha camminato trionfalmente sul palco, con la mano alzata in aria, tra gli applausi e gli applausi di un'arena da 14.000 persone assolutamente piena di influencer e fan, i loro...",
       "summary_en": "On January 6th, 2025, Nvidia CEO Jensen Huang got his rockstar moment at last. He strode triumphantly onstage, hand raised in the air, to the claps and cheers of a 14,000-person arena absolutely packed with influencers and fans, their...",
       "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/gettyimages-2194622930.jpg?quality=90&strip=all&crop=0,0,100,100",
       "source": "The Verge AI",
       "category": "Media & Tech",
       "published_at": "2026-11-14T13:00:00+01:00",
       "date": "2026-11-14",
-      "translated": false
+      "translated": true
     },
     {
       "id": "96048276e5de0ccf",
-      "title": "Amazon has a plan to index the world’s online shopping data",
+      "title": "Amazon ha un piano per indicizzare i dati degli acquisti online a livello mondiale",
       "title_en": "Amazon has a plan to index the world’s online shopping data",
       "url": "https://www.theverge.com/tech/1033697/amazon-world-product-graph-ai-search",
-      "summary": "Amazon has plans to build a vault of data on every product sold anywhere on the internet, even products Amazon doesn't sell, and make the information available through its own site, according to Reuters. The project, called the \"World...",
+      "summary": "Secondo Reuters, Amazon ha in programma di creare un archivio di dati su ogni prodotto venduto ovunque su Internet, anche sui prodotti che Amazon non vende, e di rendere le informazioni disponibili attraverso il proprio sito. Il progetto, denominato \"Mondo...",
       "summary_en": "Amazon has plans to build a vault of data on every product sold anywhere on the internet, even products Amazon doesn't sell, and make the information available through its own site, according to Reuters. The project, called the \"World...",
       "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/09/acastro_STK103__03.jpg?quality=90&strip=all&crop=0,0,100,100",
       "source": "The Verge AI",
       "category": "Media & Tech",
       "published_at": "2026-11-14T00:49:11+01:00",
       "date": "2026-11-14",
-      "translated": false
+      "translated": true
     }
   ]
 }

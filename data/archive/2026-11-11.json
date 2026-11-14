@@ -1,137 +1,137 @@
 {
   "date": "2026-11-11",
-  "updated_at": "2026-11-14T17:29:41.287463+01:00",
+  "updated_at": "2026-11-14T17:35:50.276924+01:00",
   "count": 12,
   "articles": [
     {
       "id": "5fb859151deb4003",
-      "title": "Taiwan’s chipmaking giant TSMC to invest $1B in Anthropic, OpenAI",
+      "title": "Il colosso taiwanese della produzione di chip TSMC investirà 1 miliardo di dollari in Anthropic, OpenAI",
       "title_en": "Taiwan’s chipmaking giant TSMC to invest $1B in Anthropic, OpenAI",
       "url": "https://arstechnica.com/ai/2026/11/taiwans-chipmaking-giant-tsmc-to-invest-1b-in-anthropic-openai/",
-      "summary": "Latest example of the AI boom’s circular financing comes as AI trade wobbles.",
+      "summary": "L’ultimo esempio del finanziamento circolare del boom dell’intelligenza artificiale arriva mentre il commercio dell’intelligenza artificiale vacilla.",
       "summary_en": "Latest example of the AI boom’s circular financing comes as AI trade wobbles.",
       "image": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/TSMC-Fab-18-1152x648.jpg",
       "source": "Ars Technica AI",
       "category": "Media & Tech",
       "published_at": "2026-11-11T19:16:40+01:00",
       "date": "2026-11-11",
-      "translated": false
+      "translated": true
     },
     {
       "id": "c06fca3b9549fb95",
-      "title": "Gemini Decisions API: Fast, calibrated multimodal decisions",
+      "title": "API Gemini Decisions: decisioni multimodali veloci e calibrate",
       "title_en": "Gemini Decisions API: Fast, calibrated multimodal decisions",
       "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
-      "summary": "Meet the Gemini Decisions API, powered by our state-of-the-art model Gemini Decision for fast, calibrated multimodal decisions.",
+      "summary": "Scopri l'API Gemini Decisions, basata sul nostro modello all'avanguardia Gemini Decision per decisioni multimodali rapide e calibrate.",
       "summary_en": "Meet the Gemini Decisions API, powered by our state-of-the-art model Gemini Decision for fast, calibrated multimodal decisions.",
       "image": "",
       "source": "Google AI Blog",
       "category": "Laboratori",
       "published_at": "2026-11-11T19:00:00+01:00",
       "date": "2026-11-11",
-      "translated": false
+      "translated": true
     },
     {
       "id": "5e08e87b87fd5b69",
-      "title": "Big Walk used AI to fix a bug. Now the indie gaming world is having a reckoning.",
+      "title": "Big Walk ha utilizzato l'intelligenza artificiale per correggere un bug. Ora il mondo dei giochi indie sta facendo i conti.",
       "title_en": "Big Walk used AI to fix a bug. Now the indie gaming world is having a reckoning.",
       "url": "https://arstechnica.com/gaming/2026/11/big-walk-used-ai-to-fix-a-bug-now-the-indie-gaming-world-is-having-a-reckoning/",
-      "summary": "Any amount of AI coding is too much for many Independent Games Festival judges.",
+      "summary": "Qualsiasi quantità di codifica IA è eccessiva per molti giudici dell'Independent Games Festival.",
       "summary_en": "Any amount of AI coding is too much for many Independent Games Festival judges.",
       "image": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/bigwalkdebate-1152x648.png",
       "source": "Ars Technica AI",
       "category": "Media & Tech",
       "published_at": "2026-11-11T18:37:32+01:00",
       "date": "2026-11-11",
-      "translated": false
+      "translated": true
     },
     {
       "id": "eac4d84ef949975e",
-      "title": "Try Tabletop: Customizable, collaborative spaces for groups to plan, play and do more together.",
+      "title": "Prova Tabletop: spazi collaborativi e personalizzabili in cui i gruppi possono pianificare, giocare e fare di più insieme.",
       "title_en": "Try Tabletop: Customizable, collaborative spaces for groups to plan, play and do more together.",
       "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/tabletop/",
-      "summary": "Tabletop is a new Google Labs experiment for group collaboration. Build interactive itineraries, polls, and brackets with your team. Join the waitlist.",
+      "summary": "Tabletop è un nuovo esperimento di Google Labs per la collaborazione di gruppo. Crea percorsi interattivi, sondaggi e parentesi con il tuo team. Iscriviti alla lista d'attesa.",
       "summary_en": "Tabletop is a new Google Labs experiment for group collaboration. Build interactive itineraries, polls, and brackets with your team. Join the waitlist.",
       "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/labs_tabletop_blog_image_2784x1.max-600x600.format-webp.webp",
       "source": "Google AI Blog",
       "category": "Laboratori",
       "published_at": "2026-11-11T17:00:00+01:00",
       "date": "2026-11-11",
-      "translated": false
+      "translated": true
     },
     {
       "id": "833534b672b8daa3",
-      "title": "AlphaGenome 2: Deciphering how cells read DNA to better understand disease",
+      "title": "AlphaGenome 2: decifrare il modo in cui le cellule leggono il DNA per comprendere meglio la malattia",
       "title_en": "AlphaGenome 2: Deciphering how cells read DNA to better understand disease",
       "url": "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/",
-      "summary": "Predicting how DNA sequences and their variations impact specific human cell types and disease.",
+      "summary": "Predire in che modo le sequenze di DNA e le loro variazioni influiscono su specifici tipi di cellule umane e malattie.",
       "summary_en": "Predicting how DNA sequences and their variations impact specific human cell types and disease.",
       "image": "https://lh3.googleusercontent.com/VPOhADdGu1T7kK_gWBiGzyVawQbKCjpL3-B0L0wxpYCyr8cHxviYmo9Hghy4f1laeIo2YKwuz8E07TR9HWWk2b0EONi0uvju-8TDLHX6YWHG4dXe3w=w528-h297-n-nu-rw-lo",
       "source": "Google DeepMind",
       "category": "Laboratori",
       "published_at": "2026-11-11T16:00:15+01:00",
       "date": "2026-11-11",
-      "translated": false
+      "translated": true
     },
     {
       "id": "b5b225f8da047fd6",
-      "title": "Google DeepMind just mathematically verified key parts of Signal",
+      "title": "Google DeepMind ha appena verificato matematicamente le parti chiave di Signal",
       "title_en": "Google DeepMind just mathematically verified key parts of Signal",
       "url": "https://arstechnica.com/ai/2026/11/signals-encryption-just-passed-an-ai-powered-mathematical-checkup/",
-      "summary": "The four-week project hints that AI could make formal verification far more practical.",
+      "summary": "Il progetto di quattro settimane suggerisce che l’intelligenza artificiale potrebbe rendere la verifica formale molto più pratica.",
       "summary_en": "The four-week project hints that AI could make formal verification far more practical.",
       "image": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/signal_icon-1024x648.jpg",
       "source": "Ars Technica AI",
       "category": "Media & Tech",
       "published_at": "2026-11-11T15:08:57+01:00",
       "date": "2026-11-11",
-      "translated": false
+      "translated": true
     },
     {
       "id": "2b5f528d3b67d19c",
-      "title": "The Download: preserving minds and weighing open AI risks",
+      "title": "Il download: preservare le menti e valutare i rischi aperti dell'IA",
       "title_en": "The Download: preserving minds and weighing open AI risks",
       "url": "https://www.technologyreview.com/2026/11/11/1148424/the-download-preserving-minds-open-ai-risks/",
-      "summary": "This is today’s edition of The Download, our weekday newsletter that provides a daily dose of what’s going on in the world of technology. Six wild ideas for perpetuating your mind As we age, we forget most of what we’ve experienced, yet...",
+      "summary": "Questa è l'edizione di oggi di The Download, la nostra newsletter nei giorni feriali che fornisce una dose quotidiana di ciò che accade nel mondo della tecnologia. Sei idee folli per perpetuare la tua mente Invecchiando, dimentichiamo la maggior parte di ciò che abbiamo vissuto, eppure...",
       "summary_en": "This is today’s edition of The Download, our weekday newsletter that provides a daily dose of what’s going on in the world of technology. Six wild ideas for perpetuating your mind As we age, we forget most of what we’ve experienced, yet...",
       "image": "https://wp.technologyreview.com/wp-content/uploads/2024/10/GettyImages-82110531_1.jpg?fit=2880,1920",
       "source": "MIT Tech Review",
       "category": "Media & Tech",
       "published_at": "2026-11-11T14:10:00+01:00",
       "date": "2026-11-11",
-      "translated": false
+      "translated": true
     },
     {
       "id": "8e8e851f9ac38a19",
-      "title": "Experience the art and legacy of Dr. Esther Mahlangu",
+      "title": "Scopri l'arte e l'eredità della dottoressa Esther Mahlangu",
       "title_en": "Experience the art and legacy of Dr. Esther Mahlangu",
       "url": "https://blog.google/company-news/outreach-and-initiatives/arts-culture/esther-mahlangu/",
-      "summary": "A portrait of Dr Nontobeko Ntombela, Senior Lecturer, Department of Curatorial, Public and Visual Cultures, Wits School of Arts, University of the Witwatersrand",
+      "summary": "Un ritratto del dottor Nontobeko Ntombela, docente senior, Dipartimento di culture curatoriali, pubbliche e visive, Wits School of Arts, Università del Witwatersrand",
       "summary_en": "A portrait of Dr Nontobeko Ntombela, Senior Lecturer, Department of Curatorial, Public and Visual Cultures, Wits School of Arts, University of the Witwatersrand",
       "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/esther_video_still.max-600x600.format-webp.webp",
       "source": "Google AI Blog",
       "category": "Laboratori",
       "published_at": "2026-11-11T10:00:00+01:00",
       "date": "2026-11-11",
-      "translated": false
+      "translated": true
     },
     {
       "id": "ac94b61a25ade5ed",
-      "title": "ChatGPT Plus for veterans and servicemembers",
+      "title": "ChatGPT Plus per veterani e militari",
       "title_en": "ChatGPT Plus for veterans and servicemembers",
       "url": "https://openai.com/index/chatgpt-plus-for-veterans",
-      "summary": "More than 20,000 veterans and transitioning service members have claimed a free year of ChatGPT Plus. See how they use it to prepare for civilian careers.",
+      "summary": "Più di 20.000 veterani e membri del servizio in transizione hanno richiesto un anno gratuito di ChatGPT Plus. Guarda come lo usano per prepararsi alle carriere civili.",
       "summary_en": "More than 20,000 veterans and transitioning service members have claimed a free year of ChatGPT Plus. See how they use it to prepare for civilian careers.",
       "image": "",
       "source": "OpenAI News",
       "category": "Laboratori",
       "published_at": "2026-11-11T09:00:00+01:00",
       "date": "2026-11-11",
-      "translated": false
+      "translated": true
     },
     {
       "id": "19b4fcb1faac9c9b",
-      "title": "BotPsy: On-Device Personal Assistant with a Sub-Billion-Parameter Agentic Language Model",
+      "title": "BotPsy: assistente personale sul dispositivo con un modello linguistico agentico da meno di un miliardo di parametri",
       "title_en": "BotPsy: On-Device Personal Assistant with a Sub-Billion-Parameter Agentic Language Model",
       "url": "https://huggingface.co/blog/qvac/botpsy",
       "summary": "",
@@ -141,25 +141,25 @@
       "category": "Laboratori",
       "published_at": "2026-11-11T06:01:16+01:00",
       "date": "2026-11-11",
-      "translated": false
+      "translated": true
     },
     {
       "id": "55ff14dc4213127d",
-      "title": "JioStar’s chief architect on AI discovery at 500M-user scale",
+      "title": "Capo architetto di JioStar per la scoperta dell'intelligenza artificiale su scala di 500 milioni di utenti",
       "title_en": "JioStar’s chief architect on AI discovery at 500M-user scale",
       "url": "https://openai.com/index/jiostar-vijay-seshadri",
-      "summary": "JioStar’s Vijay Seshadri explains AI discovery at 500M-user scale. Read his lessons on evals, guardrails, and taking AI into production.",
+      "summary": "Vijay Seshadri di JioStar spiega la scoperta dell'intelligenza artificiale su scala di 500 milioni di utenti. Leggi le sue lezioni su valutazioni, guardrail e introduzione dell'intelligenza artificiale in produzione.",
       "summary_en": "JioStar’s Vijay Seshadri explains AI discovery at 500M-user scale. Read his lessons on evals, guardrails, and taking AI into production.",
       "image": "",
       "source": "OpenAI News",
       "category": "Laboratori",
       "published_at": "2026-11-11T01:00:00+01:00",
       "date": "2026-11-11",
-      "translated": false
+      "translated": true
     },
     {
       "id": "11568aa8dfcf9a3c",
-      "title": "Token Pooling-Aware Training for Multi-Vector Embedding Models",
+      "title": "Formazione mirata al token pooling per modelli di incorporamento multi-vettore",
       "title_en": "Token Pooling-Aware Training for Multi-Vector Embedding Models",
       "url": "https://huggingface.co/blog/token-pooling",
       "summary": "",
@@ -169,7 +169,7 @@
       "category": "Laboratori",
       "published_at": "2026-11-11T01:00:00+01:00",
       "date": "2026-11-11",
-      "translated": false
+      "translated": true
     }
   ]
 }
