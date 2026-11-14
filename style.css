@@ -50,7 +50,7 @@ body {
   background: var(--header-bg);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  padding: 18px 0;
+  padding: 22px 0;
   position: sticky;
   top: 0;
   z-index: 20;
@@ -95,19 +95,26 @@ body {
   flex-wrap: wrap;
 }
 
-.brand { display: flex; align-items: center; gap: 12px; }
+.brand { display: flex; align-items: center; gap: 14px; }
 
 .brand-dot {
-  width: 10px;
-  height: 10px;
+  width: 11px;
+  height: 11px;
   border-radius: 50%;
   background: var(--green);
-  box-shadow: 0 0 10px var(--green);
+  box-shadow: 0 0 12px var(--green);
   flex-shrink: 0;
 }
 
-.brand h1 { font-size: 1.38rem; font-weight: 800; letter-spacing: -0.025em; }
-.subtitle { font-size: 0.84rem; color: var(--text-muted); }
+.brand h1 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 2px;
+}
+
+.subtitle { font-size: 0.86rem; color: var(--text-muted); }
 .subtitle strong { color: var(--text); font-weight: 600; }
 
 .header-right {
@@ -163,9 +170,13 @@ body {
   flex-shrink: 0;
 }
 
-/* Corpo e filtri */
-main { flex: 1; padding: 28px 0 56px; }
-.controls-bar { display: flex; flex-direction: column; gap: 14px; margin-bottom: 22px; }
+/* Spazio corretto sopra il menu Ultime Notizie */
+main.container {
+  flex: 1;
+  padding: 44px 20px 64px;
+}
+
+.controls-bar { display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px; }
 .date-tabs { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 
 .tab-btn, .pill {
@@ -284,7 +295,7 @@ select:focus, input[type="search"]:focus { border-color: var(--accent); }
 }
 
 /* Sezione Chi sono */
-.about-section { margin-top: 52px; scroll-margin-top: 90px; }
+.about-section { margin-top: 52px; scroll-margin-top: 110px; }
 
 .about-card {
   background: var(--surface);
@@ -315,7 +326,6 @@ select:focus, input[type="search"]:focus { border-color: var(--accent); }
 .about-content { display: flex; flex-direction: column; gap: 8px; }
 .about-header { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 
-/* Dimensione uguale al testo del paragrafo */
 .about-header h2 {
   font-size: 0.92rem;
   font-weight: 700;
@@ -363,8 +373,8 @@ select:focus, input[type="search"]:focus { border-color: var(--accent); }
 }
 
 @media (max-width: 720px) {
+  .brand h1 { font-size: 1.5rem; }
   .header-right { width: 100%; justify-content: space-between; }
+  main.container { padding: 32px 16px 48px; }
   .archive-select-wrap { margin-left: 0; }
-  .about-card { flex-direction: column; align-items: flex-start; }
-  .footer-inner { justify-content: center; text-align: center; }
-}
+  .abo
