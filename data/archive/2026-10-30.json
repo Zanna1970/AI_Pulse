@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-30",
+  "updated_at": "2026-11-14T17:04:41.885767+01:00",
+  "count": 1,
+  "articles": [
+    {
+      "id": "1b296d8bb115085d",
+      "title": "Speeding up planning decisions with AI",
+      "url": "https://deepmind.google/blog/speeding-up-planning-decisions-with-ai/",
+      "summary": "Google DeepMind and UK government work together to reduce planning assessment times",
+      "image": "https://lh3.googleusercontent.com/AnSfPLyNIwSu1XsT_WUP3aYfQrc9jo8lwlotms7NmryT7RhWXnwdF4_zzYBMlJOcNT1U_ZbDMCM7AzpnFDPeYKJDardybJGlm447xeEXo1eQqgjCEg=w528-h297-n-nu-rw-lo",
+      "source": "Google DeepMind",
+      "category": "Laboratori",
+      "published_at": "2026-10-30T15:18:30+01:00",
+      "date": "2026-10-30"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "date": "2026-05-08",
+  "updated_at": "2026-11-14T17:04:41.885767+01:00",
+  "count": 1,
+  "articles": [
+    {
+      "id": "e59d5123a62637ac",
+      "title": "Adaptive Parallel Reasoning: The Next Paradigm in Efficient Inference Scaling",
+      "url": "http://bair.berkeley.edu/blog/2026/05/08/adaptive-parallel-reasoning/",
+      "summary": "Overview of adaptive parallel reasoning. What if a reasoning model could decide for itself when to decompose and parallelize independent subtasks, how many concurrent threads to spawn, and how to coordinate them based on the problem at...",
+      "image": "https://bair.berkeley.edu/static/blog/adaptive-parallel-reasoning/cover.png",
+      "source": "BAIR Berkeley",
+      "category": "Ricerca",
+      "published_at": "2026-05-08T11:00:00+02:00",
+      "date": "2026-05-08"
+    }
+  ]
+}

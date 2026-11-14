@@ -1,0 +1,260 @@
+{
+  "date": "2026-11-12",
+  "updated_at": "2026-11-14T17:04:41.885767+01:00",
+  "count": 23,
+  "articles": [
+    {
+      "id": "32df4f7d6cd40e27",
+      "title": "Democrats launch Nvidia investigation, write scathing letter on Huang’s ‘scheme’ with Trump",
+      "url": "https://techcrunch.com/2026/11/12/democrats-launch-nvidia-investigation-write-scathing-letter-on-huangs-scheme-with-trump/",
+      "summary": "This Congressional investigation into Nvidia's China sales and its dealings with Trump is the second one, so far, since news of the alleged spy affair broke.",
+      "image": "",
+      "source": "TechCrunch AI",
+      "category": "Media & Tech",
+      "published_at": "2026-11-12T23:42:51+01:00",
+      "date": "2026-11-12"
+    },
+    {
+      "id": "ca2f28331a6de25a",
+      "title": "Muse can now place calls to US businesses — if you pay",
+      "url": "https://techcrunch.com/2026/11/12/muse-can-now-place-calls-to-u-s-businesses-if-you-pay/",
+      "summary": "Muse's AI can now place outbound calls to U.S. businesses — but it's not free.",
+      "image": "",
+      "source": "TechCrunch AI",
+      "category": "Media & Tech",
+      "published_at": "2026-11-12T23:22:28+01:00",
+      "date": "2026-11-12"
+    },
+    {
+      "id": "a3e1afb4a33deb1b",
+      "title": "Google’s new Gemini model is better at understanding complicated questions",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1032505/google-search-ai-mode-gemini-4-hydrogen",
+      "summary": "Google says its new Gemini 4 Hydrogen model can give more helpful answers to complex questions, including \"questions with multiple parts, hard-to-understand typos, or highly specific requests.\" The new model can break down your...",
+      "image": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/25290329/STK255_Google_Gemini_A.jpg?quality=90&strip=all&crop=0,0,100,100",
+      "source": "The Verge AI",
+      "category": "Media & Tech",
+      "published_at": "2026-11-12T22:55:32+01:00",
+      "date": "2026-11-12"
+    },
+    {
+      "id": "9f9ef1f7c9cc007b",
+      "title": "Nebius tests the neocloud playbook with $40 billion in planned spending",
+      "url": "https://techcrunch.com/2026/11/12/nebius-tests-the-neocloud-playbook-with-40-billion-in-planned-spending/",
+      "summary": "Nebius plans to fund its $40 billion AI infrastructure expansion through customer prepayments and loans, even as delays at a Microsoft data center raise questions about its financing model.",
+      "image": "",
+      "source": "TechCrunch AI",
+      "category": "Media & Tech",
+      "published_at": "2026-11-12T22:27:10+01:00",
+      "date": "2026-11-12"
+    },
+    {
+      "id": "f661cd1e2d45b72e",
+      "title": "Three Lincoln Laboratory technologies receive 2026 R&D 100 Awards",
+      "url": "https://news.mit.edu/2026/lincoln-laboratory-technologies-receive-rd-100-awards-1112",
+      "summary": "A secure operating system, a quantum microsystem platform, and a 5G interference-canceling algorithm are named among the year's most significant innovations.",
+      "image": "https://news.mit.edu/sites/default/files/styles/news_article__cover_image__original/public/images/202610/mit-lincoln-awards.jpg?itok=LWW0sVfe",
+      "source": "MIT News AI",
+      "category": "Ricerca",
+      "published_at": "2026-11-12T22:15:00+01:00",
+      "date": "2026-11-12"
+    },
+    {
+      "id": "ff447842ecb2519b",
+      "title": "Jensen Huang was having a third affair, Reuters reports",
+      "url": "https://techcrunch.com/2026/11/12/jensen-huang-was-having-a-third-affair-reuters-reports/",
+      "summary": "Reuters is withholding the name of the new employee linked to Huang, but says she is an employee of Nvidia.",
+      "image": "",
+      "source": "TechCrunch AI",
+      "category": "Media & Tech",
+      "published_at": "2026-11-12T21:26:47+01:00",
+      "date": "2026-11-12"
+    },
+    {
+      "id": "eeb3027690b25fcf",
+      "title": "Nvidia privately confirmed it could track chips to fight smuggling, even as industry publicly questioned feasibility",
+      "url": "https://www.technologyreview.com/2026/11/12/1148483/nvidia-chip-tracking/",
+      "summary": "Representatives from Nvidia told Illinois representative Bill Foster that it would be technically possible to implement the anti-smuggling measures called for in the Chip Security Act, Foster told MIT Technology Review in an interview...",
+      "image": "",
+      "source": "MIT Tech Review",
+      "category": "Media & Tech",
+      "published_at": "2026-11-12T21:16:24+01:00",
+      "date": "2026-11-12"
+    },
+    {
+      "id": "67672a694e389b29",
+      "title": "How Amplitude ships product improvements in 1–2 days with OpenAI",
+      "url": "https://openai.com/business/customer-stories/amplitude",
+      "summary": "Built primarily on OpenAI models, Amplitude’s proactive product agent, Wave, identifies what to build, helps teams ship changes with coding agents, and measures the impact.",
+      "image": "",
+      "source": "OpenAI News",
+      "category": "Laboratori",
+      "published_at": "2026-11-12T21:00:00+01:00",
+      "date": "2026-11-12"
+    },
+    {
+      "id": "d4774d28d264a29f",
+      "title": "Ars Live: What drone attacks on data centers mean for modern life in the cloud",
+      "url": "https://arstechnica.com/gadgets/2026/11/ars-live-can-the-cloud-survive-drone-strikes-on-data-centers/",
+      "summary": "A livestream Ars discussion is happening on November 17 at 1 pm Eastern Time.",
+      "image": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/Ukraine-data-center-under-attack-1152x648.jpg",
+      "source": "Ars Technica AI",
+      "category": "Media & Tech",
+      "published_at": "2026-11-12T20:59:59+01:00",
+      "date": "2026-11-12"
+    },
+    {
+      "id": "a20d1e6a0e529bc1",
+      "title": "No, AI agents did not discover a previously unknown Maya site",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1032125/ai-agents-maya-site-archeology-discovery",
+      "summary": "Armed with a team of AI agents, Google researcher Pietro Miotti claimed earlier this week to have discovered a potentially unmapped Maya site in Mexico. There was just one problem: The site had already been discovered and was published...",
+      "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/maya-sites.jpg?quality=90&strip=all&crop=0,0,100,100",
+      "source": "The Verge AI",
+      "category": "Media & Tech",
+      "published_at": "2026-11-12T20:42:40+01:00",
+      "date": "2026-11-12"
+    },
+    {
+      "id": "6efd6e806be9c0a7",
+      "title": "Google rolls out Gemini 4 Hydrogen, finally replacing 3.8 Flash",
+      "url": "https://arstechnica.com/google/2026/11/google-rolls-out-gemini-4-hydrogen-finally-replacing-3-8-flash/",
+      "summary": "Gemini 4 Hydrogen isn't getting a slow, security-conscious release like Carbon and Argon.",
+      "image": "https://cdn.arstechnica.net/wp-content/uploads/2026/04/gemini-general-6-1152x648.jpg",
+      "source": "Ars Technica AI",
+      "category": "Media & Tech",
+      "published_at": "2026-11-12T20:23:03+01:00",
+      "date": "2026-11-12"
+    },
+    {
+      "id": "84ec87286cb35a64",
+      "title": "LLMON: An LLM-Native Markup Language, now in Granite 4.1 3B and 8B",
+      "url": "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite",
+      "summary": "",
+      "image": "",
+      "source": "Hugging Face",
+      "category": "Laboratori",
+      "published_at": "2026-11-12T20:07:35+01:00",
+      "date": "2026-11-12"
+    },
+    {
+      "id": "bcd74023a99fbd1f",
+      "title": "Google faces calls for AI moratoriums in schools after Gemini pilot backlash",
+      "url": "https://arstechnica.com/tech-policy/2026/11/families-fight-to-keep-googles-disturbing-ai-off-school-issued-chromebooks/",
+      "summary": "Families confront Google after teen’s lawsuit labels Gemini a “suicide coach.”",
+      "image": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/Win-win-1152x648.jpeg",
+      "source": "Ars Technica AI",
+      "category": "Media & Tech",
+      "published_at": "2026-11-12T19:57:45+01:00",
+      "date": "2026-11-12"
+    },
+    {
+      "id": "648ab3e5a06f7ebf",
+      "title": "Oh, Palantir is ‘progressive’ now, is it?",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1032126/alex-baby-you-were-recorded-on-video",
+      "summary": "I had other things to do today, but Alex Karp's pathetic attempt to pivot back to the left gave me no choice but to put them on hold. Last week's elections were a bloodbath for the right, a problem for all the wannabe fash founders who...",
+      "image": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/8407711/479950372.jpg?quality=90&strip=all&crop=0,0,100,100",
+      "source": "The Verge AI",
+      "category": "Media & Tech",
+      "published_at": "2026-11-12T19:06:54+01:00",
+      "date": "2026-11-12"
+    },
+    {
+      "id": "c7a410ad3b862809",
+      "title": "Introducing Gemini 4 Hydrogen",
+      "url": "https://deepmind.google/blog/introducing-gemini-4-hydrogen/",
+      "summary": "",
+      "image": "",
+      "source": "Google DeepMind",
+      "category": "Laboratori",
+      "published_at": "2026-11-12T19:00:50+01:00",
+      "date": "2026-11-12"
+    },
+    {
+      "id": "f19cddd04797ae7d",
+      "title": "Google Search gets a major upgrade with Gemini 4 Hydrogen",
+      "url": "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/",
+      "summary": "Rotating carousel of cards with text \"Gemini 4 Hydrogen\" \"Now in Google Search\" and examples from the Google Search UI",
+      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/HydrogenUI_socialshare.max-600x600.format-webp.webp",
+      "source": "Google AI Blog",
+      "category": "Laboratori",
+      "published_at": "2026-11-12T19:00:00+01:00",
+      "date": "2026-11-12"
+    },
+    {
+      "id": "f890f008ac13960a",
+      "title": "Google pushes privacy angle as Gemini-powered smartglasses debut starting at $395",
+      "url": "https://arstechnica.com/google/2026/11/google-pushes-privacy-angle-as-gemini-powered-smartglasses-debut-starting-at-395/",
+      "summary": "The first Gemini smartglasses are a collab between Google, Samsung, Gentle Monster, and Warby Parker.",
+      "image": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/WP_ALDEN-Carousel_Lifestyle-copy-1152x648.jpg",
+      "source": "Ars Technica AI",
+      "category": "Media & Tech",
+      "published_at": "2026-11-12T15:50:17+01:00",
+      "date": "2026-11-12"
+    },
+    {
+      "id": "b9840fd67063a36a",
+      "title": "Gondola doubles revenue as its team builds more with Codex",
+      "url": "https://openai.com/business/customer-stories/gondola",
+      "summary": "Gondola helps creatives get credit and get hired, with Codex raising its lead engineer’s output by 50% and ChatGPT simplifying daily work.",
+      "image": "",
+      "source": "OpenAI News",
+      "category": "Laboratori",
+      "published_at": "2026-11-12T13:00:00+01:00",
+      "date": "2026-11-12"
+    },
+    {
+      "id": "4922ca6fb0dd9299",
+      "title": "Holiday Extras is rethinking what it can build with Codex",
+      "url": "https://openai.com/business/customer-stories/holidays-extras-codex",
+      "summary": "With Codex, Holiday Extras is turning customer expertise into better apps, higher booking conversion and new possibilities for growth.",
+      "image": "",
+      "source": "OpenAI News",
+      "category": "Laboratori",
+      "published_at": "2026-11-12T10:30:00+01:00",
+      "date": "2026-11-12"
+    },
+    {
+      "id": "d652bf4e1f2db561",
+      "title": "New research could lead to faster, trustworthy AI models for climate prediction",
+      "url": "https://news.mit.edu/2026/new-research-could-lead-faster-trustworthy-ai-models-climate-prediction-1112",
+      "summary": "MIT scientists developed a training method to generate models that simulate the effects of human activities on climate much more quickly than other approaches.",
+      "image": "https://news.mit.edu/sites/default/files/styles/news_article__cover_image__original/public/images/202611/MIT-Climate-Emulation-01.jpg?itok=QnECRQGT",
+      "source": "MIT News AI",
+      "category": "Ricerca",
+      "published_at": "2026-11-12T06:00:00+01:00",
+      "date": "2026-11-12"
+    },
+    {
+      "id": "d7c1da8cb7dc41da",
+      "title": "Supporting research on AI and children’s safety",
+      "url": "https://openai.com/index/children-first-declaration",
+      "summary": "OpenAI commits $2 million to research on AI and children’s safety. The work supports shared tools to measure risks and opportunities for young people.",
+      "image": "",
+      "source": "OpenAI News",
+      "category": "Laboratori",
+      "published_at": "2026-11-12T01:00:00+01:00",
+      "date": "2026-11-12"
+    },
+    {
+      "id": "65b96c238445cded",
+      "title": "Gilbert + Tobin rethinks the business of law with AI",
+      "url": "https://openai.com/index/gilbert-tobin-sam-nickless",
+      "summary": "A conversation with Sam Nickless, Partner and Chief Executive Officer at Gilbert + Tobin.",
+      "image": "",
+      "source": "OpenAI News",
+      "category": "Laboratori",
+      "published_at": "2026-11-12T01:00:00+01:00",
+      "date": "2026-11-12"
+    },
+    {
+      "id": "cbda9238a3684b28",
+      "title": "The Definitive Fine-Tuning Guide for 3D Generation Models",
+      "url": "https://huggingface.co/blog/3d-lora-finetuning",
+      "summary": "",
+      "image": "",
+      "source": "Hugging Face",
+      "category": "Laboratori",
+      "published_at": "2026-11-12T01:00:00+01:00",
+      "date": "2026-11-12"
+    }
+  ]
+}
