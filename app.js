@@ -81,6 +81,18 @@ function initAmbientParticles() {
     const maxDist = 130;
     const maxDistSq = maxDist * maxDist;
 
+    // Alone luminoso intorno al puntatore
+    if (mouse.x > 0 && mouse.y > 0) {
+      const grad = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 220);
+      grad.addColorStop(0, isDark ? "rgba(59, 130, 246, 0.16)" : "rgba(37, 99, 235, 0.11)");
+      grad.addColorStop(0.5, isDark ? "rgba(16, 185, 129, 0.06)" : "rgba(5, 150, 105, 0.04)");
+      grad.addColorStop(1, "rgba(0, 0, 0, 0)");
+      ctx.fillStyle = grad;
+      ctx.beginPath();
+      ctx.arc(mouse.x, mouse.y, 220, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
     for (let i = 0; i < particles.length; i++) {
       const p = particles[i];
       if (!reduceMotion) {
