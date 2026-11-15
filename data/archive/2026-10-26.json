@@ -1,6 +1,6 @@
 {
   "date": "2026-10-26",
-  "updated_at": "2026-11-15T12:51:27.848440+01:00",
+  "updated_at": "2026-11-15T13:44:03.967669+01:00",
   "count": 1,
   "articles": [
     {
@@ -13,6 +13,7 @@
       "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/social_sharing_updated.max-600x600.format-webp.webp",
       "source": "Google AI Blog",
       "category": "Laboratori",
+      "lang": "en",
       "published_at": "2026-10-26T17:00:00+01:00",
       "date": "2026-10-26",
       "translated": true

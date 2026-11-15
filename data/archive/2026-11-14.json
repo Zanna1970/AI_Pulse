@@ -1,7 +1,7 @@
 {
   "date": "2026-11-14",
-  "updated_at": "2026-11-15T12:51:27.848440+01:00",
-  "count": 6,
+  "updated_at": "2026-11-15T13:44:03.967669+01:00",
+  "count": 7,
   "articles": [
     {
       "id": "e86112d5f8734949",
@@ -70,6 +70,21 @@
       "source": "The Verge AI",
       "category": "Media & Tech",
       "published_at": "2026-11-14T13:00:00+01:00",
+      "date": "2026-11-14",
+      "translated": true
+    },
+    {
+      "id": "fe5e249a79c2c253",
+      "title": "Ho creato un'app Android con un Agente AI: l'APK prende forma | Parte 2",
+      "title_en": "Ho creato un'app Android con un Agente AI: l'APK prende forma | Parte 2",
+      "url": "https://www.hdblog.it/android/speciali/n676699/foldrive-app-android-ai-seconda-parte/",
+      "summary": "Foldrive cresce tra problemi e migliorie: le prove della mia app Android creata con l’AI.",
+      "summary_en": "Foldrive cresce tra problemi e migliorie: le prove della mia app Android creata con l’AI.",
+      "image": "https://hd2.tudocdn.net/1385213?w=660",
+      "source": "HDblog",
+      "category": "Italia",
+      "lang": "it",
+      "published_at": "2026-11-14T10:55:00+01:00",
       "date": "2026-11-14",
       "translated": true
     },

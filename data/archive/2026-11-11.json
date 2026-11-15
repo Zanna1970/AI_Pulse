@@ -1,7 +1,7 @@
 {
   "date": "2026-11-11",
-  "updated_at": "2026-11-15T12:51:27.848440+01:00",
-  "count": 12,
+  "updated_at": "2026-11-15T13:44:03.967669+01:00",
+  "count": 13,
   "articles": [
     {
       "id": "5fb859151deb4003",
@@ -84,6 +84,21 @@
       "source": "Ars Technica AI",
       "category": "Media & Tech",
       "published_at": "2026-11-11T15:08:57+01:00",
+      "date": "2026-11-11",
+      "translated": true
+    },
+    {
+      "id": "7489ec2ec803d25f",
+      "title": "Anthropic sfida Google Workplace e Microsoft Office",
+      "title_en": "Anthropic sfida Google Workplace e Microsoft Office",
+      "url": "https://www.ilsole24ore.com/art/anthropic-sfida-google-workplace-e-microsoft-office-AJJEynCC",
+      "summary": "Anthropic apre un nuovo fronte di competizione con aziende come Microsoft e Google. E lo fa lanciando alcune funzionalità di Claude oggi tipiche delle suite da ufficio, come quelle contenute...",
+      "summary_en": "Anthropic apre un nuovo fronte di competizione con aziende come Microsoft e Google. E lo fa lanciando alcune funzionalità di Claude oggi tipiche delle suite da ufficio, come quelle contenute...",
+      "image": "https://i2.res.24o.it/images2010/S24/Documenti/2026/11/12/Immagini/Ritagli/Claude-Artifacts-All-Press-U73500113054wuo-1440x752@IlSole24Ore-Web.png",
+      "source": "Il Sole 24 Ore Tech",
+      "category": "Italia",
+      "lang": "it",
+      "published_at": "2026-11-11T15:06:31+01:00",
       "date": "2026-11-11",
       "translated": true
     },

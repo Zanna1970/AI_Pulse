@@ -1,6 +1,6 @@
 {
   "date": "2026-07-07",
-  "updated_at": "2026-11-15T12:51:27.848440+01:00",
+  "updated_at": "2026-11-15T13:44:03.967669+01:00",
   "count": 1,
   "articles": [
     {
@@ -13,6 +13,7 @@
       "image": "https://bair.berkeley.edu/static/blog/intelligence-is-free-now-what/image6.png",
       "source": "BAIR Berkeley",
       "category": "Ricerca",
+      "lang": "en",
       "published_at": "2026-07-07T11:00:00+02:00",
       "date": "2026-07-07",
       "translated": true

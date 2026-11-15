@@ -1,6 +1,6 @@
 {
   "date": "2026-10-28",
-  "updated_at": "2026-11-15T12:51:27.848440+01:00",
+  "updated_at": "2026-11-15T13:44:03.967669+01:00",
   "count": 1,
   "articles": [
     {
@@ -13,6 +13,7 @@
       "image": "",
       "source": "Google DeepMind",
       "category": "Laboratori",
+      "lang": "en",
       "published_at": "2026-10-28T18:00:58+01:00",
       "date": "2026-10-28",
       "translated": true

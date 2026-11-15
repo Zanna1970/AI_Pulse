@@ -1,7 +1,7 @@
 {
   "date": "2026-11-12",
-  "updated_at": "2026-11-15T12:51:27.848440+01:00",
-  "count": 23,
+  "updated_at": "2026-11-15T13:44:03.967669+01:00",
+  "count": 27,
   "articles": [
     {
       "id": "32df4f7d6cd40e27",
@@ -186,6 +186,21 @@
       "translated": true
     },
     {
+      "id": "c910dbb6a47f94c8",
+      "title": "Microsoft, problemi a Outlook, Teams e Copilot. L’azienda: «Ci avviciniamo alla normalità»",
+      "title_en": "Microsoft, problemi a Outlook, Teams e Copilot. L’azienda: «Ci avviciniamo alla normalità»",
+      "url": "https://www.ilsole24ore.com/art/microsoft-problemi-i-servizi-diffusi-tutto-mondo-coinvolto-anche-outlook-AJWv0hEC",
+      "summary": "Proseguono le attività di recupero delle piattaforme Microsoft, i cui disservizi sono partiti oltre 16 ore fa e si sono diffusi a livello mondiale. Tramite X, l’azienda ha fatto sapere...",
+      "summary_en": "Proseguono le attività di recupero delle piattaforme Microsoft, i cui disservizi sono partiti oltre 16 ore fa e si sono diffusi a livello mondiale. Tramite X, l’azienda ha fatto sapere...",
+      "image": "https://i2.res.24o.it/images2010/S24/Documenti/2026/11/13/Immagini/Ritagli/microsoft2-U16038532346xUF-1440x752@IlSole24Ore-Web.jpg",
+      "source": "Il Sole 24 Ore Tech",
+      "category": "Italia",
+      "lang": "it",
+      "published_at": "2026-11-12T19:57:00+01:00",
+      "date": "2026-11-12",
+      "translated": true
+    },
+    {
       "id": "648ab3e5a06f7ebf",
       "title": "Oh, Palantir è “progressista” adesso, vero?",
       "title_en": "Oh, Palantir is ‘progressive’ now, is it?",
@@ -228,6 +243,21 @@
       "translated": true
     },
     {
+      "id": "a735380bbdd8a3c9",
+      "title": "Intelligenza artificiale: i costi nascosti in Italia",
+      "title_en": "Intelligenza artificiale: i costi nascosti in Italia",
+      "url": "https://www.ai4business.it/intelligenza-artificiale/intelligenza-artificiale-i-costi-nascosti-in-italia/",
+      "summary": "Una ricerca del Centre for Economics and Business Research, commissionata da Wasabi Technologies, stima in 2,8 miliardi di euro l'anno i costi tecnologici imprevisti per le imprese italiane. La metà riguarda l'intelligenza artificiale....",
+      "summary_en": "Una ricerca del Centre for Economics and Business Research, commissionata da Wasabi Technologies, stima in 2,8 miliardi di euro l'anno i costi tecnologici imprevisti per le imprese italiane. La metà riguarda l'intelligenza artificiale....",
+      "image": "",
+      "source": "AI4Business",
+      "category": "Italia",
+      "lang": "it",
+      "published_at": "2026-11-12T18:12:37+01:00",
+      "date": "2026-11-12",
+      "translated": true
+    },
+    {
       "id": "f890f008ac13960a",
       "title": "Google spinge l'angolo della privacy con il debutto degli smartglass Gemini a partire da $ 395",
       "title_en": "Google pushes privacy angle as Gemini-powered smartglasses debut starting at $395",
@@ -238,6 +268,36 @@
       "source": "Ars Technica AI",
       "category": "Media & Tech",
       "published_at": "2026-11-12T15:50:17+01:00",
+      "date": "2026-11-12",
+      "translated": true
+    },
+    {
+      "id": "868b5212e1cd86ec",
+      "title": "IBM connette due chip Nighthawk: ecco la roadmap quantistica 2027",
+      "title_en": "IBM connette due chip Nighthawk: ecco la roadmap quantistica 2027",
+      "url": "https://www.ai4business.it/intelligenza-artificiale/ibm-connette-due-chip-nighthawk-ecco-la-roadmap-quantistica-2027/",
+      "summary": "L'azienda annuncia Nighthawk r3, processore progettato per 10 mila operazioni su 520 qubit programmabili, e prevede di collegarne due nel 2027 per un sistema da 1.040 qubit. I risultati di r2 e l’integrazione con i supercomputer...",
+      "summary_en": "L'azienda annuncia Nighthawk r3, processore progettato per 10 mila operazioni su 520 qubit programmabili, e prevede di collegarne due nel 2027 per un sistema da 1.040 qubit. I risultati di r2 e l’integrazione con i supercomputer...",
+      "image": "",
+      "source": "AI4Business",
+      "category": "Italia",
+      "lang": "it",
+      "published_at": "2026-11-12T15:34:03+01:00",
+      "date": "2026-11-12",
+      "translated": true
+    },
+    {
+      "id": "8b0f234c39efd5ba",
+      "title": "Huang si dimette da Nvidia: quali conseguenze per l’azienda e l’AI",
+      "title_en": "Huang si dimette da Nvidia: quali conseguenze per l’azienda e l’AI",
+      "url": "https://www.ai4business.it/intelligenza-artificiale/huang-si-dimette-da-nvidia-e-ora/",
+      "summary": "Jensen Huang si dimette con effetto immediato dalla carica di Ceo di Nvidia dopo il sexy scandalo spy story cinese. Colette Kress assume l'incarico ad interim. Tra le questioni aperte: la continuità della roadmap dei chip, i rapporti...",
+      "summary_en": "Jensen Huang si dimette con effetto immediato dalla carica di Ceo di Nvidia dopo il sexy scandalo spy story cinese. Colette Kress assume l'incarico ad interim. Tra le questioni aperte: la continuità della roadmap dei chip, i rapporti...",
+      "image": "",
+      "source": "AI4Business",
+      "category": "Italia",
+      "lang": "it",
+      "published_at": "2026-11-12T15:19:39+01:00",
       "date": "2026-11-12",
       "translated": true
     },
