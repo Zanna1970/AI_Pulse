@@ -13,24 +13,36 @@
   </div>
 
   <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <span class="brand-dot" aria-hidden="true"></span>
-        <div>
-          <h1>AI Pulse</h1>
-          <p class="subtitle">Rassegna AI quotidiana</p>
+    <div class="container">
+      <div class="header-inner">
+        <div class="brand">
+          <span class="brand-dot" aria-hidden="true"></span>
+          <div>
+            <h1>AI Pulse</h1>
+            <p class="subtitle">Rassegna AI quotidiana</p>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <span id="last-updated" class="update-status">Caricamento...</span>
+          <nav class="header-menu" aria-label="Menu principale">
+            <button id="lang-toggle" class="menu-item" type="button" title="Passa tra Italiano e Inglese">IT</button>
+            <span class="menu-sep" aria-hidden="true"></span>
+            <button id="theme-toggle" class="menu-item" type="button" title="Passa tra Dark e Light">Dark</button>
+          </nav>
         </div>
       </div>
 
-      <div class="header-right">
-        <span id="last-updated" class="update-status">Caricamento...</span>
-        <nav class="header-menu" aria-label="Menu principale">
-          <a href="#chi-sono" class="menu-item">Chi sono</a>
-          <span class="menu-sep" aria-hidden="true"></span>
-          <button id="lang-toggle" class="menu-item" type="button" title="Passa tra Italiano e Inglese">IT</button>
-          <span class="menu-sep" aria-hidden="true"></span>
-          <button id="theme-toggle" class="menu-item" type="button" title="Passa tra Dark e Light">Dark</button>
-        </nav>
+      <div class="header-bio">
+        <div class="bio-logo" aria-hidden="true">RZ</div>
+        <div class="bio-text">
+          <p>
+            <strong>Ciao, sono Roberto</strong> <span class="bio-tag">Appassionato di tecnologia &amp; AI</span>
+          </p>
+          <p>
+            Sono un appassionato di tecnologia, innovazione digitale e tutto ciò che ruota attorno all'Intelligenza Artificiale. Ho realizzato <strong>AI Pulse</strong> per avere ogni giorno in automatico le notizie più interessanti dai migliori laboratori e testate tech.
+          </p>
+        </div>
       </div>
     </div>
   </header>
@@ -67,24 +79,6 @@
 
     <div id="status-bar" class="status-bar"></div>
     <section id="news-grid" class="news-grid"></section>
-
-    <section id="chi-sono" class="about-section">
-      <div class="about-card">
-        <div class="about-avatar" aria-hidden="true">RZ</div>
-        <div class="about-content">
-          <div class="about-header">
-            <h2>Ciao, sono Roberto</h2>
-            <span class="about-tag">Appassionato di tecnologia &amp; AI</span>
-          </div>
-          <p>
-            Sono un appassionato di tecnologia, innovazione digitale e tutto ciò che ruota attorno
-            all'Intelligenza Artificiale. Ho realizzato <strong>AI Pulse</strong> per avere ogni giorno,
-            in un unico spazio semplice e aggiornato in automatico, le notizie più interessanti
-            dai migliori laboratori di ricerca e dalle principali testate tech internazionali.
-          </p>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">
