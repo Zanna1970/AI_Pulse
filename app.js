@@ -81,6 +81,7 @@ function initAmbientParticles() {
     const maxDist = 130;
     const maxDistSq = maxDist * maxDist;
 
+    // Alone luminoso intorno al puntatore
     if (mouse.x > 0 && mouse.y > 0) {
       const grad = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 220);
       grad.addColorStop(0, isDark ? "rgba(59, 130, 246, 0.16)" : "rgba(37, 99, 235, 0.11)");
@@ -98,6 +99,7 @@ function initAmbientParticles() {
         p.x += p.vx;
         p.y += p.vy;
 
+        // Le particelle vicine seguono dolcemente il cursore
         if (mouse.x > 0 && mouse.y > 0) {
           const mdx = mouse.x - p.x;
           const mdy = mouse.y - p.y;
@@ -340,6 +342,29 @@ async function init() {
   const savedTheme = localStorage.getItem("ai-pulse-theme") || "dark";
   updateThemeUI(savedTheme);
   updateLangUI(state.lang);
+
+  const brandHome = document.getElementById("brand-home");
+  if (brandHome) {
+    brandHome.addEventListener("click", async (e) => {
+      e.preventDefault();
+      state.selectedCategory = "Tutte";
+      state.selectedSource = "Tutte";
+      state.searchQuery = "";
+      els.searchInput.value = "";
+      els.sourceFilter.value = "Tutte";
+      els.archiveSelect.value = "";
+
+      els.dateTabs.querySelectorAll(".tab-btn").forEach((b) => {
+        b.classList.toggle("active", b.dataset.mode === "latest");
+      });
+      els.categoryPills.querySelectorAll(".pill").forEach((p) => {
+        p.classList.toggle("active", p.dataset.category === "Tutte");
+      });
+
+      await loadLatest();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
 
   els.themeToggle.addEventListener("click", () => {
     const curr = document.documentElement.getAttribute("data-theme");
