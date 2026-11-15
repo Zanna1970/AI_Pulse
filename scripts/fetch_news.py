@@ -16,22 +16,37 @@ DATA_DIR = Path("data")
 ARCHIVE_DIR = DATA_DIR / "archive"
 
 FEEDS = [
-    {"name": "OpenAI News", "url": "https://openai.com/news/rss.xml", "category": "Laboratori", "max_items": 10},
-    {"name": "Google DeepMind", "url": "https://deepmind.google/blog/rss.xml", "category": "Laboratori", "max_items": 10},
-    {"name": "Google AI Blog", "url": "https://blog.google/technology/ai/rss/", "category": "Laboratori", "max_items": 10},
-    {"name": "Hugging Face", "url": "https://huggingface.co/blog/feed.xml", "category": "Laboratori", "max_items": 10},
-    {"name": "TechCrunch AI", "url": "https://techcrunch.com/category/artificial-intelligence/feed/", "category": "Media & Tech", "max_items": 12},
-    {"name": "The Verge AI", "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml", "category": "Media & Tech", "max_items": 12},
-    {"name": "Ars Technica AI", "url": "https://arstechnica.com/ai/feed/", "category": "Media & Tech", "max_items": 10},
-    {"name": "MIT Tech Review", "url": "https://www.technologyreview.com/feed/", "category": "Media & Tech", "max_items": 15, "ai_filter": True},
-    {"name": "MIT News AI", "url": "https://news.mit.edu/topic/mitartificial-intelligence2-rss.xml", "category": "Ricerca", "max_items": 8},
-    {"name": "BAIR Berkeley", "url": "https://bair.berkeley.edu/blog/feed.xml", "category": "Ricerca", "max_items": 6},
-    {"name": "arXiv cs.AI", "url": "https://rss.arxiv.org/rss/cs.AI", "category": "Ricerca", "max_items": 8},
+    # Fonti Italiane
+    {"name": "AI4Business", "url": "https://www.ai4business.it/feed/", "category": "Italia", "lang": "it", "max_items": 10},
+    {"name": "Agenda Digitale", "url": "https://www.agendadigitale.eu/feed/", "category": "Italia", "lang": "it", "max_items": 15, "ai_filter": True},
+    {"name": "Il Sole 24 Ore Tech", "url": "https://www.ilsole24ore.com/rss/tecnologia.xml", "category": "Italia", "lang": "it", "max_items": 12, "ai_filter": True},
+    {"name": "Punto Informatico", "url": "https://www.punto-informatico.it/feed/", "category": "Italia", "lang": "it", "max_items": 15, "ai_filter": True},
+    {"name": "Hardware Upgrade", "url": "https://www.hwupgrade.it/rss/news.xml", "category": "Italia", "lang": "it", "max_items": 15, "ai_filter": True},
+    {"name": "HDblog", "url": "https://www.hdblog.it/rss/", "category": "Italia", "lang": "it", "max_items": 15, "ai_filter": True},
+
+    # Laboratori & Ricerca AI (Internazionali)
+    {"name": "OpenAI News", "url": "https://openai.com/news/rss.xml", "category": "Laboratori", "lang": "en", "max_items": 10},
+    {"name": "Google DeepMind", "url": "https://deepmind.google/blog/rss.xml", "category": "Laboratori", "lang": "en", "max_items": 10},
+    {"name": "Google AI Blog", "url": "https://blog.google/technology/ai/rss/", "category": "Laboratori", "lang": "en", "max_items": 10},
+    {"name": "Hugging Face", "url": "https://huggingface.co/blog/feed.xml", "category": "Laboratori", "lang": "en", "max_items": 10},
+
+    # Media Tech (Internazionali)
+    {"name": "TechCrunch AI", "url": "https://techcrunch.com/category/artificial-intelligence/feed/", "category": "Media & Tech", "lang": "en", "max_items": 10},
+    {"name": "The Verge AI", "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml", "category": "Media & Tech", "lang": "en", "max_items": 10},
+    {"name": "Ars Technica AI", "url": "https://arstechnica.com/ai/feed/", "category": "Media & Tech", "lang": "en", "max_items": 8},
+    {"name": "MIT Tech Review", "url": "https://www.technologyreview.com/feed/", "category": "Media & Tech", "lang": "en", "max_items": 12, "ai_filter": True},
+
+    # Ricerca Accademica
+    {"name": "MIT News AI", "url": "https://news.mit.edu/topic/mitartificial-intelligence2-rss.xml", "category": "Ricerca", "lang": "en", "max_items": 8},
+    {"name": "BAIR Berkeley", "url": "https://bair.berkeley.edu/blog/feed.xml", "category": "Ricerca", "lang": "en", "max_items": 6},
+    {"name": "arXiv cs.AI", "url": "https://rss.arxiv.org/rss/cs.AI", "category": "Ricerca", "lang": "en", "max_items": 8},
 ]
 
 AI_KEYWORDS = re.compile(
-    r"\b(ai|artificial intelligence|llm|gpt|gemini|claude|openai|anthropic|deepmind|"
-    r"machine learning|deep learning|neural|nvidia|agent|agents|robotics|deepseek|mistral|llama)\b",
+    r"\b(ai|ia|i\.a\.|intelligenza artificiale|artificial intelligence|llm|chatgpt|gpt|gemini|"
+    r"claude|openai|anthropic|deepmind|copilot|perplexity|grok|machine learning|"
+    r"deep learning|reti neurali|neural|nvidia|agenti|agent|agents|robotics|robotica|"
+    r"deepseek|mistral|llama)\b",
     re.IGNORECASE,
 )
 
@@ -123,7 +138,7 @@ def gtx_translate(text: str) -> str | None:
 
 
 def translate_articles_batch(articles: list[dict]) -> int:
-    pending = [a for a in articles if not a.get("translated")]
+    pending = [a for a in articles if not a.get("translated") and a.get("lang", "en") != "it"]
     if not pending:
         return 0
 
@@ -159,7 +174,6 @@ def translate_articles_batch(articles: list[dict]) -> int:
                     translated_count += 1
                 continue
 
-        # Fallback singolo se le righe del blocco non combaciano
         for art in chunk:
             it_t = gtx_translate(art["title_en"]) if art["title_en"] else ""
             it_s = gtx_translate(art["summary_en"]) if art["summary_en"] else ""
@@ -181,7 +195,7 @@ def main():
     for fpath in sorted(ARCHIVE_DIR.glob("*.json"), reverse=True)[:7]:
         day_data = load_json(fpath, {})
         for item in day_data.get("articles", []):
-            if item.get("translated") and item.get("title_en"):
+            if item.get("translated") or item.get("lang") == "it":
                 known_cache[item["id"]] = item
 
     fetched_articles = []
@@ -197,22 +211,24 @@ def main():
             continue
 
         count = 0
+        lang = feed_cfg.get("lang", "en")
+
         for entry in parsed.entries:
             if count >= feed_cfg["max_items"]:
                 break
 
-            title_en = clean_html(entry.get("title", ""), max_len=200)
+            raw_title = clean_html(entry.get("title", ""), max_len=200)
             link = (entry.get("link") or "").strip()
-            if not title_en or not link:
+            if not raw_title or not link:
                 continue
 
             raw_summary = entry.get("summary") or ""
             if not raw_summary and entry.get("content"):
                 raw_summary = entry["content"][0].get("value", "")
-            summary_en = clean_html(raw_summary, max_len=240)
+            summary_clean = clean_html(raw_summary, max_len=240)
 
             if feed_cfg.get("ai_filter"):
-                haystack = f"{title_en} {summary_en}"
+                haystack = f"{raw_title} {summary_clean}"
                 if not AI_KEYWORDS.search(haystack):
                     continue
 
@@ -220,7 +236,7 @@ def main():
             if pub_dt > now_rome + timedelta(hours=2):
                 pub_dt = now_rome
 
-            art_id = make_id(link, title_en)
+            art_id = make_id(link, raw_title)
             if art_id in known_cache:
                 cached = known_cache[art_id]
                 article = {
@@ -229,17 +245,34 @@ def main():
                     "published_at": pub_dt.isoformat(),
                     "date": pub_dt.strftime("%Y-%m-%d"),
                 }
-            else:
+            elif lang == "it":
                 article = {
                     "id": art_id,
-                    "title": title_en,
-                    "title_en": title_en,
+                    "title": raw_title,
+                    "title_en": raw_title,
                     "url": link,
-                    "summary": summary_en,
-                    "summary_en": summary_en,
+                    "summary": summary_clean,
+                    "summary_en": summary_clean,
                     "image": extract_image(entry),
                     "source": feed_cfg["name"],
                     "category": feed_cfg["category"],
+                    "lang": "it",
+                    "published_at": pub_dt.isoformat(),
+                    "date": pub_dt.strftime("%Y-%m-%d"),
+                    "translated": True,
+                }
+            else:
+                article = {
+                    "id": art_id,
+                    "title": raw_title,
+                    "title_en": raw_title,
+                    "url": link,
+                    "summary": summary_clean,
+                    "summary_en": summary_clean,
+                    "image": extract_image(entry),
+                    "source": feed_cfg["name"],
+                    "category": feed_cfg["category"],
+                    "lang": "en",
                     "published_at": pub_dt.isoformat(),
                     "date": pub_dt.strftime("%Y-%m-%d"),
                     "translated": False,
@@ -296,7 +329,7 @@ def main():
         dates_index.append({"date": d_str, "count": len(arts)})
 
     unique_recent = {a["id"]: a for a in all_recent}
-    latest_sorted = sorted(unique_recent.values(), key=lambda x: x["published_at"], reverse=True)[:80]
+    latest_sorted = sorted(unique_recent.values(), key=lambda x: x["published_at"], reverse=True)[:90]
 
     save_json(
         DATA_DIR / "latest.json",
