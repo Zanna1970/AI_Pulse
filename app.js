@@ -1,497 +1,400 @@
-const state = {
-  articles: [],
-  dates: [],
-  selectedCategory: "Tutte",
-  selectedSource: "Tutte",
-  searchQuery: "",
-  lang: localStorage.getItem("ai-pulse-lang") || "it",
-};
-
-const els = {
-  grid: document.getElementById("news-grid"),
-  statusBar: document.getElementById("status-bar"),
-  lastUpdated: document.getElementById("last-updated"),
-  archiveSelect: document.getElementById("archive-select"),
-  sourceFilter: document.getElementById("source-filter"),
-  searchInput: document.getElementById("search-input"),
-  btnYesterday: document.getElementById("btn-yesterday"),
-  dateTabs: document.getElementById("date-tabs"),
-  categoryPills: document.getElementById("category-pills"),
-  themeToggle: document.getElementById("theme-toggle"),
-  langToggle: document.getElementById("lang-toggle"),
-};
-
-function initAmbientParticles() {
-  const canvas = document.getElementById("bg-canvas");
-  if (!canvas) return;
-
-  const ctx = canvas.getContext("2d");
-  if (!ctx) return;
-
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  let width = 0;
-  let height = 0;
-  let particles = [];
-  let pulses = [];
-  let ripples = [];
-  const mouse = { x: -999, y: -999 };
-
-  function buildParticles() {
-    // Alta densita: circa 250-300 particelle su desktop
-    const targetCount = Math.max(130, Math.min(300, Math.floor((width * height) / 5500)));
-    particles = [];
-    for (let i = 0; i < targetCount; i++) {
-      const depth = 0.55 + Math.random() * 0.85;
-      particles.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.45 * depth,
-        vy: (Math.random() - 0.5) * 0.45 * depth,
-        r: (1.1 + Math.random() * 1.7) * depth,
-        depth,
-        phase: Math.random() * Math.PI * 2,
-      });
-    }
-  }
-
-  function resize() {
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    width = window.innerWidth;
-    height = window.innerHeight;
-    canvas.width = Math.floor(width * dpr);
-    canvas.height = Math.floor(height * dpr);
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    buildParticles();
-  }
-
-  window.addEventListener("mousemove", (e) => {
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
-  });
-
-  document.addEventListener("mouseleave", () => {
-    mouse.x = -999;
-    mouse.y = -999;
-  });
-
-  window.addEventListener("click", (e) => {
-    if (reduceMotion) return;
-    ripples.push({
-      x: e.clientX,
-      y: e.clientY,
-      r: 4,
-      maxR: 250,
-      alpha: 0.48,
-    });
-  });
-
-  function draw() {
-    if (width === 0 || height === 0) {
-      requestAnimationFrame(draw);
-      return;
-    }
-
-    ctx.clearRect(0, 0, width, height);
-    const isDark = document.documentElement.getAttribute("data-theme") !== "light";
-    const dotColor = isDark ? "96, 165, 250" : "37, 99, 235";
-    const lineColor = isDark ? "56, 189, 248" : "59, 130, 246";
-    const pulseColor = isDark ? "52, 211, 153" : "5, 150, 105";
-    const maxDist = 125;
-    const maxDistSq = maxDist * maxDist;
-
-    // 1. Alone luminoso intorno al cursore
-    if (mouse.x > 0 && mouse.y > 0) {
-      const grad = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 220);
-      grad.addColorStop(0, isDark ? "rgba(59, 130, 246, 0.14)" : "rgba(37, 99, 235, 0.10)");
-      grad.addColorStop(0.5, isDark ? "rgba(16, 185, 129, 0.05)" : "rgba(5, 150, 105, 0.04)");
-      grad.addColorStop(1, "rgba(0, 0, 0, 0)");
-      ctx.fillStyle = grad;
-      ctx.beginPath();
-      ctx.arc(mouse.x, mouse.y, 220, 0, Math.PI * 2);
-      ctx.fill();
-    }
-
-    // 2. Onde al clic
-    for (let k = ripples.length - 1; k >= 0; k--) {
-      const rp = ripples[k];
-      rp.r += 5.5;
-      rp.alpha *= 0.96;
-
-      ctx.beginPath();
-      ctx.arc(rp.x, rp.y, rp.r, 0, Math.PI * 2);
-      ctx.strokeStyle = `rgba(${pulseColor}, ${rp.alpha})`;
-      ctx.lineWidth = 1.6;
-      ctx.stroke();
-
-      for (let i = 0; i < particles.length; i++) {
-        const p = particles[i];
-        const dx = p.x - rp.x;
-        const dy = p.y - rp.y;
-        const d = Math.hypot(dx, dy);
-        if (Math.abs(d - rp.r) < 18 && d > 1) {
-          p.x += (dx / d) * 1.4;
-          p.y += (dy / d) * 1.4;
-        }
-      }
-
-      if (rp.r >= rp.maxR || rp.alpha < 0.02) {
-        ripples.splice(k, 1);
-      }
-    }
-
-    // 3. Particelle e connessioni
-    for (let i = 0; i < particles.length; i++) {
-      const p = particles[i];
-      if (!reduceMotion) {
-        p.phase += 0.025;
-        p.x += p.vx;
-        p.y += p.vy;
-
-        if (mouse.x > 0) {
-          const mdx = mouse.x - p.x;
-          const mdy = mouse.y - p.y;
-          const mDistSq = mdx * mdx + mdy * mdy;
-          if (mDistSq > 900 && mDistSq < 32400) {
-            p.x += mdx * 0.0045;
-            p.y += mdy * 0.0045;
-          }
-        }
-
-        if (p.x < 0 || p.x > width) p.vx *= -1;
-        if (p.y < 0 || p.y > height) p.vy *= -1;
-        p.x = Math.max(0, Math.min(width, p.x));
-        p.y = Math.max(0, Math.min(height, p.y));
-      }
-
-      const twinkle = 0.78 + 0.22 * Math.sin(p.phase);
-      const baseAlpha = (isDark ? 0.65 : 0.45) * twinkle;
-
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${dotColor}, ${baseAlpha})`;
-      ctx.fill();
-
-      for (let j = i + 1; j < particles.length; j++) {
-        const q = particles[j];
-        const dx = p.x - q.x;
-        const dy = p.y - q.y;
-        const distSq = dx * dx + dy * dy;
-        if (distSq < maxDistSq) {
-          const dist = Math.sqrt(distSq);
-          const alpha = (1 - dist / maxDist) * (isDark ? 0.24 : 0.16);
-          ctx.beginPath();
-          ctx.moveTo(p.x, p.y);
-          ctx.lineTo(q.x, q.y);
-          ctx.strokeStyle = `rgba(${lineColor}, ${alpha})`;
-          ctx.lineWidth = 0.85;
-          ctx.stroke();
-
-          if (!reduceMotion && pulses.length < 32 && Math.random() < 0.0014) {
-            pulses.push({
-              from: p,
-              to: q,
-              t: 0,
-              speed: 0.022 + Math.random() * 0.025,
-            });
-          }
-        }
-      }
-
-      if (mouse.x > 0) {
-        const mdx = p.x - mouse.x;
-        const mdy = p.y - mouse.y;
-        const mDistSq = mdx * mdx + mdy * mdy;
-        if (mDistSq < 25600) {
-          const mDist = Math.sqrt(mDistSq);
-          const mAlpha = (1 - mDist / 160) * (isDark ? 0.44 : 0.30);
-          ctx.beginPath();
-          ctx.moveTo(p.x, p.y);
-          ctx.lineTo(mouse.x, mouse.y);
-          ctx.strokeStyle = `rgba(${pulseColor}, ${mAlpha})`;
-          ctx.lineWidth = 1.1;
-          ctx.stroke();
-        }
-      }
-    }
-
-    // 4. Impulsi luminosi lungo le connessioni
-    for (let m = pulses.length - 1; m >= 0; m--) {
-      const pl = pulses[m];
-      pl.t += pl.speed;
-      if (pl.t >= 1) {
-        pulses.splice(m, 1);
-        continue;
-      }
-      const px = pl.from.x + (pl.to.x - pl.from.x) * pl.t;
-      const py = pl.from.y + (pl.to.y - pl.from.y) * pl.t;
-
-      ctx.beginPath();
-      ctx.arc(px, py, 2.2, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${pulseColor}, ${isDark ? 0.92 : 0.78})`;
-      ctx.fill();
-    }
-
-    if (!reduceMotion) {
-      requestAnimationFrame(draw);
-    }
-  }
-
-  resize();
-  window.addEventListener("resize", resize);
-  draw();
+:root[data-theme="dark"] {
+  --bg: #070b14;
+  --header-bg: rgba(11, 17, 30, 0.35);
+  --surface: rgba(17, 24, 39, 0.76);
+  --surface-hover: rgba(23, 33, 54, 0.88);
+  --control-bg: rgba(17, 24, 39, 0.82);
+  --menu-bg: rgba(24, 34, 53, 0.55);
+  --border: rgba(56, 78, 114, 0.45);
+  --text: #f1f5f9;
+  --text-muted: #94a3b8;
+  --accent: #3b82f6;
+  --accent-soft: rgba(59, 130, 246, 0.16);
+  --green: #10b981;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
 }
 
-function formatItalianDateTime(iso) {
-  if (!iso) return "";
-  const d = new Date(iso);
-  return new Intl.DateTimeFormat("it-IT", {
-    day: "2-digit", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit",
-  }).format(d);
+:root[data-theme="light"] {
+  --bg: #f1f5fb;
+  --header-bg: rgba(255, 255, 255, 0.42);
+  --surface: rgba(255, 255, 255, 0.78);
+  --surface-hover: rgba(255, 255, 255, 0.94);
+  --control-bg: rgba(255, 255, 255, 0.86);
+  --menu-bg: rgba(238, 242, 248, 0.62);
+  --border: rgba(186, 199, 220, 0.65);
+  --text: #0f172a;
+  --text-muted: #526176;
+  --accent: #2563eb;
+  --accent-soft: rgba(37, 99, 235, 0.11);
+  --green: #059669;
+  --shadow: 0 8px 26px rgba(15, 23, 42, 0.07);
 }
 
-function formatDayLabel(dateStr) {
-  const [y, m, d] = dateStr.split("-").map(Number);
-  const dt = new Date(y, m - 1, d);
-  return new Intl.DateTimeFormat("it-IT", {
-    weekday: "short", day: "2-digit", month: "long", year: "numeric",
-  }).format(dt);
+html { scroll-behavior: smooth; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
 }
 
-function getYesterdayStr() {
-  const d = new Date();
-  d.setDate(d.getDate() - 1);
-  return d.toLocaleDateString("sv-SE", { timeZone: "Europe/Rome" });
+.container { width: 100%; max-width: 1220px; margin: 0 auto; padding: 0 20px; }
+
+/* Sfondo dinamico a tutto schermo (liquido + particelle) */
+.ambient-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
 }
 
-async function fetchJson(path) {
-  const res = await fetch(`${path}?v=${Date.now()}`);
-  if (!res.ok) throw new Error(`Impossibile caricare ${path}`);
-  return res.json();
+.ambient-liquid {
+  position: absolute;
+  inset: -25%;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(59, 130, 246, 0.22), transparent 38%),
+    radial-gradient(circle at 82% 18%, rgba(139, 92, 246, 0.18), transparent 40%),
+    radial-gradient(circle at 70% 78%, rgba(16, 185, 129, 0.16), transparent 42%),
+    radial-gradient(circle at 22% 82%, rgba(14, 165, 233, 0.16), transparent 40%);
+  filter: blur(48px);
+  animation: liquidDrift 20s ease-in-out infinite alternate;
 }
 
-function populateSourceFilter(articles) {
-  const sources = [...new Set(articles.map((a) => a.source))].sort();
-  const prev = state.selectedSource;
-  els.sourceFilter.innerHTML = '<option value="Tutte">Tutte le fonti</option>';
-  sources.forEach((src) => {
-    const opt = document.createElement("option");
-    opt.value = src;
-    opt.textContent = src;
-    els.sourceFilter.appendChild(opt);
-  });
-  els.sourceFilter.value = sources.includes(prev) ? prev : "Tutte";
-  state.selectedSource = els.sourceFilter.value;
+@keyframes liquidDrift {
+  0% { transform: translate3d(-3%, -2%, 0) scale(1); }
+  50% { transform: translate3d(3%, 3%, 0) scale(1.07); }
+  100% { transform: translate3d(-2%, 4%, 0) scale(1.03); }
 }
 
-function getTranslatedUrl(originalUrl) {
-  return `https://translate.google.com/translate?sl=auto&tl=it&u=${encodeURIComponent(originalUrl)}`;
+#bg-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
 
-function renderArticles() {
-  const q = state.searchQuery.trim().toLowerCase();
-  const filtered = state.articles.filter((art) => {
-    if (state.selectedCategory !== "Tutte" && art.category !== state.selectedCategory) return false;
-    if (state.selectedSource !== "Tutte" && art.source !== state.selectedSource) return false;
-    if (q) {
-      const hay = `${art.title} ${art.title_en || ""} ${art.summary} ${art.summary_en || ""} ${art.source}`.toLowerCase();
-      if (!hay.includes(q)) return false;
-    }
-    return true;
-  });
-
-  els.statusBar.textContent = `Visualizzate ${filtered.length} notizie su ${state.articles.length} disponibili`;
-  els.grid.innerHTML = "";
-
-  if (filtered.length === 0) {
-    const empty = document.createElement("div");
-    empty.className = "empty-state";
-    empty.textContent = "Nessuna notizia trovata con i filtri selezionati.";
-    els.grid.appendChild(empty);
-    return;
-  }
-
-  filtered.forEach((art) => {
-    const card = document.createElement("article");
-    card.className = "card";
-
-    if (art.image) {
-      const img = document.createElement("img");
-      img.className = "card-img";
-      img.src = art.image;
-      img.alt = art.title;
-      img.loading = "lazy";
-      img.onerror = () => img.remove();
-      card.appendChild(img);
-    }
-
-    const body = document.createElement("div");
-    body.className = "card-body";
-
-    const meta = document.createElement("div");
-    meta.className = "card-meta";
-    const badge = document.createElement("span");
-    badge.className = "source-badge";
-    badge.textContent = art.source;
-    const time = document.createElement("time");
-    time.textContent = formatItalianDateTime(art.published_at);
-    meta.append(badge, time);
-
-    const displayTitle = state.lang === "en" && art.title_en ? art.title_en : art.title;
-    const displaySummary = state.lang === "en" && art.summary_en ? art.summary_en : art.summary;
-    const itUrl = getTranslatedUrl(art.url);
-
-    const h2 = document.createElement("h2");
-    h2.className = "card-title";
-    const link = document.createElement("a");
-    link.href = state.lang === "en" ? art.url : itUrl;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-    link.textContent = displayTitle;
-    h2.appendChild(link);
-
-    const summary = document.createElement("p");
-    summary.className = "card-summary";
-    summary.textContent = displaySummary || "Clicca per leggere l'articolo completo.";
-
-    const actions = document.createElement("div");
-    actions.className = "card-actions";
-
-    const readItLink = document.createElement("a");
-    readItLink.href = itUrl;
-    readItLink.target = "_blank";
-    readItLink.rel = "noopener noreferrer";
-    readItLink.textContent = "Leggi in Italiano →";
-
-    const readEnLink = document.createElement("a");
-    readEnLink.href = art.url;
-    readEnLink.target = "_blank";
-    readEnLink.rel = "noopener noreferrer";
-    readEnLink.textContent = "Originale (EN) ↗";
-
-    actions.append(readItLink, readEnLink);
-    body.append(meta, h2, summary, actions);
-    card.appendChild(body);
-    els.grid.appendChild(card);
-  });
+/* Header vetro piu trasparente */
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--header-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 22px 0;
+  position: sticky;
+  top: 0;
+  z-index: 20;
 }
 
-async function loadLatest() {
-  const data = await fetchJson("data/latest.json");
-  state.articles = data.articles || [];
-  els.lastUpdated.textContent = `Aggiornato: ${formatItalianDateTime(data.updated_at)}`;
-  populateSourceFilter(state.articles);
-  renderArticles();
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
-async function loadArchiveDate(dateStr) {
-  const data = await fetchJson(`data/archive/${dateStr}.json`);
-  state.articles = data.articles || [];
-  populateSourceFilter(state.articles);
-  renderArticles();
+.brand { display: flex; align-items: center; gap: 14px; }
+
+.brand-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 12px var(--green);
+  flex-shrink: 0;
 }
 
-function updateThemeUI(theme) {
-  document.documentElement.setAttribute("data-theme", theme);
-  els.themeToggle.textContent = theme === "dark" ? "Dark" : "Light";
+.brand h1 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 2px;
 }
 
-function updateLangUI(lang) {
-  if (els.langToggle) {
-    els.langToggle.textContent = lang === "en" ? "EN" : "IT";
-  }
+.subtitle { font-size: 0.86rem; color: var(--text-muted); }
+.subtitle strong { color: var(--text); font-weight: 600; }
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
 }
 
-async function init() {
-  initAmbientParticles();
-
-  const savedTheme = localStorage.getItem("ai-pulse-theme") || "dark";
-  updateThemeUI(savedTheme);
-  updateLangUI(state.lang);
-
-  els.themeToggle.addEventListener("click", () => {
-    const curr = document.documentElement.getAttribute("data-theme");
-    const next = curr === "dark" ? "light" : "dark";
-    localStorage.setItem("ai-pulse-theme", next);
-    updateThemeUI(next);
-  });
-
-  if (els.langToggle) {
-    els.langToggle.addEventListener("click", () => {
-      state.lang = state.lang === "it" ? "en" : "it";
-      localStorage.setItem("ai-pulse-lang", state.lang);
-      updateLangUI(state.lang);
-      renderArticles();
-    });
-  }
-
-  try {
-    const datesData = await fetchJson("data/dates.json");
-    state.dates = datesData.dates || [];
-
-    const yesterdayStr = getYesterdayStr();
-    const hasYesterday = state.dates.some((d) => d.date === yesterdayStr);
-    if (hasYesterday) {
-      els.btnYesterday.disabled = false;
-      els.btnYesterday.dataset.date = yesterdayStr;
-    } else if (state.dates.length > 1) {
-      els.btnYesterday.disabled = false;
-      els.btnYesterday.dataset.date = state.dates[1].date;
-    }
-
-    state.dates.forEach((d) => {
-      const opt = document.createElement("option");
-      opt.value = d.date;
-      opt.textContent = `${formatDayLabel(d.date)} (${d.count})`;
-      els.archiveSelect.appendChild(opt);
-    });
-  } catch (e) {
-    console.warn("Archivio date non ancora disponibile:", e);
-  }
-
-  els.dateTabs.querySelectorAll(".tab-btn").forEach((btn) => {
-    btn.addEventListener("click", async () => {
-      els.dateTabs.querySelectorAll(".tab-btn").forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
-      els.archiveSelect.value = "";
-      if (btn.dataset.mode === "latest") {
-        await loadLatest();
-      } else if (btn.dataset.date) {
-        await loadArchiveDate(btn.dataset.date);
-      }
-    });
-  });
-
-  els.archiveSelect.addEventListener("change", async (e) => {
-    const dateVal = e.target.value;
-    if (!dateVal) return;
-    els.dateTabs.querySelectorAll(".tab-btn").forEach((b) => b.classList.remove("active"));
-    await loadArchiveDate(dateVal);
-  });
-
-  els.categoryPills.querySelectorAll(".pill").forEach((pill) => {
-    pill.addEventListener("click", () => {
-      els.categoryPills.querySelectorAll(".pill").forEach((p) => p.classList.remove("active"));
-      pill.classList.add("active");
-      state.selectedCategory = pill.dataset.category;
-      renderArticles();
-    });
-  });
-
-  els.sourceFilter.addEventListener("change", (e) => {
-    state.selectedSource = e.target.value;
-    renderArticles();
-  });
-
-  els.searchInput.addEventListener("input", (e) => {
-    state.searchQuery = e.target.value;
-    renderArticles();
-  });
-
-  try {
-    await loadLatest();
-  } catch (err) {
-    els.grid.innerHTML = `<div class="empty-state">Nessun dato trovato. Avvia prima la GitHub Action o esegui <code>python scripts/fetch_news.py</code>.</div>`;
-  }
+.update-status {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
 }
 
-init();
+/* Barra menu unificata */
+.header-menu {
+  display: inline-flex;
+  align-items: center;
+  background: var(--menu-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 3px;
+  backdrop-filter: blur(8px);
+}
+
+.menu-item {
+  appearance: none;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.84rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 8px 13px;
+  border-radius: 9px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+}
+
+.menu-item:hover {
+  background: var(--surface-hover);
+  color: var(--accent);
+}
+
+.menu-sep {
+  width: 1px;
+  height: 16px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+/* Contenuto sopra lo sfondo animato */
+main.container {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  padding: 44px 20px 64px;
+}
+
+.controls-bar { display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px; }
+.date-tabs { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+
+.tab-btn, .pill {
+  background: var(--control-bg);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  backdrop-filter: blur(10px);
+  padding: 8px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.86rem;
+  transition: all 0.15s ease;
+}
+
+.tab-btn:hover:not(:disabled), .pill:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.tab-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+.tab-btn.active, .pill.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+.archive-select-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  margin-left: auto;
+}
+
+select, input[type="search"] {
+  background: var(--control-bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  backdrop-filter: blur(10px);
+  font-family: inherit;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 0.86rem;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+select:focus, input[type="search"]:focus { border-color: var(--accent); }
+
+.filters-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.category-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+.pill { padding: 6px 13px; border-radius: 999px; font-size: 0.82rem; }
+.search-source { display: flex; gap: 8px; flex-wrap: wrap; }
+.search-source input { min-width: 240px; }
+.status-bar { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px; }
+
+/* Card notizie effetto vetro */
+.news-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow);
+  transition: transform 0.18s ease, border-color 0.18s ease, background-color 0.18s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  background: var(--surface-hover);
+}
+
+.card-img { width: 100%; height: 175px; object-fit: cover; background: var(--bg); }
+.card-body { padding: 18px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.card-meta { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 0.76rem; color: var(--text-muted); }
+
+.source-badge {
+  background: var(--accent-soft);
+  color: var(--accent);
+  padding: 4px 9px;
+  border-radius: 7px;
+  font-weight: 700;
+}
+
+.card-title { font-size: 1.04rem; line-height: 1.38; font-weight: 700; letter-spacing: -0.01em; }
+.card-title a { color: var(--text); text-decoration: none; }
+.card-title a:hover { color: var(--accent); }
+.card-summary { font-size: 0.88rem; color: var(--text-muted); flex: 1; }
+
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  font-size: 0.82rem;
+}
+
+.card-actions a { color: var(--accent); text-decoration: none; font-weight: 600; }
+.card-actions a:hover { text-decoration: underline; }
+
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 48px 20px;
+  background: var(--surface);
+  backdrop-filter: blur(12px);
+  border: 1px dashed var(--border);
+  border-radius: 16px;
+  color: var(--text-muted);
+}
+
+/* Sezione Chi sono */
+.about-section { margin-top: 52px; scroll-margin-top: 110px; }
+
+.about-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 18px;
+  padding: 26px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  box-shadow: var(--shadow);
+}
+
+.about-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--accent), var(--green));
+  color: #ffffff;
+  font-size: 1.55rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.about-content { display: flex; flex-direction: column; gap: 8px; }
+.about-header { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+
+.about-header h2 {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.about-tag {
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: var(--accent-soft);
+  color: var(--accent);
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.about-content p { font-size: 0.92rem; color: var(--text-muted); }
+.about-content strong { color: var(--text); }
+
+/* Footer */
+.site-footer {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--border);
+  background: var(--header-bg);
+  backdrop-filter: blur(8px);
+  padding: 22px 0;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.site-footer strong { color: var(--text); }
+
+.beta-badge {
+  font-size: 0.76rem;
+  font-weight: 600;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+@media (max-width: 720px) {
+  .brand h1 { font-size: 1.5rem; }
+  .header-right { width: 100%; justify-content: space-between; }
+  main.container { padding: 32px 16px 48px; }
+  .archive-select-wrap { margin-left: 0; }
+  .about-card { flex-direction: column; align-items: flex-start; }
+  .footer-inner { justify-content: center; text-align: center; }
+}
