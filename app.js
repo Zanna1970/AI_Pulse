@@ -81,7 +81,6 @@ function initAmbientParticles() {
     const maxDist = 130;
     const maxDistSq = maxDist * maxDist;
 
-    // Alone luminoso intorno al puntatore
     if (mouse.x > 0 && mouse.y > 0) {
       const grad = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 220);
       grad.addColorStop(0, isDark ? "rgba(59, 130, 246, 0.16)" : "rgba(37, 99, 235, 0.11)");
@@ -99,7 +98,6 @@ function initAmbientParticles() {
         p.x += p.vx;
         p.y += p.vy;
 
-        // Le particelle vicine seguono dolcemente il cursore
         if (mouse.x > 0 && mouse.y > 0) {
           const mdx = mouse.x - p.x;
           const mdy = mouse.y - p.y;
@@ -260,14 +258,15 @@ function renderArticles() {
     time.textContent = formatItalianDateTime(art.published_at);
     meta.append(badge, time);
 
-    const displayTitle = state.lang === "en" && art.title_en ? art.title_en : art.title;
-    const displaySummary = state.lang === "en" && art.summary_en ? art.summary_en : art.summary;
-    const itUrl = getTranslatedUrl(art.url);
+    const isItalianNative = art.lang === "it" || art.category === "Italia";
+    const displayTitle = !isItalianNative && state.lang === "en" && art.title_en ? art.title_en : art.title;
+    const displaySummary = !isItalianNative && state.lang === "en" && art.summary_en ? art.summary_en : art.summary;
+    const itUrl = isItalianNative ? art.url : getTranslatedUrl(art.url);
 
     const h2 = document.createElement("h2");
     h2.className = "card-title";
     const link = document.createElement("a");
-    link.href = state.lang === "en" ? art.url : itUrl;
+    link.href = !isItalianNative && state.lang === "en" ? art.url : itUrl;
     link.target = "_blank";
     link.rel = "noopener noreferrer";
     link.textContent = displayTitle;
@@ -280,19 +279,29 @@ function renderArticles() {
     const actions = document.createElement("div");
     actions.className = "card-actions";
 
-    const readItLink = document.createElement("a");
-    readItLink.href = itUrl;
-    readItLink.target = "_blank";
-    readItLink.rel = "noopener noreferrer";
-    readItLink.textContent = "Leggi in Italiano →";
+    if (isItalianNative) {
+      const readLink = document.createElement("a");
+      readLink.href = art.url;
+      readLink.target = "_blank";
+      readLink.rel = "noopener noreferrer";
+      readLink.textContent = "Leggi articolo →";
+      actions.append(readLink);
+    } else {
+      const readItLink = document.createElement("a");
+      readItLink.href = itUrl;
+      readItLink.target = "_blank";
+      readItLink.rel = "noopener noreferrer";
+      readItLink.textContent = "Leggi in Italiano →";
 
-    const readEnLink = document.createElement("a");
-    readEnLink.href = art.url;
-    readEnLink.target = "_blank";
-    readEnLink.rel = "noopener noreferrer";
-    readEnLink.textContent = "Originale (EN) ↗";
+      const readEnLink = document.createElement("a");
+      readEnLink.href = art.url;
+      readEnLink.target = "_blank";
+      readEnLink.rel = "noopener noreferrer";
+      readEnLink.textContent = "Originale (EN) ↗";
 
-    actions.append(readItLink, readEnLink);
+      actions.append(readItLink, readEnLink);
+    }
+
     body.append(meta, h2, summary, actions);
     card.appendChild(body);
     els.grid.appendChild(card);
