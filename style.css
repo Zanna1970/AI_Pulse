@@ -102,6 +102,20 @@ body {
 
 .brand { display: flex; align-items: center; gap: 14px; }
 
+.brand-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.brand-link h1 {
+  transition: color 0.15s ease;
+}
+
+.brand-link:hover h1 {
+  color: var(--accent);
+}
+
 .brand-dot {
   width: 11px;
   height: 11px;
