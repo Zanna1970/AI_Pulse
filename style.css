@@ -80,13 +80,13 @@ body {
   height: 100%;
 }
 
-/* Header fisso trasparente con titolo, menu e bio integrata */
+/* Header fisso trasparente */
 .site-header {
   border-bottom: 1px solid var(--border);
   background: var(--header-bg);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
-  padding: 18px 0 16px;
+  padding: 18px 0 14px;
   position: sticky;
   top: 0;
   z-index: 20;
@@ -179,61 +179,19 @@ body {
   flex-shrink: 0;
 }
 
-/* Riga RZ + Ciao, sono Roberto nella stessa striscia sotto il titolo */
+/* Frase personale con stesso carattere, peso e colore di "Aggiornato..." */
 .header-bio {
-  margin-top: 12px;
-  padding-top: 12px;
+  margin-top: 10px;
+  padding-top: 10px;
   padding-left: 25px;
   border-top: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  gap: 14px;
 }
 
-.bio-logo {
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, var(--accent), var(--green));
-  color: #ffffff;
-  font-size: 1.05rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.25);
-}
-
-.bio-text {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.bio-text p {
-  font-size: 0.88rem;
+.bio-line {
+  font-size: 0.8rem;
+  font-weight: 500;
   line-height: 1.45;
   color: var(--text-muted);
-}
-
-.bio-text strong {
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: var(--text);
-}
-
-.bio-tag {
-  display: inline-block;
-  margin-left: 6px;
-  font-size: 0.74rem;
-  font-weight: 600;
-  background: var(--accent-soft);
-  color: var(--accent);
-  padding: 2px 9px;
-  border-radius: 999px;
-  vertical-align: middle;
 }
 
 /* Contenuto sopra lo sfondo animato */
@@ -407,8 +365,7 @@ select:focus, input[type="search"]:focus { border-color: var(--accent); }
   .brand h1 { font-size: 1.45rem; }
   .subtitle { font-size: 0.92rem; }
   .header-right { width: 100%; justify-content: space-between; }
-  .header-bio { padding-left: 0; align-items: flex-start; }
-  .bio-logo { width: 36px; height: 36px; font-size: 0.92rem; }
+  .header-bio { padding-left: 0; }
   main.container { padding: 28px 16px 48px; }
   .archive-select-wrap { margin-left: 0; }
   .footer-inner { justify-content: center; text-align: center; }
