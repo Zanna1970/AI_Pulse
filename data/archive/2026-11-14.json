@@ -1,8 +1,36 @@
 {
   "date": "2026-11-14",
-  "updated_at": "2026-11-14T18:19:30.657130+01:00",
-  "count": 4,
+  "updated_at": "2026-11-15T12:44:18.932939+01:00",
+  "count": 6,
   "articles": [
+    {
+      "id": "e86112d5f8734949",
+      "title": "Elon Musk e altri dirigenti tecnologici firmano una petizione chiedendo a Nvidia di reintegrare Jensen Huang",
+      "title_en": "Elon Musk, other tech execs sign petition calling on Nvidia to reinstate Jensen Huang",
+      "url": "https://techcrunch.com/2026/11/14/elon-musk-other-tech-execs-sign-petition-calling-on-nvidia-to-reinstate-jensen-huang/",
+      "summary": "La petizione aveva raccolto più di 115.000 firme sabato pomeriggio.",
+      "summary_en": "The petition had attracted more than 115,000 signatures as of Saturday afternoon.",
+      "image": "",
+      "source": "TechCrunch AI",
+      "category": "Media & Tech",
+      "published_at": "2026-11-14T22:41:22+01:00",
+      "date": "2026-11-14",
+      "translated": true
+    },
+    {
+      "id": "0dac5bc8bd77a78d",
+      "title": "Il cimitero dell’intelligenza artificiale: un elenco aggiornato di progetti e startup che non ce l’hanno fatta",
+      "title_en": "The AI graveyard: a running list of projects and startups that didn’t make it",
+      "url": "https://techcrunch.com/2026/11/14/the-ai-graveyard-a-running-list-of-projects-and-startups-that-didnt-make-it/",
+      "summary": "Dall'IA di Siri ripetutamente ritardata da parte di Apple al disordinato lancio della \"super app\" di OpenAI, ecco uno sguardo ai progetti di intelligenza artificiale che hanno interrotto o mancato le aspettative.",
+      "summary_en": "From Apple's repeatedly delayed Siri AI to OpenAI's messy \"super app\" launch, here's a look at the AI projects that shut down or missed expectations.",
+      "image": "",
+      "source": "TechCrunch AI",
+      "category": "Media & Tech",
+      "published_at": "2026-11-14T18:30:00+01:00",
+      "date": "2026-11-14",
+      "translated": true
+    },
     {
       "id": "8097820885cc543d",
       "title": "I governi asiatici reagiscono all’uscita del CEO di Nvidia Jensen Huang",

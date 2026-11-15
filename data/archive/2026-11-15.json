@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-15",
+  "updated_at": "2026-11-15T12:44:18.932939+01:00",
+  "count": 1,
+  "articles": [
+    {
+      "id": "a8381ccf0f4a6c26",
+      "title": "Dov'era il team di sicurezza di Nvidia?",
+      "title_en": "Where was Nvidia’s security team?",
+      "url": "https://techcrunch.com/2026/11/14/where-was-nvidias-security-team/",
+      "summary": "Il capo della sicurezza di Nvidia se n'è andato silenziosamente in agosto, e ora che il CEO Jensen Huang si è dimesso dai suoi rapporti, incluso quello con un dirigente di una società sospettata di incanalare chip verso la Cina, un ex ufficiale dell'intelligence...",
+      "summary_en": "Nvidia’s security chief quietly left in August, and now that CEO Jensen Huang has stepped down over his relationships, including one with an executive at a company suspected of funneling chips to China, a former intelligence officer...",
+      "image": "",
+      "source": "TechCrunch AI",
+      "category": "Media & Tech",
+      "published_at": "2026-11-15T01:08:07+01:00",
+      "date": "2026-11-15",
+      "translated": true
+    }
+  ]
+}
