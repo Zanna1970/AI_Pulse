@@ -1,14 +1,14 @@
 {
   "date": "2026-10-26",
-  "updated_at": "2026-11-15T20:02:48.274441+01:00",
+  "updated_at": "2026-11-15T23:57:14.644978+01:00",
   "count": 1,
   "articles": [
     {
       "id": "b1d7eb2dedce5839",
-      "title": "La nostra ultima missione AI: mappatura del cervello umano",
+      "title": "Our newest AI Quest: Mapping the human brain",
       "title_en": "Our newest AI Quest: Mapping the human brain",
       "url": "https://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/",
-      "summary": "Un'illustrazione di un pianeta che ruota per mostrare varie figure di cartoni animati che ondeggiano. In alto c'è il testo \"AI Quests\"",
+      "summary": "An illustration of a planet rotating to show various cartoon figures waving. At the top is the text \"AI Quests\"",
       "summary_en": "An illustration of a planet rotating to show various cartoon figures waving. At the top is the text \"AI Quests\"",
       "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/social_sharing_updated.max-600x600.format-webp.webp",
       "source": "Google AI Blog",
@@ -16,7 +16,7 @@
       "lang": "en",
       "published_at": "2026-10-26T17:00:00+01:00",
       "date": "2026-10-26",
-      "translated": true
+      "translated": false
     }
   ]
 }

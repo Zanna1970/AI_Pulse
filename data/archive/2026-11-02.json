@@ -1,14 +1,14 @@
 {
   "date": "2026-11-02",
-  "updated_at": "2026-11-15T20:02:48.274441+01:00",
+  "updated_at": "2026-11-15T23:57:14.644978+01:00",
   "count": 1,
   "articles": [
     {
       "id": "c45a0b6d7de18ac5",
-      "title": "Le ultime novità sull'intelligenza artificiale annunciate nell'ottobre 2026",
+      "title": "The latest AI news we announced in October 2026",
       "title_en": "The latest AI news we announced in October 2026",
       "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-october-2026/",
-      "summary": "Carosello animato di immagini dai post AI di ottobre",
+      "summary": "Animated carousel of images from AI posts in October",
       "summary_en": "Animated carousel of images from AI posts in October",
       "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Oct_AI_Recap_social.max-600x600.format-webp.webp",
       "source": "Google AI Blog",
@@ -16,7 +16,7 @@
       "lang": "en",
       "published_at": "2026-11-02T18:45:00+01:00",
       "date": "2026-11-02",
-      "translated": true
+      "translated": false
     }
   ]
 }
