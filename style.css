@@ -46,7 +46,7 @@ body {
 
 .container { width: 100%; max-width: 1220px; margin: 0 auto; padding: 0 20px; }
 
-/* Sfondo dinamico a tutto schermo (liquido + particelle) */
+/* Sfondo dinamico a tutto schermo */
 .ambient-layer {
   position: fixed;
   inset: 0;
@@ -80,13 +80,13 @@ body {
   height: 100%;
 }
 
-/* Header ultra-trasparente per intravedere le particelle dietro */
+/* Header fisso trasparente con titolo, menu e bio integrata */
 .site-header {
   border-bottom: 1px solid var(--border);
   background: var(--header-bg);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
-  padding: 22px 0;
+  padding: 18px 0 16px;
   position: sticky;
   top: 0;
   z-index: 20;
@@ -179,12 +179,69 @@ body {
   flex-shrink: 0;
 }
 
+/* Riga RZ + Ciao, sono Roberto nella stessa striscia sotto il titolo */
+.header-bio {
+  margin-top: 12px;
+  padding-top: 12px;
+  padding-left: 25px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.bio-logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent), var(--green));
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.25);
+}
+
+.bio-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.bio-text p {
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+.bio-text strong {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.bio-tag {
+  display: inline-block;
+  margin-left: 6px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  background: var(--accent-soft);
+  color: var(--accent);
+  padding: 2px 9px;
+  border-radius: 999px;
+  vertical-align: middle;
+}
+
 /* Contenuto sopra lo sfondo animato */
 main.container {
   position: relative;
   z-index: 1;
   flex: 1;
-  padding: 44px 20px 64px;
+  padding: 40px 20px 64px;
 }
 
 .controls-bar { display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px; }
@@ -250,7 +307,7 @@ select:focus, input[type="search"]:focus { border-color: var(--accent); }
 .search-source input { min-width: 240px; }
 .status-bar { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px; }
 
-/* Card notizie traslucide per intravedere le particelle dietro */
+/* Card notizie traslucide */
 .news-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
 
 .card {
@@ -312,58 +369,6 @@ select:focus, input[type="search"]:focus { border-color: var(--accent); }
   color: var(--text-muted);
 }
 
-/* Sezione Chi sono */
-.about-section { margin-top: 52px; scroll-margin-top: 110px; }
-
-.about-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border-radius: 18px;
-  padding: 26px;
-  display: flex;
-  align-items: center;
-  gap: 22px;
-  box-shadow: var(--shadow);
-}
-
-.about-avatar {
-  width: 64px;
-  height: 64px;
-  border-radius: 16px;
-  background: linear-gradient(135deg, var(--accent), var(--green));
-  color: #ffffff;
-  font-size: 1.55rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.about-content { display: flex; flex-direction: column; gap: 8px; }
-.about-header { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-
-.about-header h2 {
-  font-size: 0.92rem;
-  font-weight: 700;
-  color: var(--text);
-}
-
-.about-tag {
-  font-size: 0.78rem;
-  font-weight: 600;
-  background: var(--accent-soft);
-  color: var(--accent);
-  padding: 3px 10px;
-  border-radius: 999px;
-}
-
-.about-content p { font-size: 0.92rem; color: var(--text-muted); }
-.about-content strong { color: var(--text); }
-
 /* Footer */
 .site-footer {
   position: relative;
@@ -398,11 +403,13 @@ select:focus, input[type="search"]:focus { border-color: var(--accent); }
 }
 
 @media (max-width: 720px) {
-  .brand h1 { font-size: 1.5rem; }
-  .subtitle { font-size: 0.94rem; }
+  .site-header { padding: 14px 0; }
+  .brand h1 { font-size: 1.45rem; }
+  .subtitle { font-size: 0.92rem; }
   .header-right { width: 100%; justify-content: space-between; }
-  main.container { padding: 32px 16px 48px; }
+  .header-bio { padding-left: 0; align-items: flex-start; }
+  .bio-logo { width: 36px; height: 36px; font-size: 0.92rem; }
+  main.container { padding: 28px 16px 48px; }
   .archive-select-wrap { margin-left: 0; }
-  .about-card { flex-direction: column; align-items: flex-start; }
   .footer-inner { justify-content: center; text-align: center; }
 }
