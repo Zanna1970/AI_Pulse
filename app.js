@@ -31,34 +31,25 @@ function initAmbientParticles() {
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   let width = 0;
   let height = 0;
-  let t = 0;
   let particles = [];
+  let pulses = [];
   let ripples = [];
   const mouse = { x: -999, y: -999 };
 
-  // Configurazione delle 7 curve d'onda sovrapposte
-  const waves = [
-    { baseY: 0.16, amp1: 26, amp2: 14, freq1: 0.0032, freq2: 0.0068, speed1: 0.014, speed2: 0.019, phase: 0.0, darkColors: ["rgba(59,130,246,0.45)", "rgba(56,189,248,0.35)"], lightColors: ["rgba(37,99,235,0.28)", "rgba(14,165,233,0.22)"] },
-    { baseY: 0.28, amp1: 34, amp2: 18, freq1: 0.0026, freq2: 0.0055, speed1: 0.011, speed2: 0.016, phase: 1.3, darkColors: ["rgba(16,185,129,0.42)", "rgba(59,130,246,0.34)"], lightColors: ["rgba(5,150,105,0.24)", "rgba(37,99,235,0.20)"] },
-    { baseY: 0.42, amp1: 40, amp2: 20, freq1: 0.0022, freq2: 0.0049, speed1: 0.009, speed2: 0.014, phase: 2.6, darkColors: ["rgba(139,92,246,0.40)", "rgba(56,189,248,0.34)"], lightColors: ["rgba(124,58,237,0.22)", "rgba(14,165,233,0.20)"] },
-    { baseY: 0.55, amp1: 36, amp2: 16, freq1: 0.0029, freq2: 0.0061, speed1: 0.013, speed2: 0.017, phase: 3.9, darkColors: ["rgba(56,189,248,0.44)", "rgba(16,185,129,0.34)"], lightColors: ["rgba(2,132,199,0.25)", "rgba(5,150,105,0.20)"] },
-    { baseY: 0.68, amp1: 44, amp2: 22, freq1: 0.0020, freq2: 0.0044, speed1: 0.008, speed2: 0.012, phase: 5.1, darkColors: ["rgba(59,130,246,0.42)", "rgba(139,92,246,0.32)"], lightColors: ["rgba(37,99,235,0.24)", "rgba(124,58,237,0.18)"] },
-    { baseY: 0.80, amp1: 32, amp2: 15, freq1: 0.0031, freq2: 0.0063, speed1: 0.012, speed2: 0.018, phase: 0.8, darkColors: ["rgba(16,185,129,0.38)", "rgba(56,189,248,0.30)"], lightColors: ["rgba(5,150,105,0.22)", "rgba(14,165,233,0.18)"] },
-    { baseY: 0.91, amp1: 28, amp2: 14, freq1: 0.0025, freq2: 0.0052, speed1: 0.010, speed2: 0.015, phase: 2.1, darkColors: ["rgba(99,102,241,0.38)", "rgba(16,185,129,0.28)"], lightColors: ["rgba(79,70,229,0.22)", "rgba(5,150,105,0.18)"] },
-  ];
-
   function buildParticles() {
-    const count = Math.max(90, Math.min(200, Math.floor((width * height) / 9000)));
+    // Alta densita: circa 250-300 particelle su desktop
+    const targetCount = Math.max(130, Math.min(300, Math.floor((width * height) / 5500)));
     particles = [];
-    for (let i = 0; i < count; i++) {
+    for (let i = 0; i < targetCount; i++) {
+      const depth = 0.55 + Math.random() * 0.85;
       particles.push({
         x: Math.random() * width,
-        waveIdx: i % waves.length,
-        yOffset: (Math.random() - 0.5) * 32,
-        speedX: 0.25 + Math.random() * 0.55,
-        r: 1.1 + Math.random() * 2.1,
-        alpha: 0.35 + Math.random() * 0.55,
-        twinklePhase: Math.random() * Math.PI * 2,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.45 * depth,
+        vy: (Math.random() - 0.5) * 0.45 * depth,
+        r: (1.1 + Math.random() * 1.7) * depth,
+        depth,
+        phase: Math.random() * Math.PI * 2,
       });
     }
   }
@@ -71,37 +62,6 @@ function initAmbientParticles() {
     canvas.height = Math.floor(height * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     buildParticles();
-  }
-
-  function getWaveY(x, wave) {
-    let y =
-      wave.baseY * height +
-      Math.sin(x * wave.freq1 + t * wave.speed1 + wave.phase) * wave.amp1 +
-      Math.cos(x * wave.freq2 - t * wave.speed2 + wave.phase * 0.7) * wave.amp2;
-
-    // Flessione fluida intorno al cursore
-    if (mouse.x > 0 && mouse.y > 0) {
-      const dx = x - mouse.x;
-      const dy = y - mouse.y;
-      const dist = Math.hypot(dx, dy);
-      if (dist < 210) {
-        const pull = 1 - dist / 210;
-        y += Math.sin(pull * Math.PI) * (dy >= 0 ? 24 : -24);
-      }
-    }
-
-    // Vibrazione lungo le onde al clic
-    for (let k = 0; k < ripples.length; k++) {
-      const rp = ripples[k];
-      const dist = Math.hypot(x - rp.x, y - rp.y);
-      const diff = Math.abs(dist - rp.r);
-      if (diff < 60) {
-        const force = (1 - diff / 60) * rp.alpha;
-        y += Math.sin((dist - rp.r) * 0.12) * 20 * force;
-      }
-    }
-
-    return y;
   }
 
   window.addEventListener("mousemove", (e) => {
@@ -119,9 +79,9 @@ function initAmbientParticles() {
     ripples.push({
       x: e.clientX,
       y: e.clientY,
-      r: 8,
-      maxR: 420,
-      alpha: 0.75,
+      r: 4,
+      maxR: 250,
+      alpha: 0.48,
     });
   });
 
@@ -133,93 +93,141 @@ function initAmbientParticles() {
 
     ctx.clearRect(0, 0, width, height);
     const isDark = document.documentElement.getAttribute("data-theme") !== "light";
+    const dotColor = isDark ? "96, 165, 250" : "37, 99, 235";
+    const lineColor = isDark ? "56, 189, 248" : "59, 130, 246";
+    const pulseColor = isDark ? "52, 211, 153" : "5, 150, 105";
+    const maxDist = 125;
+    const maxDistSq = maxDist * maxDist;
 
-    if (!reduceMotion) {
-      t += 1;
+    // 1. Alone luminoso intorno al cursore
+    if (mouse.x > 0 && mouse.y > 0) {
+      const grad = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 220);
+      grad.addColorStop(0, isDark ? "rgba(59, 130, 246, 0.14)" : "rgba(37, 99, 235, 0.10)");
+      grad.addColorStop(0.5, isDark ? "rgba(16, 185, 129, 0.05)" : "rgba(5, 150, 105, 0.04)");
+      grad.addColorStop(1, "rgba(0, 0, 0, 0)");
+      ctx.fillStyle = grad;
+      ctx.beginPath();
+      ctx.arc(mouse.x, mouse.y, 220, 0, Math.PI * 2);
+      ctx.fill();
     }
 
-    // Aggiorna eventuali onde da clic
+    // 2. Onde al clic
     for (let k = ripples.length - 1; k >= 0; k--) {
       const rp = ripples[k];
-      rp.r += 7;
-      rp.alpha *= 0.965;
+      rp.r += 5.5;
+      rp.alpha *= 0.96;
 
       ctx.beginPath();
       ctx.arc(rp.x, rp.y, rp.r, 0, Math.PI * 2);
-      ctx.strokeStyle = isDark
-        ? `rgba(56, 189, 248, ${rp.alpha * 0.35})`
-        : `rgba(37, 99, 235, ${rp.alpha * 0.25})`;
-      ctx.lineWidth = 1.4;
+      ctx.strokeStyle = `rgba(${pulseColor}, ${rp.alpha})`;
+      ctx.lineWidth = 1.6;
       ctx.stroke();
+
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+        const dx = p.x - rp.x;
+        const dy = p.y - rp.y;
+        const d = Math.hypot(dx, dy);
+        if (Math.abs(d - rp.r) < 18 && d > 1) {
+          p.x += (dx / d) * 1.4;
+          p.y += (dy / d) * 1.4;
+        }
+      }
 
       if (rp.r >= rp.maxR || rp.alpha < 0.02) {
         ripples.splice(k, 1);
       }
     }
 
-    // 1. Disegna le curve d'onda animate e il riempimento traslucido
-    const step = 16;
-    for (let w = 0; w < waves.length; w++) {
-      const wave = waves[w];
-      const colors = isDark ? wave.darkColors : wave.lightColors;
-
-      const strokeGrad = ctx.createLinearGradient(0, 0, width, 0);
-      strokeGrad.addColorStop(0, colors[0]);
-      strokeGrad.addColorStop(0.5, colors[1]);
-      strokeGrad.addColorStop(1, colors[0]);
-
-      ctx.beginPath();
-      for (let x = 0; x <= width + step; x += step) {
-        const y = getWaveY(x, wave);
-        if (x === 0) {
-          ctx.moveTo(x, y);
-        } else {
-          ctx.lineTo(x, y);
-        }
-      }
-
-      ctx.strokeStyle = strokeGrad;
-      ctx.lineWidth = 1.6;
-      ctx.stroke();
-
-      // Sfumatura morbida sotto ogni curva
-      ctx.lineTo(width + step, height);
-      ctx.lineTo(0, height);
-      ctx.closePath();
-
-      const fillGrad = ctx.createLinearGradient(0, wave.baseY * height - 40, 0, wave.baseY * height + 130);
-      fillGrad.addColorStop(0, isDark ? "rgba(59, 130, 246, 0.055)" : "rgba(37, 99, 235, 0.035)");
-      fillGrad.addColorStop(1, "rgba(0, 0, 0, 0)");
-      ctx.fillStyle = fillGrad;
-      ctx.fill();
-    }
-
-    // 2. Disegna le particelle che cavalcano le onde
+    // 3. Particelle e connessioni
     for (let i = 0; i < particles.length; i++) {
       const p = particles[i];
       if (!reduceMotion) {
-        p.x += p.speedX;
-        p.twinklePhase += 0.03;
-        if (p.x > width + 10) {
-          p.x = -10;
+        p.phase += 0.025;
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (mouse.x > 0) {
+          const mdx = mouse.x - p.x;
+          const mdy = mouse.y - p.y;
+          const mDistSq = mdx * mdx + mdy * mdy;
+          if (mDistSq > 900 && mDistSq < 32400) {
+            p.x += mdx * 0.0045;
+            p.y += mdy * 0.0045;
+          }
+        }
+
+        if (p.x < 0 || p.x > width) p.vx *= -1;
+        if (p.y < 0 || p.y > height) p.vy *= -1;
+        p.x = Math.max(0, Math.min(width, p.x));
+        p.y = Math.max(0, Math.min(height, p.y));
+      }
+
+      const twinkle = 0.78 + 0.22 * Math.sin(p.phase);
+      const baseAlpha = (isDark ? 0.65 : 0.45) * twinkle;
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${dotColor}, ${baseAlpha})`;
+      ctx.fill();
+
+      for (let j = i + 1; j < particles.length; j++) {
+        const q = particles[j];
+        const dx = p.x - q.x;
+        const dy = p.y - q.y;
+        const distSq = dx * dx + dy * dy;
+        if (distSq < maxDistSq) {
+          const dist = Math.sqrt(distSq);
+          const alpha = (1 - dist / maxDist) * (isDark ? 0.24 : 0.16);
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(q.x, q.y);
+          ctx.strokeStyle = `rgba(${lineColor}, ${alpha})`;
+          ctx.lineWidth = 0.85;
+          ctx.stroke();
+
+          if (!reduceMotion && pulses.length < 32 && Math.random() < 0.0014) {
+            pulses.push({
+              from: p,
+              to: q,
+              t: 0,
+              speed: 0.022 + Math.random() * 0.025,
+            });
+          }
         }
       }
 
-      const wave = waves[p.waveIdx];
-      const py = getWaveY(p.x, wave) + p.yOffset;
-      const twinkle = 0.65 + 0.35 * Math.sin(p.twinklePhase);
-      const a = p.alpha * twinkle * (isDark ? 0.9 : 0.65);
+      if (mouse.x > 0) {
+        const mdx = p.x - mouse.x;
+        const mdy = p.y - mouse.y;
+        const mDistSq = mdx * mdx + mdy * mdy;
+        if (mDistSq < 25600) {
+          const mDist = Math.sqrt(mDistSq);
+          const mAlpha = (1 - mDist / 160) * (isDark ? 0.44 : 0.30);
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.strokeStyle = `rgba(${pulseColor}, ${mAlpha})`;
+          ctx.lineWidth = 1.1;
+          ctx.stroke();
+        }
+      }
+    }
+
+    // 4. Impulsi luminosi lungo le connessioni
+    for (let m = pulses.length - 1; m >= 0; m--) {
+      const pl = pulses[m];
+      pl.t += pl.speed;
+      if (pl.t >= 1) {
+        pulses.splice(m, 1);
+        continue;
+      }
+      const px = pl.from.x + (pl.to.x - pl.from.x) * pl.t;
+      const py = pl.from.y + (pl.to.y - pl.from.y) * pl.t;
 
       ctx.beginPath();
-      ctx.arc(p.x, py, p.r, 0, Math.PI * 2);
-      ctx.fillStyle =
-        p.waveIdx % 2 === 0
-          ? isDark
-            ? `rgba(96, 165, 250, ${a})`
-            : `rgba(37, 99, 235, ${a})`
-          : isDark
-            ? `rgba(52, 211, 153, ${a})`
-            : `rgba(5, 150, 105, ${a})`;
+      ctx.arc(px, py, 2.2, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${pulseColor}, ${isDark ? 0.92 : 0.78})`;
       ctx.fill();
     }
 
@@ -383,107 +391,4 @@ async function loadArchiveDate(dateStr) {
 }
 
 function updateThemeUI(theme) {
-  document.documentElement.setAttribute("data-theme", theme);
-  els.themeToggle.textContent = theme === "dark" ? "Dark" : "Light";
-}
-
-function updateLangUI(lang) {
-  if (els.langToggle) {
-    els.langToggle.textContent = lang === "en" ? "EN" : "IT";
-  }
-}
-
-async function init() {
-  initAmbientParticles();
-
-  const savedTheme = localStorage.getItem("ai-pulse-theme") || "dark";
-  updateThemeUI(savedTheme);
-  updateLangUI(state.lang);
-
-  els.themeToggle.addEventListener("click", () => {
-    const curr = document.documentElement.getAttribute("data-theme");
-    const next = curr === "dark" ? "light" : "dark";
-    localStorage.setItem("ai-pulse-theme", next);
-    updateThemeUI(next);
-  });
-
-  if (els.langToggle) {
-    els.langToggle.addEventListener("click", () => {
-      state.lang = state.lang === "it" ? "en" : "it";
-      localStorage.setItem("ai-pulse-lang", state.lang);
-      updateLangUI(state.lang);
-      renderArticles();
-    });
-  }
-
-  try {
-    const datesData = await fetchJson("data/dates.json");
-    state.dates = datesData.dates || [];
-
-    const yesterdayStr = getYesterdayStr();
-    const hasYesterday = state.dates.some((d) => d.date === yesterdayStr);
-    if (hasYesterday) {
-      els.btnYesterday.disabled = false;
-      els.btnYesterday.dataset.date = yesterdayStr;
-    } else if (state.dates.length > 1) {
-      els.btnYesterday.disabled = false;
-      els.btnYesterday.dataset.date = state.dates[1].date;
-    }
-
-    state.dates.forEach((d) => {
-      const opt = document.createElement("option");
-      opt.value = d.date;
-      opt.textContent = `${formatDayLabel(d.date)} (${d.count})`;
-      els.archiveSelect.appendChild(opt);
-    });
-  } catch (e) {
-    console.warn("Archivio date non ancora disponibile:", e);
-  }
-
-  els.dateTabs.querySelectorAll(".tab-btn").forEach((btn) => {
-    btn.addEventListener("click", async () => {
-      els.dateTabs.querySelectorAll(".tab-btn").forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
-      els.archiveSelect.value = "";
-      if (btn.dataset.mode === "latest") {
-        await loadLatest();
-      } else if (btn.dataset.date) {
-        await loadArchiveDate(btn.dataset.date);
-      }
-    });
-  });
-
-  els.archiveSelect.addEventListener("change", async (e) => {
-    const dateVal = e.target.value;
-    if (!dateVal) return;
-    els.dateTabs.querySelectorAll(".tab-btn").forEach((b) => b.classList.remove("active"));
-    await loadArchiveDate(dateVal);
-  });
-
-  els.categoryPills.querySelectorAll(".pill").forEach((pill) => {
-    pill.addEventListener("click", () => {
-      els.categoryPills.querySelectorAll(".pill").forEach((p) => p.classList.remove("active"));
-      pill.classList.add("active");
-      state.selectedCategory = pill.dataset.category;
-      renderArticles();
-    });
-  });
-
-  els.sourceFilter.addEventListener("change", (e) => {
-    state.selectedSource = e.target.value;
-    renderArticles();
-  });
-
-  els.searchInput.addEventListener("input", (e) => {
-    state.searchQuery = e.target.value;
-    renderArticles();
-  });
-
-  try {
-    await loadLatest();
-  } catch (err) {
-    els.grid.innerHTML = `<div class="empty-state">Nessun dato trovato. Avvia prima la GitHub Action o esegui <code>python scripts/fetch_news.py</code>.</div>`;
-  }
-}
-
-init();
+  document.documentElement.setAttribute("data-theme",
