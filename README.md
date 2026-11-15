@@ -1,4 +1,4 @@
-# AI Pulse
+# Neura Wire
 
 Rassegna quotidiana automatica con le migliori notizie sull'Intelligenza Artificiale e archivio storico giornaliero.
 
