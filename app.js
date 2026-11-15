@@ -4,7 +4,7 @@ const state = {
   selectedCategory: "Tutte",
   selectedSource: "Tutte",
   searchQuery: "",
-  lang: localStorage.getItem("ai-pulse-lang") || "it",
+  lang: localStorage.getItem("neura-wire-lang") || "it",
 };
 
 const els = {
@@ -81,7 +81,6 @@ function initAmbientParticles() {
     const maxDist = 130;
     const maxDistSq = maxDist * maxDist;
 
-    // Alone luminoso intorno al puntatore
     if (mouse.x > 0 && mouse.y > 0) {
       const grad = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 220);
       grad.addColorStop(0, isDark ? "rgba(59, 130, 246, 0.16)" : "rgba(37, 99, 235, 0.11)");
@@ -99,7 +98,6 @@ function initAmbientParticles() {
         p.x += p.vx;
         p.y += p.vy;
 
-        // Le particelle vicine seguono dolcemente il cursore
         if (mouse.x > 0 && mouse.y > 0) {
           const mdx = mouse.x - p.x;
           const mdy = mouse.y - p.y;
@@ -339,7 +337,7 @@ function updateLangUI(lang) {
 async function init() {
   initAmbientParticles();
 
-  const savedTheme = localStorage.getItem("ai-pulse-theme") || "dark";
+  const savedTheme = localStorage.getItem("neura-wire-theme") || "dark";
   updateThemeUI(savedTheme);
   updateLangUI(state.lang);
 
@@ -369,14 +367,14 @@ async function init() {
   els.themeToggle.addEventListener("click", () => {
     const curr = document.documentElement.getAttribute("data-theme");
     const next = curr === "dark" ? "light" : "dark";
-    localStorage.setItem("ai-pulse-theme", next);
+    localStorage.setItem("neura-wire-theme", next);
     updateThemeUI(next);
   });
 
   if (els.langToggle) {
     els.langToggle.addEventListener("click", () => {
       state.lang = state.lang === "it" ? "en" : "it";
-      localStorage.setItem("ai-pulse-lang", state.lang);
+      localStorage.setItem("neura-wire-lang", state.lang);
       updateLangUI(state.lang);
       renderArticles();
     });
