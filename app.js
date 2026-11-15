@@ -391,4 +391,107 @@ async function loadArchiveDate(dateStr) {
 }
 
 function updateThemeUI(theme) {
-  document.documentElement.setAttribute("data-theme",
+  document.documentElement.setAttribute("data-theme", theme);
+  els.themeToggle.textContent = theme === "dark" ? "Dark" : "Light";
+}
+
+function updateLangUI(lang) {
+  if (els.langToggle) {
+    els.langToggle.textContent = lang === "en" ? "EN" : "IT";
+  }
+}
+
+async function init() {
+  initAmbientParticles();
+
+  const savedTheme = localStorage.getItem("ai-pulse-theme") || "dark";
+  updateThemeUI(savedTheme);
+  updateLangUI(state.lang);
+
+  els.themeToggle.addEventListener("click", () => {
+    const curr = document.documentElement.getAttribute("data-theme");
+    const next = curr === "dark" ? "light" : "dark";
+    localStorage.setItem("ai-pulse-theme", next);
+    updateThemeUI(next);
+  });
+
+  if (els.langToggle) {
+    els.langToggle.addEventListener("click", () => {
+      state.lang = state.lang === "it" ? "en" : "it";
+      localStorage.setItem("ai-pulse-lang", state.lang);
+      updateLangUI(state.lang);
+      renderArticles();
+    });
+  }
+
+  try {
+    const datesData = await fetchJson("data/dates.json");
+    state.dates = datesData.dates || [];
+
+    const yesterdayStr = getYesterdayStr();
+    const hasYesterday = state.dates.some((d) => d.date === yesterdayStr);
+    if (hasYesterday) {
+      els.btnYesterday.disabled = false;
+      els.btnYesterday.dataset.date = yesterdayStr;
+    } else if (state.dates.length > 1) {
+      els.btnYesterday.disabled = false;
+      els.btnYesterday.dataset.date = state.dates[1].date;
+    }
+
+    state.dates.forEach((d) => {
+      const opt = document.createElement("option");
+      opt.value = d.date;
+      opt.textContent = `${formatDayLabel(d.date)} (${d.count})`;
+      els.archiveSelect.appendChild(opt);
+    });
+  } catch (e) {
+    console.warn("Archivio date non ancora disponibile:", e);
+  }
+
+  els.dateTabs.querySelectorAll(".tab-btn").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      els.dateTabs.querySelectorAll(".tab-btn").forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      els.archiveSelect.value = "";
+      if (btn.dataset.mode === "latest") {
+        await loadLatest();
+      } else if (btn.dataset.date) {
+        await loadArchiveDate(btn.dataset.date);
+      }
+    });
+  });
+
+  els.archiveSelect.addEventListener("change", async (e) => {
+    const dateVal = e.target.value;
+    if (!dateVal) return;
+    els.dateTabs.querySelectorAll(".tab-btn").forEach((b) => b.classList.remove("active"));
+    await loadArchiveDate(dateVal);
+  });
+
+  els.categoryPills.querySelectorAll(".pill").forEach((pill) => {
+    pill.addEventListener("click", () => {
+      els.categoryPills.querySelectorAll(".pill").forEach((p) => p.classList.remove("active"));
+      pill.classList.add("active");
+      state.selectedCategory = pill.dataset.category;
+      renderArticles();
+    });
+  });
+
+  els.sourceFilter.addEventListener("change", (e) => {
+    state.selectedSource = e.target.value;
+    renderArticles();
+  });
+
+  els.searchInput.addEventListener("input", (e) => {
+    state.searchQuery = e.target.value;
+    renderArticles();
+  });
+
+  try {
+    await loadLatest();
+  } catch (err) {
+    els.grid.innerHTML = `<div class="empty-state">Nessun dato trovato. Avvia prima la GitHub Action o esegui <code>python scripts/fetch_news.py</code>.</div>`;
+  }
+}
+
+init();
