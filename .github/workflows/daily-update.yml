@@ -2,8 +2,6 @@ name: Aggiorna Notizie AI e Pubblica
 
 on:
   schedule:
-    # Orari con minuti dispari per evitare la congestione delle :00
-    # 07:23, 13:37 e 19:19 ora italiana (inverno)
     - cron: "23 6 * * *"
     - cron: "37 12 * * *"
     - cron: "19 18 * * *"
@@ -17,12 +15,15 @@ permissions:
   id-token: write
 
 concurrency:
-  group: ai-pulse-deploy
+  group: neura-wire-deploy
   cancel-in-progress: false
 
 jobs:
   update-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Scarica repository
         uses: actions/checkout@v4
@@ -62,4 +63,5 @@ jobs:
           path: "."
 
       - name: Pubblica su GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
