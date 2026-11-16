@@ -1,14 +1,14 @@
 {
   "date": "2026-11-15",
-  "updated_at": "2026-11-15T23:57:14.644978+01:00",
+  "updated_at": "2026-11-16T10:43:36.433112+01:00",
   "count": 14,
   "articles": [
     {
       "id": "2e8f421d2ee2a3df",
-      "title": "A step toward defining the Standard Model on a lattice",
+      "title": "Un passo verso la definizione del Modello Standard su un reticolo",
       "title_en": "A step toward defining the Standard Model on a lattice",
       "url": "https://openai.com/index/step-toward-defining-the-standard-model",
-      "summary": "Explore a candidate nonperturbative lattice definition of the Standard Model and how GPT-6 Astra helped turn the idea into a detailed proof.",
+      "summary": "Esplora una possibile definizione di reticolo non perturbativo del Modello Standard e come GPT-6 Astra ha contribuito a trasformare l'idea in una dimostrazione dettagliata.",
       "summary_en": "Explore a candidate nonperturbative lattice definition of the Standard Model and how GPT-6 Astra helped turn the idea into a detailed proof.",
       "image": "",
       "source": "OpenAI News",
@@ -16,14 +16,14 @@
       "lang": "en",
       "published_at": "2026-11-15T23:00:01+01:00",
       "date": "2026-11-15",
-      "translated": false
+      "translated": true
     },
     {
       "id": "33b95c2112c46efd",
-      "title": "Our new blog for science",
+      "title": "Il nostro nuovo blog per la scienza",
       "title_en": "Our new blog for science",
       "url": "https://openai.com/index/our-new-blog-for-science",
-      "summary": "The OpenAI science blog shares new findings, practical methods, and firsthand accounts from researchers using AI to advance scientific discovery.",
+      "summary": "Il blog scientifico OpenAI condivide nuove scoperte, metodi pratici e resoconti di prima mano di ricercatori che utilizzano l'intelligenza artificiale per promuovere la scoperta scientifica.",
       "summary_en": "The OpenAI science blog shares new findings, practical methods, and firsthand accounts from researchers using AI to advance scientific discovery.",
       "image": "",
       "source": "OpenAI News",
@@ -31,14 +31,14 @@
       "lang": "en",
       "published_at": "2026-11-15T23:00:00+01:00",
       "date": "2026-11-15",
-      "translated": false
+      "translated": true
     },
     {
       "id": "9bfb2ab667837ec0",
-      "title": "Is bad news for Jensen Huang also bad news for the AI industry?",
+      "title": "Le cattive notizie per Jensen Huang sono cattive notizie anche per l’industria dell’intelligenza artificiale?",
       "title_en": "Is bad news for Jensen Huang also bad news for the AI industry?",
       "url": "https://techcrunch.com/2026/11/15/is-bad-news-for-jensen-huang-also-bad-news-for-the-ai-industry/",
-      "summary": "\"Jensen is Nvidia, right? And so much of this economy is riding on Nvidia.\"",
+      "summary": "\"Jensen è Nvidia, giusto? E gran parte di questa economia dipende da Nvidia.\"",
       "summary_en": "\"Jensen is Nvidia, right? And so much of this economy is riding on Nvidia.\"",
       "image": "",
       "source": "TechCrunch AI",
@@ -46,7 +46,7 @@
       "lang": "en",
       "published_at": "2026-11-15T22:56:35+01:00",
       "date": "2026-11-15",
-      "translated": false
+      "translated": true
     },
     {
       "id": "e8eff6bbf0f08483",
@@ -65,10 +65,10 @@
     },
     {
       "id": "7310523931ec31d7",
-      "title": "Jensen Huang might be plotting a return and more of the latest Nvidia drama",
+      "title": "Jensen Huang potrebbe pianificare un ritorno e qualcosa in più dell'ultimo dramma di Nvidia",
       "title_en": "Jensen Huang might be plotting a return and more of the latest Nvidia drama",
       "url": "https://www.theverge.com/tech/1033999/jensen-huang-return-nvidia-megaspeed",
-      "summary": "The drama around Nvidia co-founder and former CEO Jensen Huang is evolving quickly. The latest edition of our Stepback newsletter should get you up to speed, but there have already been a number of new developments since this morning....",
+      "summary": "Il dramma attorno al co-fondatore ed ex CEO di Nvidia Jensen Huang si sta evolvendo rapidamente. L'ultima edizione della nostra newsletter Stepback dovrebbe aggiornarvi, ma da stamattina ci sono già stati numerosi nuovi sviluppi....",
       "summary_en": "The drama around Nvidia co-founder and former CEO Jensen Huang is evolving quickly. The latest edition of our Stepback newsletter should get you up to speed, but there have already been a number of new developments since this morning....",
       "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/Nvidia_Jensen_huang_03.jpg?quality=90&strip=all&crop=0,0,100,100",
       "source": "The Verge AI",
@@ -76,14 +76,14 @@
       "lang": "en",
       "published_at": "2026-11-15T21:43:49+01:00",
       "date": "2026-11-15",
-      "translated": false
+      "translated": true
     },
     {
       "id": "e13a4bd95b8b6ac7",
-      "title": "SNL gathers all the tech tycoons for a lesson in dating and spycraft",
+      "title": "SNL riunisce tutti i magnati della tecnologia per una lezione su appuntamenti e spionaggio",
       "title_en": "SNL gathers all the tech tycoons for a lesson in dating and spycraft",
       "url": "https://techcrunch.com/2026/11/15/snl-gathers-all-the-tech-tycoons-for-a-lesson-in-dating-and-spycraft/",
-      "summary": "While awkward, creepy tech executives have become a recurring theme on Saturday Night Live, this week’s episode gave the cast a chance to show off all their impressions at once.",
+      "summary": "Sebbene i dirigenti tecnologici imbarazzanti e inquietanti siano diventati un tema ricorrente nel Saturday Night Live, l'episodio di questa settimana ha dato al cast la possibilità di mostrare tutte le loro impressioni in una volta.",
       "summary_en": "While awkward, creepy tech executives have become a recurring theme on Saturday Night Live, this week’s episode gave the cast a chance to show off all their impressions at once.",
       "image": "",
       "source": "TechCrunch AI",
@@ -91,14 +91,14 @@
       "lang": "en",
       "published_at": "2026-11-15T21:20:57+01:00",
       "date": "2026-11-15",
-      "translated": false
+      "translated": true
     },
     {
       "id": "6c2c64409dfbba0f",
-      "title": "Congress wants to tighten export rules on AI chips after Nvidia spy scandal",
+      "title": "Il Congresso vuole inasprire le regole sull'esportazione dei chip IA dopo lo scandalo delle spie Nvidia",
       "title_en": "Congress wants to tighten export rules on AI chips after Nvidia spy scandal",
       "url": "https://www.theverge.com/ai-artificial-intelligence/1033984/congress-export-rules-ai-chips-china",
-      "summary": "Unsurprisingly, following the scandal involving now-former Nvidia CEO Jensen Huang and a suspected Chinese spy, Congress is looking to further restrict exports of AI chips. Both Democrats and Republicans have voiced support for various...",
+      "summary": "Non sorprende che, in seguito allo scandalo che ha coinvolto l’ex CEO di Nvidia Jensen Huang e una sospetta spia cinese, il Congresso stia cercando di limitare ulteriormente le esportazioni di chip AI. Sia i democratici che i repubblicani hanno espresso sostegno per vari...",
       "summary_en": "Unsurprisingly, following the scandal involving now-former Nvidia CEO Jensen Huang and a suspected Chinese spy, Congress is looking to further restrict exports of AI chips. Both Democrats and Republicans have voiced support for various...",
       "image": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/25545717/STK481_STK432_CONGRESS_GOVERNMENT_CIVRGINIA_D.jpg?quality=90&strip=all&crop=0,0,100,100",
       "source": "The Verge AI",
@@ -106,7 +106,7 @@
       "lang": "en",
       "published_at": "2026-11-15T20:15:43+01:00",
       "date": "2026-11-15",
-      "translated": false
+      "translated": true
     },
     {
       "id": "4d8c2c105e6cf84c",
