@@ -1,14 +1,14 @@
 {
   "date": "2026-07-26",
-  "updated_at": "2026-11-16T10:43:36.433112+01:00",
+  "updated_at": "2026-11-16T10:45:04.830798+01:00",
   "count": 1,
   "articles": [
     {
       "id": "d1cd21036962a84e",
-      "title": "Teaching LLMs to Update Beliefs for Efficient Long-Horizon Interaction",
+      "title": "Insegnare ai LLM ad aggiornare le convinzioni per un'interazione efficiente a lungo orizzonte",
       "title_en": "Teaching LLMs to Update Beliefs for Efficient Long-Horizon Interaction",
       "url": "http://bair.berkeley.edu/blog/2026/07/26/abbel/",
-      "summary": "Overview of ABBEL compared to traditional recursive summarization. Beliefs replace the full interaction history as the agent’s working context, and belief grading improves performance by supervising the contents of each belief state.....",
+      "summary": "Panoramica di ABBEL rispetto al tradizionale riepilogo ricorsivo. Le convinzioni sostituiscono l’intera storia dell’interazione come contesto lavorativo dell’agente, e la valutazione delle convinzioni migliora le prestazioni supervisionando i contenuti di ciascuno stato di convinzioni.",
       "summary_en": "Overview of ABBEL compared to traditional recursive summarization. Beliefs replace the full interaction history as the agent’s working context, and belief grading improves performance by supervising the contents of each belief state.....",
       "image": "https://bair.berkeley.edu/static/blog/abbel/ABBEL%20main%20figure.png",
       "source": "BAIR Berkeley",
@@ -16,7 +16,7 @@
       "lang": "en",
       "published_at": "2026-07-26T11:00:00+02:00",
       "date": "2026-07-26",
-      "translated": false
+      "translated": true
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-16T10:43:36.433112+01:00",
-  "count": 49,
+  "updated_at": "2026-11-16T10:45:04.830798+01:00",
+  "count": 50,
   "articles": [
     {
       "id": "78efb61e0009fd0b",
@@ -59,6 +59,21 @@
       "category": "Italia",
       "lang": "it",
       "published_at": "2026-11-16T09:51:50+01:00",
+      "date": "2026-11-16",
+      "translated": true
+    },
+    {
+      "id": "168738a031453a82",
+      "title": "Samsung Health, basterà una foto per sapere quante calorie ha un piatto",
+      "title_en": "Samsung Health, basterà una foto per sapere quante calorie ha un piatto",
+      "url": "https://www.hdblog.it/samsung/articoli/n677134/samsung-health-foto-piatto-calorie-ai/",
+      "summary": "Samsung Health potrebbe introdurre Scan meal, una nuova funzione Galaxy AI che analizza le fotografie dei pasti per riconoscere alimenti, ingredienti e porzioni, fornendo una stima delle calorie. La...",
+      "summary_en": "Samsung Health potrebbe introdurre Scan meal, una nuova funzione Galaxy AI che analizza le fotografie dei pasti per riconoscere alimenti, ingredienti e porzioni, fornendo una stima delle calorie. La...",
+      "image": "https://hd2.tudocdn.net/1385465?w=660",
+      "source": "HDblog",
+      "category": "Italia",
+      "lang": "it",
+      "published_at": "2026-11-16T09:45:00+01:00",
       "date": "2026-11-16",
       "translated": true
     },

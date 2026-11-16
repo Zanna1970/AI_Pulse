@@ -1,6 +1,6 @@
 {
   "date": "2026-11-09",
-  "updated_at": "2026-11-16T10:43:36.433112+01:00",
+  "updated_at": "2026-11-16T10:45:04.830798+01:00",
   "count": 6,
   "articles": [
     {
@@ -13,6 +13,7 @@
       "image": "https://lh3.googleusercontent.com/F1CrVEYRb8lJOyyxGgcyow-Td1de-nkp7K8MZrhjrKPANJUc0EYB754Ninn-Yrppjdb54nolOWo6Rk8iDaRNuixWwLaEKc0K9ImGooxen9fj9IOh=w528-h297-n-nu-rw-lo",
       "source": "Google DeepMind",
       "category": "Laboratori",
+      "lang": "en",
       "published_at": "2026-11-09T20:51:47+01:00",
       "date": "2026-11-09",
       "translated": true
@@ -27,6 +28,7 @@
       "image": "",
       "source": "MIT Tech Review",
       "category": "Media & Tech",
+      "lang": "en",
       "published_at": "2026-11-09T20:35:33+01:00",
       "date": "2026-11-09",
       "translated": true
@@ -41,6 +43,7 @@
       "image": "",
       "source": "Hugging Face",
       "category": "Laboratori",
+      "lang": "en",
       "published_at": "2026-11-09T13:34:29+01:00",
       "date": "2026-11-09",
       "translated": true
@@ -55,6 +58,7 @@
       "image": "",
       "source": "BAIR Berkeley",
       "category": "Ricerca",
+      "lang": "en",
       "published_at": "2026-11-09T10:00:00+01:00",
       "date": "2026-11-09",
       "translated": true
@@ -69,6 +73,7 @@
       "image": "https://news.mit.edu/sites/default/files/styles/news_article__cover_image__original/public/images/202611/MIT-WorldParticle-01-Press.jpg?itok=kwMpBg6F",
       "source": "MIT News AI",
       "category": "Ricerca",
+      "lang": "en",
       "published_at": "2026-11-09T06:00:00+01:00",
       "date": "2026-11-09",
       "translated": true
@@ -83,6 +88,7 @@
       "image": "https://news.mit.edu/sites/default/files/styles/news_article__cover_image__original/public/images/202611/MIT-FLEX-01-press.jpg?itok=811PS9Sd",
       "source": "MIT News AI",
       "category": "Ricerca",
+      "lang": "en",
       "published_at": "2026-11-09T06:00:00+01:00",
       "date": "2026-11-09",
       "translated": true

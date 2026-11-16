@@ -1,11 +1,11 @@
 {
   "date": "2026-10-28",
-  "updated_at": "2026-11-16T10:43:36.433112+01:00",
+  "updated_at": "2026-11-16T10:45:04.830798+01:00",
   "count": 1,
   "articles": [
     {
       "id": "e8e0cb1d0e685ced",
-      "title": "Gemini 4 Carbon: Our next frontier model",
+      "title": "Gemini 4 Carbon: il nostro prossimo modello di frontiera",
       "title_en": "Gemini 4 Carbon: Our next frontier model",
       "url": "https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model/",
       "summary": "",
@@ -16,7 +16,7 @@
       "lang": "en",
       "published_at": "2026-10-28T18:00:58+01:00",
       "date": "2026-10-28",
-      "translated": false
+      "translated": true
     }
   ]
 }
