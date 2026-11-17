@@ -1,14 +1,14 @@
 {
   "date": "2026-11-16",
-  "updated_at": "2026-11-17T02:54:00.445623+01:00",
-  "count": 98,
+  "updated_at": "2026-11-17T17:14:05.771346+01:00",
+  "count": 99,
   "articles": [
     {
       "id": "5672c177889c4ac2",
-      "title": "Robo-soldier startup backed by Eric Trump misses payroll, may collapse",
+      "title": "La startup di robot-soldato sostenuta da Eric Trump perde il libro paga e potrebbe crollare",
       "title_en": "Robo-soldier startup backed by Eric Trump misses payroll, may collapse",
       "url": "https://arstechnica.com/ai/2026/11/robo-soldier-startup-backed-by-eric-trump-misses-payroll-may-collapse/",
-      "summary": "Robotics startup misses payroll a year after CEO used funds for luxury home.",
+      "summary": "Una startup di robotica perde il libro paga un anno dopo che il CEO ha utilizzato i fondi per una casa di lusso.",
       "summary_en": "Robotics startup misses payroll a year after CEO used funds for luxury home.",
       "image": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/Foundation-Phantom-MK-1-mortar-demo-1152x648.jpg",
       "source": "Ars Technica AI",
@@ -16,7 +16,7 @@
       "lang": "en",
       "published_at": "2026-11-16T23:58:27+01:00",
       "date": "2026-11-16",
-      "translated": false
+      "translated": true
     },
     {
       "id": "4f20b6480ffff64b",
@@ -930,6 +930,21 @@
       "category": "Italia",
       "lang": "it",
       "published_at": "2026-11-16T10:31:00+01:00",
+      "date": "2026-11-16",
+      "translated": true
+    },
+    {
+      "id": "b82b64ef90f76e66",
+      "title": "Come Revolut aumenta l'ambizione senza abbassare l'asticella",
+      "title_en": "How Revolut raises ambition without lowering the bar",
+      "url": "https://openai.com/business/customer-stories/revolut",
+      "summary": "Scopri come Revolut utilizza i modelli OpenAI e il Codex per ridurre i tempi di codifica del 30-60%, ampliare le indagini sulla criminalità finanziaria e innovare senza compromettere la sicurezza.",
+      "summary_en": "Discover how Revolut uses OpenAI models and Codex to cut coding time by 30–60%, scale financial crime investigations, and innovate without compromising security.",
+      "image": "",
+      "source": "OpenAI News",
+      "category": "Laboratori",
+      "lang": "en",
+      "published_at": "2026-11-16T10:30:00+01:00",
       "date": "2026-11-16",
       "translated": true
     },

@@ -1,11 +1,11 @@
 {
   "date": "2026-11-05",
-  "updated_at": "2026-11-17T02:54:00.445623+01:00",
+  "updated_at": "2026-11-17T17:14:05.771346+01:00",
   "count": 2,
   "articles": [
     {
       "id": "f09d7876c1e95fca",
-      "title": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips",
+      "title": "Gemini Omni 1.2 Flash: veloce ed economico con clip più lunghe",
       "title_en": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips",
       "url": "https://deepmind.google/blog/gemini-omni-12-flash-fast-and-cost-effective-with-longer-clips/",
       "summary": "",
@@ -16,14 +16,14 @@
       "lang": "en",
       "published_at": "2026-11-05T18:05:16+01:00",
       "date": "2026-11-05",
-      "translated": false
+      "translated": true
     },
     {
       "id": "27b87d65d3f99406",
-      "title": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips",
+      "title": "Gemini Omni 1.2 Flash: veloce ed economico con clip più lunghe",
       "title_en": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips",
       "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
-      "summary": "Text \"Gemini Introducing Gemini Omni 1.2 Flash\" surroudned by images of a beehive, animals in conversation, a squid, and a woman walking down a street",
+      "summary": "Testo \"Gemini Introducing Gemini Omni 1.2 Flash\" circondato dalle immagini di un alveare, animali in conversazione, un calamaro e una donna che cammina per strada",
       "summary_en": "Text \"Gemini Introducing Gemini Omni 1.2 Flash\" surroudned by images of a beehive, animals in conversation, a squid, and a woman walking down a street",
       "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-omni-1.2_FZLql41.max-600x600.format-webp.webp",
       "source": "Google AI Blog",
@@ -31,7 +31,7 @@
       "lang": "en",
       "published_at": "2026-11-05T18:00:00+01:00",
       "date": "2026-11-05",
-      "translated": false
+      "translated": true
     }
   ]
 }
