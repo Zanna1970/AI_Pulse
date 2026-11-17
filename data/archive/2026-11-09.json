@@ -1,14 +1,14 @@
 {
   "date": "2026-11-09",
-  "updated_at": "2026-11-16T23:27:40.334125+01:00",
+  "updated_at": "2026-11-17T02:54:00.445623+01:00",
   "count": 6,
   "articles": [
     {
       "id": "8827aad4505e69ef",
-      "title": "Gemini Robotics 2.5 accelera la destrezza generale del mondo reale",
+      "title": "Gemini Robotics 2.5 accelerates real-world general dexterity",
       "title_en": "Gemini Robotics 2.5 accelerates real-world general dexterity",
       "url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/",
-      "summary": "Il nostro modello visione-linguaggio-azione più efficace migliora la destrezza, l’affidabilità e la sicurezza del robot",
+      "summary": "Our most capable vision-language-action model enhances robot dexterity, reliability, and safety",
       "summary_en": "Our most capable vision-language-action model enhances robot dexterity, reliability, and safety",
       "image": "https://lh3.googleusercontent.com/F1CrVEYRb8lJOyyxGgcyow-Td1de-nkp7K8MZrhjrKPANJUc0EYB754Ninn-Yrppjdb54nolOWo6Rk8iDaRNuixWwLaEKc0K9ImGooxen9fj9IOh=w528-h297-n-nu-rw-lo",
       "source": "Google DeepMind",
@@ -16,7 +16,7 @@
       "lang": "en",
       "published_at": "2026-11-09T20:51:47+01:00",
       "date": "2026-11-09",
-      "translated": true
+      "translated": false
     },
     {
       "id": "a0dbf5e971943802",
@@ -50,10 +50,10 @@
     },
     {
       "id": "174d32c755b396f0",
-      "title": "BAIR al CoRL 2026",
+      "title": "BAIR at CoRL 2026",
       "title_en": "BAIR at CoRL 2026",
       "url": "http://bair.berkeley.edu/blog/2026/11/09/bair-at-corl-2026/",
-      "summary": "La Conference on Robot Learning (CoRL) si svolgerà dal 9 al 12 novembre 2026 ad Austin, in Texas. I docenti, i dottorandi e gli studenti del BAIR presenteranno la ricerca in varie sessioni, incluso un keynote sull'inizio della carriera del professor Negar Mehr....",
+      "summary": "The Conference on Robot Learning (CoRL) takes place November 9–12, 2026, in Austin, Texas. BAIR faculty, postdocs and students will be presenting research at various sessions, including an Early Career Keynote from Professor Negar Mehr....",
       "summary_en": "The Conference on Robot Learning (CoRL) takes place November 9–12, 2026, in Austin, Texas. BAIR faculty, postdocs and students will be presenting research at various sessions, including an Early Career Keynote from Professor Negar Mehr....",
       "image": "",
       "source": "BAIR Berkeley",
@@ -61,14 +61,14 @@
       "lang": "en",
       "published_at": "2026-11-09T10:00:00+01:00",
       "date": "2026-11-09",
-      "translated": true
+      "translated": false
     },
     {
       "id": "6fbb9cbc09ce7eb4",
-      "title": "Un singolo modello di intelligenza artificiale simula il comportamento di molte sostanze, dalla sabbia che scivola alle proteine che si ripiegano",
+      "title": "A single AI model simulates the behavior of many substances, from sliding sand to folding proteins",
       "title_en": "A single AI model simulates the behavior of many substances, from sliding sand to folding proteins",
       "url": "https://news.mit.edu/2026/single-ai-model-simulates-many-substances-behavior-1109",
-      "summary": "Imparando come si muove la materia, il sistema WorldParticle potrebbe aiutare a sviluppare robot morbidi, medicinali e altro ancora.",
+      "summary": "By learning how matter moves, the WorldParticle system could assist with developing soft robots, medicines, and more.",
       "summary_en": "By learning how matter moves, the WorldParticle system could assist with developing soft robots, medicines, and more.",
       "image": "https://news.mit.edu/sites/default/files/styles/news_article__cover_image__original/public/images/202611/MIT-WorldParticle-01-Press.jpg?itok=kwMpBg6F",
       "source": "MIT News AI",
@@ -76,14 +76,14 @@
       "lang": "en",
       "published_at": "2026-11-09T06:00:00+01:00",
       "date": "2026-11-09",
-      "translated": true
+      "translated": false
     },
     {
       "id": "f2b130fea883df69",
-      "title": "La piattaforma di apprendimento assistito dall'intelligenza artificiale aiuta i robot a ragionare oltre i comandi letterali",
+      "title": "AI-assisted learning platform helps robots reason beyond literal commands",
       "title_en": "AI-assisted learning platform helps robots reason beyond literal commands",
       "url": "https://news.mit.edu/2026/ai-assisted-learning-platform-helps-robots-reason-beyond-literal-commands-1109",
-      "summary": "Il nuovo approccio, noto come FLEX, potrebbe portare a robot domestici e di assistenza più intuitivi e interattivi.",
+      "summary": "The new approach, known as FLEX, could lead to more intuitive, interactive household and assistive robots.",
       "summary_en": "The new approach, known as FLEX, could lead to more intuitive, interactive household and assistive robots.",
       "image": "https://news.mit.edu/sites/default/files/styles/news_article__cover_image__original/public/images/202611/MIT-FLEX-01-press.jpg?itok=811PS9Sd",
       "source": "MIT News AI",
@@ -91,7 +91,7 @@
       "lang": "en",
       "published_at": "2026-11-09T06:00:00+01:00",
       "date": "2026-11-09",
-      "translated": true
+      "translated": false
     }
   ]
 }

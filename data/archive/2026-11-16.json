@@ -1,8 +1,23 @@
 {
   "date": "2026-11-16",
-  "updated_at": "2026-11-16T23:27:40.334125+01:00",
-  "count": 97,
+  "updated_at": "2026-11-17T02:54:00.445623+01:00",
+  "count": 98,
   "articles": [
+    {
+      "id": "5672c177889c4ac2",
+      "title": "Robo-soldier startup backed by Eric Trump misses payroll, may collapse",
+      "title_en": "Robo-soldier startup backed by Eric Trump misses payroll, may collapse",
+      "url": "https://arstechnica.com/ai/2026/11/robo-soldier-startup-backed-by-eric-trump-misses-payroll-may-collapse/",
+      "summary": "Robotics startup misses payroll a year after CEO used funds for luxury home.",
+      "summary_en": "Robotics startup misses payroll a year after CEO used funds for luxury home.",
+      "image": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/Foundation-Phantom-MK-1-mortar-demo-1152x648.jpg",
+      "source": "Ars Technica AI",
+      "category": "Media & Tech",
+      "lang": "en",
+      "published_at": "2026-11-16T23:58:27+01:00",
+      "date": "2026-11-16",
+      "translated": false
+    },
     {
       "id": "4f20b6480ffff64b",
       "title": "Tutte le domande a cui Nvidia dovrebbe rispondere martedì, ma probabilmente non lo farà",

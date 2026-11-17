@@ -1,14 +1,14 @@
 {
   "date": "2026-11-06",
-  "updated_at": "2026-11-16T23:27:40.334125+01:00",
+  "updated_at": "2026-11-17T02:54:00.445623+01:00",
   "count": 1,
   "articles": [
     {
       "id": "0bb49f96544d94ec",
-      "title": "Come prevedere il comportamento delle molecole da dati scarsi",
+      "title": "How to predict the behavior of molecules from scant data",
       "title_en": "How to predict the behavior of molecules from scant data",
       "url": "https://news.mit.edu/2026/how-to-predict-molecule-behavior-with-scant-data-1106",
-      "summary": "Un approccio di apprendimento automatico chiamato CheMeleon fornisce un modo pratico per sviluppare nuovi farmaci o altre molecole con una sperimentazione molto meno dettagliata e costosa.",
+      "summary": "A machine-learning approach called CheMeleon provides a practical way to develop new drugs or other molecules with much less detailed, expensive experimentation.",
       "summary_en": "A machine-learning approach called CheMeleon provides a practical way to develop new drugs or other molecules with much less detailed, expensive experimentation.",
       "image": "https://news.mit.edu/sites/default/files/styles/news_article__cover_image__original/public/images/202610/mit-cheme-chemeleon.jpg?itok=sxUBAH56",
       "source": "MIT News AI",
@@ -16,7 +16,7 @@
       "lang": "en",
       "published_at": "2026-11-06T20:00:00+01:00",
       "date": "2026-11-06",
-      "translated": true
+      "translated": false
     }
   ]
 }

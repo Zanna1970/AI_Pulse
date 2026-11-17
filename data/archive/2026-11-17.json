@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-17",
+  "updated_at": "2026-11-17T02:54:00.445623+01:00",
+  "count": 2,
+  "articles": [
+    {
+      "id": "24baf68da2c147d6",
+      "title": "Cybersecurity AI startup Corma reaches $1B valuation in about 3 months",
+      "title_en": "Cybersecurity AI startup Corma reaches $1B valuation in about 3 months",
+      "url": "https://techcrunch.com/2026/11/16/cybersecurity-ai-startup-corma-reaches-1b-valuation-in-about-3-months/",
+      "summary": "Three months since introducing its product, AI cybersecurity startup Corba has raised a $125 million Series A at a $1 billion valuation led by NEA.",
+      "summary_en": "Three months since introducing its product, AI cybersecurity startup Corba has raised a $125 million Series A at a $1 billion valuation led by NEA.",
+      "image": "",
+      "source": "TechCrunch AI",
+      "category": "Media & Tech",
+      "lang": "en",
+      "published_at": "2026-11-17T00:32:32+01:00",
+      "date": "2026-11-17",
+      "translated": false
+    },
+    {
+      "id": "ae3d9685f670ac12",
+      "title": "Tech leaders are convinced that Jensen Huang’s exit was a plot against him",
+      "title_en": "Tech leaders are convinced that Jensen Huang’s exit was a plot against him",
+      "url": "https://www.theverge.com/tech/1035027/tech-leaders-nvidia-jensen-huang-theories",
+      "summary": "Jensen Huang's stunning resignation from Nvidia after more than 33 years has sent shockwaves throughout the tech industry. Now prominent figures are calling for Huang's reinstatement, and many are also hopping on board with a theory...",
+      "summary_en": "Jensen Huang's stunning resignation from Nvidia after more than 33 years has sent shockwaves throughout the tech industry. Now prominent figures are calling for Huang's reinstatement, and many are also hopping on board with a theory...",
+      "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/gettyimages-2299645290.jpg?quality=90&strip=all&crop=0,0,100,100",
+      "source": "The Verge AI",
+      "category": "Media & Tech",
+      "lang": "en",
+      "published_at": "2026-11-17T00:17:34+01:00",
+      "date": "2026-11-17",
+      "translated": false
+    }
+  ]
+}
