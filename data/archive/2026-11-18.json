@@ -1,0 +1,82 @@
+{
+  "date": "2026-11-18",
+  "updated_at": "2026-11-18T02:01:37.039344+01:00",
+  "count": 5,
+  "articles": [
+    {
+      "id": "26a444a0aabf92a2",
+      "title": "Copilot è \"il nuovo sistema operativo per il lavoro\" e ora Office viene eseguito al suo interno",
+      "title_en": "Copilot is \"the new OS for work,\" and now Office runs inside of it",
+      "url": "https://arstechnica.com/gadgets/2026/11/microsoft-calls-copilot-the-new-os-for-work-at-ignite-keynote/",
+      "summary": "Word, Excel e PowerPoint ora risiedono all'interno di Copilot; gli agenti sempre attivi sono i prossimi.",
+      "summary_en": "Word, Excel, and PowerPoint now live inside Copilot; always-on agents are next.",
+      "image": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/MS_Ignite_Perception.png",
+      "source": "Ars Technica AI",
+      "category": "Media & Tech",
+      "lang": "en",
+      "published_at": "2026-11-18T01:27:29+01:00",
+      "date": "2026-11-18",
+      "translated": true
+    },
+    {
+      "id": "ceeb5bf897d71eb6",
+      "title": "Nvidia promette che le entrate continueranno a salire, per ora",
+      "title_en": "Nvidia promises that revenue will keep soaring — for now",
+      "url": "https://techcrunch.com/2026/11/17/nvidia-promises-that-revenue-will-keep-soaring-for-now/",
+      "summary": "Nonostante il tumulto in cui Nvidia si trova dopo la partenza del suo fondatore e CEO Jensen Huang, caduto in disgrazia, la società prevede che la sua serie di entrate da record non si fermerà.",
+      "summary_en": "Despite the turmoil Nvidia is in after the departure of its disgraced founder and CEO Jensen Huang, the company projected that its streak of record-breaking revenue isn't about to stop.",
+      "image": "",
+      "source": "TechCrunch AI",
+      "category": "Media & Tech",
+      "lang": "en",
+      "published_at": "2026-11-18T01:16:50+01:00",
+      "date": "2026-11-18",
+      "translated": true
+    },
+    {
+      "id": "d34ce25785fdf87b",
+      "title": "Satya Nadella dice che ora è in pillola AGI",
+      "title_en": "Satya Nadella says he’s AGI-pilled now",
+      "url": "https://www.theverge.com/tech/1036111/satya-nadella-says-hes-agi-pilled-now",
+      "summary": "Il CEO di Microsoft, Satya Nadella, afferma di essere in preda all'AGI, almeno per quanto riguarda come l'intelligenza artificiale potrebbe apportare cambiamenti sorprendenti alla struttura dell'economia e come la politica potrebbe cambiare a causa di ciò. \"Sono AGI in pasticcio, nel senso che ad un...",
+      "summary_en": "Microsoft CEO Satya Nadella says he's AGI-pilled, at least when it comes to how AI might make startling changes to the structure of the economy and how politics might change because of it. \"I am AGI pilled in the sense that at an...",
+      "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/Screenshot-2026-11-17-at-3.00.15-PM.png?quality=90&strip=all&crop=0,0,100,100",
+      "source": "The Verge AI",
+      "category": "Media & Tech",
+      "lang": "en",
+      "published_at": "2026-11-18T00:41:18+01:00",
+      "date": "2026-11-18",
+      "translated": true
+    },
+    {
+      "id": "9818d892a2fa5769",
+      "title": "Nvidia abbandona la Cina dopo la cacciata di Jensen Huang",
+      "title_en": "Nvidia is abandoning China after Jensen Huang’s ouster",
+      "url": "https://techcrunch.com/2026/11/17/nvidia-is-abandoning-china-after-jensen-huangs-ouster/",
+      "summary": "Il CEO ad interim di Nvidia afferma che la società ha smesso di vendere chip in Cina. Quanto costerà?",
+      "summary_en": "Nvidia's interim CEO says the company is done selling chips to China. How much will that cost?",
+      "image": "",
+      "source": "TechCrunch AI",
+      "category": "Media & Tech",
+      "lang": "en",
+      "published_at": "2026-11-18T00:37:48+01:00",
+      "date": "2026-11-18",
+      "translated": true
+    },
+    {
+      "id": "8339a30c8d70bc4c",
+      "title": "Nvidia afferma che la sua strategia AI open source rimane intatta dopo l’uscita di Jensen Huang",
+      "title_en": "Nvidia says its open source AI strategy remains intact after Jensen Huang’s exit",
+      "url": "https://techcrunch.com/2026/11/17/nvidia-says-its-open-source-ai-strategy-remains-intact-after-jensen-huangs-exit/",
+      "summary": "Il CEO ad interim di Nvidia ha riaffermato la sua strategia di intelligenza artificiale open source e prevede di acquisire Hugging Face, nonostante l'improvvisa partenza di Jensen Huang.",
+      "summary_en": "Nvidia's interim CEO reaffirmed its open source AI strategy and plans to acquire Hugging Face, despite Jensen Huang's sudden departure.",
+      "image": "",
+      "source": "TechCrunch AI",
+      "category": "Media & Tech",
+      "lang": "en",
+      "published_at": "2026-11-18T00:04:35+01:00",
+      "date": "2026-11-18",
+      "translated": true
+    }
+  ]
+}
