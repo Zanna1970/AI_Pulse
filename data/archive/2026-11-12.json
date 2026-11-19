@@ -1,6 +1,6 @@
 {
   "date": "2026-11-12",
-  "updated_at": "2026-11-19T01:30:58.647042+01:00",
+  "updated_at": "2026-11-19T16:53:47.050283+01:00",
   "count": 27,
   "articles": [
     {
@@ -224,6 +224,7 @@
       "image": "",
       "source": "Google DeepMind",
       "category": "Laboratori",
+      "lang": "en",
       "published_at": "2026-11-12T19:00:50+01:00",
       "date": "2026-11-12",
       "translated": true
@@ -238,6 +239,7 @@
       "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/HydrogenUI_socialshare.max-600x600.format-webp.webp",
       "source": "Google AI Blog",
       "category": "Laboratori",
+      "lang": "en",
       "published_at": "2026-11-12T19:00:00+01:00",
       "date": "2026-11-12",
       "translated": true
