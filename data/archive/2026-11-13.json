@@ -1,6 +1,6 @@
 {
   "date": "2026-11-13",
-  "updated_at": "2026-11-20T16:36:54.159142+01:00",
+  "updated_at": "2026-11-20T21:39:28.015274+01:00",
   "count": 41,
   "articles": [
     {
@@ -83,6 +83,7 @@
       "image": "",
       "source": "Hugging Face",
       "category": "Laboratori",
+      "lang": "en",
       "published_at": "2026-11-13T19:00:39+01:00",
       "date": "2026-11-13",
       "translated": true
@@ -118,7 +119,7 @@
     },
     {
       "id": "96c7f67bef86f831",
-      "title": "XYBench: aiutare con il problema dietro la domanda",
+      "title": "XYBench: Aiutare con il problema dietro la domanda",
       "title_en": "XYBench: Helping with the problem behind the question",
       "url": "https://huggingface.co/blog/allenai/xybench",
       "summary": "",
@@ -126,6 +127,7 @@
       "image": "",
       "source": "Hugging Face",
       "category": "Laboratori",
+      "lang": "en",
       "published_at": "2026-11-13T18:02:35+01:00",
       "date": "2026-11-13",
       "translated": true
