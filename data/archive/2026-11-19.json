@@ -1,29 +1,29 @@
 {
   "date": "2026-11-19",
-  "updated_at": "2026-11-20T01:42:19.958774+01:00",
+  "updated_at": "2026-11-20T16:36:54.159142+01:00",
   "count": 73,
   "articles": [
     {
       "id": "f8133dc16aac0ad5",
-      "title": "Apple is hiring engineers to build its own AI agent",
+      "title": "Apple sta assumendo ingegneri per costruire il proprio agente AI",
       "title_en": "Apple is hiring engineers to build its own AI agent",
       "url": "https://www.theverge.com/tech/1038227/apple-ai-agent-engineer-job-listing",
-      "summary": "Apple is working on its own AI agent that can perform a range of tasks for you, including browsing the web, working across apps, writing code, and calling services. That's according to a job listing spotted by Bloomberg, which says...",
-      "summary_en": "Apple is working on its own AI agent that can perform a range of tasks for you, including browsing the web, working across apps, writing code, and calling services. That's according to a job listing spotted by Bloomberg, which says...",
+      "summary": "Apple sta lavorando al proprio agente AI in grado di eseguire una serie di attività per te, tra cui navigare sul Web, lavorare su più app, scrivere codice e chiamare servizi. Questo è secondo un annuncio di lavoro ora rimosso individuato da Bloomberg,...",
+      "summary_en": "Apple is working on its own AI agent that can perform a range of tasks for you, including browsing the web, working across apps, writing code, and calling services. That's according to a now-removed job listing spotted by Bloomberg,...",
       "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/09/DSC04239.jpg?quality=90&strip=all&crop=0,0,100,100",
       "source": "The Verge AI",
       "category": "Media & Tech",
       "lang": "en",
       "published_at": "2026-11-19T23:31:41+01:00",
       "date": "2026-11-19",
-      "translated": false
+      "translated": true
     },
     {
       "id": "c842cebd4bd1f2ab",
-      "title": "AI helps researchers investigate how thousands of medical studies share code",
+      "title": "L'intelligenza artificiale aiuta i ricercatori a indagare su come migliaia di studi medici condividono il codice",
       "title_en": "AI helps researchers investigate how thousands of medical studies share code",
       "url": "https://news.mit.edu/2026/ai-helps-researchers-investigate-how-medical-studies-share-code-1119",
-      "summary": "An MIT and Dana-Farber Institute-led team used large language models to examine nearly 4,000 studies and hundreds of code repositories, revealing gaps in the information needed to scrutinize and reuse published research.",
+      "summary": "Un team guidato dal MIT e dal Dana-Farber Institute ha utilizzato modelli linguistici di grandi dimensioni per esaminare quasi 4.000 studi e centinaia di archivi di codici, rivelando lacune nelle informazioni necessarie per esaminare e riutilizzare la ricerca pubblicata.",
       "summary_en": "An MIT and Dana-Farber Institute-led team used large language models to examine nearly 4,000 studies and hundreds of code repositories, revealing gaps in the information needed to scrutinize and reuse published research.",
       "image": "https://news.mit.edu/sites/default/files/styles/news_article__cover_image__original/public/images/202611/medical-code-pollard-research-00.jpeg?itok=otuCAojQ",
       "source": "MIT News AI",
@@ -31,14 +31,14 @@
       "lang": "en",
       "published_at": "2026-11-19T23:15:00+01:00",
       "date": "2026-11-19",
-      "translated": false
+      "translated": true
     },
     {
       "id": "a16a060150c59a52",
-      "title": "A brief history of Nvidia’s recent stock fluctuations",
+      "title": "Una breve storia delle recenti fluttuazioni delle azioni di Nvidia",
       "title_en": "A brief history of Nvidia’s recent stock fluctuations",
       "url": "https://www.theverge.com/ai-artificial-intelligence/1038063/nvidia-stock-market-price-earnings",
-      "summary": "\"We've got this,\" Colette Kress, interim CEO of Nvidia, said Tuesday night as she closed out the embattled chip company's third quarter earnings call. By Thursday, the company's stock price was hovering at around $150 per share, a...",
+      "summary": "\"Ci siamo\", ha detto martedì sera Colette Kress, CEO ad interim di Nvidia, chiudendo la conferenza sugli utili del terzo trimestre della società di chip in difficoltà. Giovedì, il prezzo delle azioni della società si aggirava intorno ai 150 dollari per azione, un...",
       "summary_en": "\"We've got this,\" Colette Kress, interim CEO of Nvidia, said Tuesday night as she closed out the embattled chip company's third quarter earnings call. By Thursday, the company's stock price was hovering at around $150 per share, a...",
       "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/gettyimages-2305716823.jpg?quality=90&strip=all&crop=0,0,100,100",
       "source": "The Verge AI",
@@ -46,14 +46,14 @@
       "lang": "en",
       "published_at": "2026-11-19T22:59:35+01:00",
       "date": "2026-11-19",
-      "translated": false
+      "translated": true
     },
     {
       "id": "094a4dd2aa9bf45f",
-      "title": "Meta’s new Muse Charm device may cost $300",
+      "title": "Il nuovo dispositivo Muse Charm di Meta potrebbe costare $ 300",
       "title_en": "Meta’s new Muse Charm device may cost $300",
       "url": "https://techcrunch.com/2026/11/19/metas-new-muse-charm-device-may-cost-300/",
-      "summary": "Meta hasn't denied the reporting from The Information, saying only that it will \"have more to share soon\" about its upcoming AI wearable.",
+      "summary": "Meta non ha negato la segnalazione di The Information, dicendo solo che \"avrà altro da condividere presto\" sul suo prossimo indossabile AI.",
       "summary_en": "Meta hasn't denied the reporting from The Information, saying only that it will \"have more to share soon\" about its upcoming AI wearable.",
       "image": "",
       "source": "TechCrunch AI",
@@ -61,14 +61,14 @@
       "lang": "en",
       "published_at": "2026-11-19T22:58:06+01:00",
       "date": "2026-11-19",
-      "translated": false
+      "translated": true
     },
     {
       "id": "8028310220014671",
-      "title": "These tech outages are giving Y2K, AI agent style",
+      "title": "Queste interruzioni tecnologiche stanno dando Y2K, stile agente AI",
       "title_en": "These tech outages are giving Y2K, AI agent style",
       "url": "https://techcrunch.com/2026/11/19/these-tech-outages-are-giving-y2k-ai-agent-style/",
-      "summary": "Are the recent outages in the airline booking systems, banking platforms, and productivity platforms really a coincidence? There's actually likely something deeper going on, cybersecurity experts say.",
+      "summary": "Le recenti interruzioni nei sistemi di prenotazione aerea, nelle piattaforme bancarie e nelle piattaforme di produttività sono davvero una coincidenza? In realtà probabilmente sta succedendo qualcosa di più profondo, dicono gli esperti di sicurezza informatica.",
       "summary_en": "Are the recent outages in the airline booking systems, banking platforms, and productivity platforms really a coincidence? There's actually likely something deeper going on, cybersecurity experts say.",
       "image": "",
       "source": "TechCrunch AI",
@@ -76,7 +76,7 @@
       "lang": "en",
       "published_at": "2026-11-19T22:42:31+01:00",
       "date": "2026-11-19",
-      "translated": false
+      "translated": true
     },
     {
       "id": "b331a244d62b8fc8",
@@ -965,10 +965,10 @@
     },
     {
       "id": "a890a236270cc5e3",
-      "title": "Deploying Daybreak Red",
+      "title": "Distribuzione di Daybreak Red",
       "title_en": "Deploying Daybreak Red",
       "url": "https://openai.com/business/learn/deploying-daybreak-red",
-      "summary": "Explore a reference architecture for supervised security investigations with Daybreak Red, including safety controls, setup, and monitoring.",
+      "summary": "Esplora un'architettura di riferimento per indagini di sicurezza supervisionate con Daybreak Red, inclusi controlli di sicurezza, configurazione e monitoraggio.",
       "summary_en": "Explore a reference architecture for supervised security investigations with Daybreak Red, including safety controls, setup, and monitoring.",
       "image": "",
       "source": "OpenAI News",
@@ -976,14 +976,14 @@
       "lang": "en",
       "published_at": "2026-11-19T01:00:00+01:00",
       "date": "2026-11-19",
-      "translated": false
+      "translated": true
     },
     {
       "id": "17b7a2b39f098895",
-      "title": "See PR scans in action",
+      "title": "Guarda le scansioni PR in azione",
       "title_en": "See PR scans in action",
       "url": "https://openai.com/business/learn/pr-scans-demo",
-      "summary": "Watch a walkthrough of PR scans and see how the presenter reviews scan results in a pull request workflow.",
+      "summary": "Guarda una panoramica delle scansioni PR e scopri come il relatore esamina i risultati della scansione in un flusso di lavoro di richiesta pull.",
       "summary_en": "Watch a walkthrough of PR scans and see how the presenter reviews scan results in a pull request workflow.",
       "image": "",
       "source": "OpenAI News",
@@ -991,14 +991,14 @@
       "lang": "en",
       "published_at": "2026-11-19T01:00:00+01:00",
       "date": "2026-11-19",
-      "translated": false
+      "translated": true
     },
     {
       "id": "82fe289fe466dcc1",
-      "title": "Explore the Codex Security Plugin",
+      "title": "Esplora il plugin di sicurezza del Codex",
       "title_en": "Explore the Codex Security Plugin",
       "url": "https://openai.com/business/learn/codex-security-plugin-demo",
-      "summary": "Watch a demo of the Codex Security Plugin and see the workflow in action, from getting started to reviewing the results shown in the recording.",
+      "summary": "Guarda una demo del Codex Security Plugin e osserva il flusso di lavoro in azione, dall'inizio alla revisione dei risultati mostrati nella registrazione.",
       "summary_en": "Watch a demo of the Codex Security Plugin and see the workflow in action, from getting started to reviewing the results shown in the recording.",
       "image": "",
       "source": "OpenAI News",
@@ -1006,14 +1006,14 @@
       "lang": "en",
       "published_at": "2026-11-19T01:00:00+01:00",
       "date": "2026-11-19",
-      "translated": false
+      "translated": true
     },
     {
       "id": "da30645137037f00",
-      "title": "Get started with Daybreak Blue",
+      "title": "Inizia con Daybreak Blue",
       "title_en": "Get started with Daybreak Blue",
       "url": "https://openai.com/business/learn/daybreak-blue-onboarding-demo",
-      "summary": "Watch a walkthrough of onboarding to Daybreak Blue, with a closer look at the setup experience and how to get started.",
+      "summary": "Guarda una panoramica dell'onboarding in Daybreak Blue, con uno sguardo più da vicino all'esperienza di configurazione e a come iniziare.",
       "summary_en": "Watch a walkthrough of onboarding to Daybreak Blue, with a closer look at the setup experience and how to get started.",
       "image": "",
       "source": "OpenAI News",
@@ -1021,7 +1021,7 @@
       "lang": "en",
       "published_at": "2026-11-19T01:00:00+01:00",
       "date": "2026-11-19",
-      "translated": false
+      "translated": true
     },
     {
       "id": "5bad8737440aac2b",
