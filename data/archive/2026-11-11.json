@@ -1,6 +1,6 @@
 {
   "date": "2026-11-11",
-  "updated_at": "2026-11-19T21:55:05.072720+01:00",
+  "updated_at": "2026-11-20T01:42:19.958774+01:00",
   "count": 13,
   "articles": [
     {
@@ -19,10 +19,10 @@
     },
     {
       "id": "c06fca3b9549fb95",
-      "title": "API Gemini Decisions: decisioni multimodali veloci e calibrate",
+      "title": "Gemini Decisions API: Fast, calibrated multimodal decisions",
       "title_en": "Gemini Decisions API: Fast, calibrated multimodal decisions",
       "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
-      "summary": "Scopri l'API Gemini Decisions, basata sul nostro modello all'avanguardia Gemini Decision per decisioni multimodali rapide e calibrate.",
+      "summary": "Meet the Gemini Decisions API, powered by our state-of-the-art model Gemini Decision for fast, calibrated multimodal decisions.",
       "summary_en": "Meet the Gemini Decisions API, powered by our state-of-the-art model Gemini Decision for fast, calibrated multimodal decisions.",
       "image": "",
       "source": "Google AI Blog",
@@ -30,7 +30,7 @@
       "lang": "en",
       "published_at": "2026-11-11T19:00:00+01:00",
       "date": "2026-11-11",
-      "translated": true
+      "translated": false
     },
     {
       "id": "5e08e87b87fd5b69",
@@ -48,10 +48,10 @@
     },
     {
       "id": "eac4d84ef949975e",
-      "title": "Prova Tabletop: spazi collaborativi e personalizzabili in cui i gruppi possono pianificare, giocare e fare di più insieme.",
+      "title": "Try Tabletop: Customizable, collaborative spaces for groups to plan, play and do more together.",
       "title_en": "Try Tabletop: Customizable, collaborative spaces for groups to plan, play and do more together.",
       "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/tabletop/",
-      "summary": "Tabletop è un nuovo esperimento di Google Labs per la collaborazione di gruppo. Crea percorsi interattivi, sondaggi e parentesi con il tuo team. Iscriviti alla lista d'attesa.",
+      "summary": "Tabletop is a new Google Labs experiment for group collaboration. Build interactive itineraries, polls, and brackets with your team. Join the waitlist.",
       "summary_en": "Tabletop is a new Google Labs experiment for group collaboration. Build interactive itineraries, polls, and brackets with your team. Join the waitlist.",
       "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/labs_tabletop_blog_image_2784x1.max-600x600.format-webp.webp",
       "source": "Google AI Blog",
@@ -59,14 +59,14 @@
       "lang": "en",
       "published_at": "2026-11-11T17:00:00+01:00",
       "date": "2026-11-11",
-      "translated": true
+      "translated": false
     },
     {
       "id": "833534b672b8daa3",
-      "title": "AlphaGenome 2: decifrare il modo in cui le cellule leggono il DNA per comprendere meglio la malattia",
+      "title": "AlphaGenome 2: Deciphering how cells read DNA to better understand disease",
       "title_en": "AlphaGenome 2: Deciphering how cells read DNA to better understand disease",
       "url": "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/",
-      "summary": "Predire in che modo le sequenze di DNA e le loro variazioni influiscono su specifici tipi di cellule umane e malattie.",
+      "summary": "Predicting how DNA sequences and their variations impact specific human cell types and disease.",
       "summary_en": "Predicting how DNA sequences and their variations impact specific human cell types and disease.",
       "image": "https://lh3.googleusercontent.com/VPOhADdGu1T7kK_gWBiGzyVawQbKCjpL3-B0L0wxpYCyr8cHxviYmo9Hghy4f1laeIo2YKwuz8E07TR9HWWk2b0EONi0uvju-8TDLHX6YWHG4dXe3w=w528-h297-n-nu-rw-lo",
       "source": "Google DeepMind",
@@ -74,7 +74,7 @@
       "lang": "en",
       "published_at": "2026-11-11T16:00:15+01:00",
       "date": "2026-11-11",
-      "translated": true
+      "translated": false
     },
     {
       "id": "b5b225f8da047fd6",
@@ -121,10 +121,10 @@
     },
     {
       "id": "8e8e851f9ac38a19",
-      "title": "Scopri l'arte e l'eredità della dottoressa Esther Mahlangu",
+      "title": "Experience the art and legacy of Dr. Esther Mahlangu",
       "title_en": "Experience the art and legacy of Dr. Esther Mahlangu",
       "url": "https://blog.google/company-news/outreach-and-initiatives/arts-culture/esther-mahlangu/",
-      "summary": "Un ritratto del dottor Nontobeko Ntombela, docente senior, Dipartimento di culture curatoriali, pubbliche e visive, Wits School of Arts, Università del Witwatersrand",
+      "summary": "A portrait of Dr Nontobeko Ntombela, Senior Lecturer, Department of Curatorial, Public and Visual Cultures, Wits School of Arts, University of the Witwatersrand",
       "summary_en": "A portrait of Dr Nontobeko Ntombela, Senior Lecturer, Department of Curatorial, Public and Visual Cultures, Wits School of Arts, University of the Witwatersrand",
       "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/esther_video_still.max-600x600.format-webp.webp",
       "source": "Google AI Blog",
@@ -132,7 +132,7 @@
       "lang": "en",
       "published_at": "2026-11-11T10:00:00+01:00",
       "date": "2026-11-11",
-      "translated": true
+      "translated": false
     },
     {
       "id": "ac94b61a25ade5ed",

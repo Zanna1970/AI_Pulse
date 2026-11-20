@@ -1,6 +1,6 @@
 {
   "date": "2026-11-12",
-  "updated_at": "2026-11-19T21:55:05.072720+01:00",
+  "updated_at": "2026-11-20T01:42:19.958774+01:00",
   "count": 27,
   "articles": [
     {
@@ -159,7 +159,7 @@
     },
     {
       "id": "84ec87286cb35a64",
-      "title": "LLMON: un linguaggio di markup nativo LLM, ora in Granite 4.1 3B e 8B",
+      "title": "LLMON: An LLM-Native Markup Language, now in Granite 4.1 3B and 8B",
       "title_en": "LLMON: An LLM-Native Markup Language, now in Granite 4.1 3B and 8B",
       "url": "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite",
       "summary": "",
@@ -170,7 +170,7 @@
       "lang": "en",
       "published_at": "2026-11-12T20:07:35+01:00",
       "date": "2026-11-12",
-      "translated": true
+      "translated": false
     },
     {
       "id": "bcd74023a99fbd1f",
@@ -217,7 +217,7 @@
     },
     {
       "id": "c7a410ad3b862809",
-      "title": "Presentazione di Gemini 4 Hydrogen",
+      "title": "Introducing Gemini 4 Hydrogen",
       "title_en": "Introducing Gemini 4 Hydrogen",
       "url": "https://deepmind.google/blog/introducing-gemini-4-hydrogen/",
       "summary": "",
@@ -228,14 +228,14 @@
       "lang": "en",
       "published_at": "2026-11-12T19:00:50+01:00",
       "date": "2026-11-12",
-      "translated": true
+      "translated": false
     },
     {
       "id": "f19cddd04797ae7d",
-      "title": "La Ricerca Google ottiene un importante aggiornamento con Gemini 4 Hydrogen",
+      "title": "Google Search gets a major upgrade with Gemini 4 Hydrogen",
       "title_en": "Google Search gets a major upgrade with Gemini 4 Hydrogen",
       "url": "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/",
-      "summary": "Carosello rotante di carte con il testo \"Gemini 4 Hydrogen\" \"Now in Google Search\" ed esempi dall'interfaccia utente di Ricerca Google",
+      "summary": "Rotating carousel of cards with text \"Gemini 4 Hydrogen\" \"Now in Google Search\" and examples from the Google Search UI",
       "summary_en": "Rotating carousel of cards with text \"Gemini 4 Hydrogen\" \"Now in Google Search\" and examples from the Google Search UI",
       "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/HydrogenUI_socialshare.max-600x600.format-webp.webp",
       "source": "Google AI Blog",
@@ -243,7 +243,7 @@
       "lang": "en",
       "published_at": "2026-11-12T19:00:00+01:00",
       "date": "2026-11-12",
-      "translated": true
+      "translated": false
     },
     {
       "id": "a735380bbdd8a3c9",

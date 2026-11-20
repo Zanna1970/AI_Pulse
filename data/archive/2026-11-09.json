@@ -1,14 +1,14 @@
 {
   "date": "2026-11-09",
-  "updated_at": "2026-11-19T21:55:05.072720+01:00",
+  "updated_at": "2026-11-20T01:42:19.958774+01:00",
   "count": 6,
   "articles": [
     {
       "id": "8827aad4505e69ef",
-      "title": "Gemini Robotics 2.5 accelera la destrezza generale del mondo reale",
+      "title": "Gemini Robotics 2.5 accelerates real-world general dexterity",
       "title_en": "Gemini Robotics 2.5 accelerates real-world general dexterity",
       "url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/",
-      "summary": "Il nostro modello visione-linguaggio-azione più efficace migliora la destrezza, l’affidabilità e la sicurezza del robot",
+      "summary": "Our most capable vision-language-action model enhances robot dexterity, reliability, and safety",
       "summary_en": "Our most capable vision-language-action model enhances robot dexterity, reliability, and safety",
       "image": "https://lh3.googleusercontent.com/F1CrVEYRb8lJOyyxGgcyow-Td1de-nkp7K8MZrhjrKPANJUc0EYB754Ninn-Yrppjdb54nolOWo6Rk8iDaRNuixWwLaEKc0K9ImGooxen9fj9IOh=w528-h297-n-nu-rw-lo",
       "source": "Google DeepMind",
@@ -16,7 +16,7 @@
       "lang": "en",
       "published_at": "2026-11-09T20:51:47+01:00",
       "date": "2026-11-09",
-      "translated": true
+      "translated": false
     },
     {
       "id": "a0dbf5e971943802",
@@ -50,10 +50,10 @@
     },
     {
       "id": "174d32c755b396f0",
-      "title": "BAIR al CoRL 2026",
+      "title": "BAIR at CoRL 2026",
       "title_en": "BAIR at CoRL 2026",
       "url": "http://bair.berkeley.edu/blog/2026/11/09/bair-at-corl-2026/",
-      "summary": "La Conference on Robot Learning (CoRL) si svolgerà dal 9 al 12 novembre 2026 ad Austin, in Texas. I docenti, i dottorandi e gli studenti del BAIR presenteranno la ricerca in varie sessioni, incluso un keynote sull'inizio della carriera del professor Negar Mehr....",
+      "summary": "The Conference on Robot Learning (CoRL) takes place November 9–12, 2026, in Austin, Texas. BAIR faculty, postdocs and students will be presenting research at various sessions, including an Early Career Keynote from Professor Negar Mehr....",
       "summary_en": "The Conference on Robot Learning (CoRL) takes place November 9–12, 2026, in Austin, Texas. BAIR faculty, postdocs and students will be presenting research at various sessions, including an Early Career Keynote from Professor Negar Mehr....",
       "image": "",
       "source": "BAIR Berkeley",
@@ -61,7 +61,7 @@
       "lang": "en",
       "published_at": "2026-11-09T10:00:00+01:00",
       "date": "2026-11-09",
-      "translated": true
+      "translated": false
     },
     {
       "id": "6fbb9cbc09ce7eb4",
