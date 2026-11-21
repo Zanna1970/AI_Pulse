@@ -1,14 +1,14 @@
 {
   "date": "2026-07-01",
-  "updated_at": "2026-11-20T21:39:28.015274+01:00",
+  "updated_at": "2026-11-21T01:02:20.484977+01:00",
   "count": 1,
   "articles": [
     {
       "id": "5469d96a2734fae0",
-      "title": "Vetrina dei laureati BAIR 2026",
+      "title": "2026 BAIR Graduate Showcase",
       "title_en": "2026 BAIR Graduate Showcase",
       "url": "http://bair.berkeley.edu/blog/2026/07/01/grads-2026/",
-      "summary": "Congratulazioni al corso del Berkeley Artificial Intelligence Research (BAIR) Lab del 2026! Quest'anno, BAIR celebra un altro straordinario gruppo di dottorandi. laureati la cui curiosità, creatività e perseveranza hanno ampliato le frontiere del...",
+      "summary": "Congratulations to the Berkeley Artificial Intelligence Research (BAIR) Lab class of 2026! This year, BAIR celebrates another remarkable group of Ph.D. graduates whose curiosity, creativity, and perseverance have pushed the frontiers of...",
       "summary_en": "Congratulations to the Berkeley Artificial Intelligence Research (BAIR) Lab class of 2026! This year, BAIR celebrates another remarkable group of Ph.D. graduates whose curiosity, creativity, and perseverance have pushed the frontiers of...",
       "image": "https://bair.berkeley.edu/static/blog/grads2026/baifeng-shi.jpg",
       "source": "BAIR Berkeley",
@@ -16,7 +16,7 @@
       "lang": "en",
       "published_at": "2026-07-01T11:00:00+02:00",
       "date": "2026-07-01",
-      "translated": true
+      "translated": false
     }
   ]
 }

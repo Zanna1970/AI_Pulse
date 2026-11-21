@@ -1,8 +1,83 @@
 {
   "date": "2026-11-20",
-  "updated_at": "2026-11-20T21:39:28.015274+01:00",
-  "count": 58,
+  "updated_at": "2026-11-21T01:02:20.484977+01:00",
+  "count": 64,
   "articles": [
+    {
+      "id": "ae5a204aaba705d5",
+      "title": "Google rolls out new search homepage with AI chat history and no search button",
+      "title_en": "Google rolls out new search homepage with AI chat history and no search button",
+      "url": "https://arstechnica.com/ai/2026/11/googles-latest-search-page-redesign-drops-the-search-button-adds-ai-sidebar/",
+      "summary": "Google search is making it even easier to access AI tools on the search page.",
+      "summary_en": "Google search is making it even easier to access AI tools on the search page.",
+      "image": "https://cdn.arstechnica.net/wp-content/uploads/2026/06/google-sign-logo-1152x648.jpg",
+      "source": "Ars Technica AI",
+      "category": "Media & Tech",
+      "lang": "en",
+      "published_at": "2026-11-20T22:58:29+01:00",
+      "date": "2026-11-20",
+      "translated": false
+    },
+    {
+      "id": "85d0c5a4a983edfb",
+      "title": "Meta reconsiders 2030 net-zero goal amid record emissions from AI data centers",
+      "title_en": "Meta reconsiders 2030 net-zero goal amid record emissions from AI data centers",
+      "url": "https://arstechnica.com/ai/2026/11/meta-reconsiders-2030-net-zero-goal-amid-record-emissions-from-ai-data-centers/",
+      "summary": "Meta is “re-evaluating” 2030 sustainability goals. Will others follow?",
+      "summary_en": "Meta is “re-evaluating” 2030 sustainability goals. Will others follow?",
+      "image": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/Meta-El-Paso-data-center-1152x648.jpg",
+      "source": "Ars Technica AI",
+      "category": "Media & Tech",
+      "lang": "en",
+      "published_at": "2026-11-20T22:47:10+01:00",
+      "date": "2026-11-20",
+      "translated": false
+    },
+    {
+      "id": "35c2239500f319c9",
+      "title": "Q&A: Enabling more human-like interactions and understanding in multimodal foundation models",
+      "title_en": "Q&A: Enabling more human-like interactions and understanding in multimodal foundation models",
+      "url": "https://news.mit.edu/2026/qa-enabling-more-human-interactions-understanding-multimodal-foundation-models-1120",
+      "summary": "Senior Research Scientist Jim Glass discusses how his MIT-IBM Computing Research Lab collaboration connects perception and language, and addresses the shortcoming of current models.",
+      "summary_en": "Senior Research Scientist Jim Glass discusses how his MIT-IBM Computing Research Lab collaboration connects perception and language, and addresses the shortcoming of current models.",
+      "image": "https://news.mit.edu/sites/default/files/styles/news_article__cover_image__original/public/images/202610/mit-ibm-multimodal.jpg?itok=5RCVRMBS",
+      "source": "MIT News AI",
+      "category": "Ricerca",
+      "lang": "en",
+      "published_at": "2026-11-20T22:00:00+01:00",
+      "date": "2026-11-20",
+      "translated": false
+    },
+    {
+      "id": "cc88c546d1214b65",
+      "title": "Researcher plants 2m canaries into the AI supply chain. A privacy disaster surfaced.",
+      "title_en": "Researcher plants 2m canaries into the AI supply chain. A privacy disaster surfaced.",
+      "url": "https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate/",
+      "summary": "Test using prompts with unique, trackable secrets proves that data doesn't stay private.",
+      "summary_en": "Test using prompts with unique, trackable secrets proves that data doesn't stay private.",
+      "image": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/ai-privacy-leakage-1152x648.jpg",
+      "source": "Ars Technica AI",
+      "category": "Media & Tech",
+      "lang": "en",
+      "published_at": "2026-11-20T21:59:08+01:00",
+      "date": "2026-11-20",
+      "translated": false
+    },
+    {
+      "id": "b2926e8e7f4e634a",
+      "title": "New approach enables physically consistent AI models of chaotic systems",
+      "title_en": "New approach enables physically consistent AI models of chaotic systems",
+      "url": "https://news.mit.edu/new-approach-enables-physically-consistent-ai-models-chaotic-systems-1120",
+      "summary": "Enforcing physics-based constraints prevents AI models from generating unreliable predictions for complex nonlinear systems in weather, climate, and turbulent flows.",
+      "summary_en": "Enforcing physics-based constraints prevents AI models from generating unreliable predictions for complex nonlinear systems in weather, climate, and turbulent flows.",
+      "image": "https://news.mit.edu/sites/default/files/styles/news_article__cover_image__original/public/images/202611/mit-lids-stable_chaos.jpg?itok=yDuaaSB5",
+      "source": "MIT News AI",
+      "category": "Ricerca",
+      "lang": "en",
+      "published_at": "2026-11-20T21:00:00+01:00",
+      "date": "2026-11-20",
+      "translated": false
+    },
     {
       "id": "05d06a2ae37185a1",
       "title": "Daniel Ek sostiene la startup sull’energia da fusione di un ricercatore di intelligenza artificiale. Ecco cosa stanno costruendo.",
@@ -872,6 +947,21 @@
       "published_at": "2026-11-20T01:00:00+01:00",
       "date": "2026-11-20",
       "translated": true
+    },
+    {
+      "id": "8145fefb47ff1ca9",
+      "title": "Hebbia sees improvements in financial research with GPT-6 Astra",
+      "title_en": "Hebbia sees improvements in financial research with GPT-6 Astra",
+      "url": "https://openai.com/business/customer-stories/hebbia",
+      "summary": "Hebbia tested GPT-6 Astra for financial research. Its prerelease evaluations found gains in source coverage, citation relevance, and presentation quality.",
+      "summary_en": "Hebbia tested GPT-6 Astra for financial research. Its prerelease evaluations found gains in source coverage, citation relevance, and presentation quality.",
+      "image": "",
+      "source": "OpenAI News",
+      "category": "Laboratori",
+      "lang": "en",
+      "published_at": "2026-11-20T01:00:00+01:00",
+      "date": "2026-11-20",
+      "translated": false
     }
   ]
 }

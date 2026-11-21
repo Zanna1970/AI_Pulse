@@ -1,14 +1,14 @@
 {
   "date": "2026-05-08",
-  "updated_at": "2026-11-20T21:39:28.015274+01:00",
+  "updated_at": "2026-11-21T01:02:20.484977+01:00",
   "count": 1,
   "articles": [
     {
       "id": "e59d5123a62637ac",
-      "title": "Ragionamento parallelo adattivo: il prossimo paradigma nello scaling efficiente dell'inferenza",
+      "title": "Adaptive Parallel Reasoning: The Next Paradigm in Efficient Inference Scaling",
       "title_en": "Adaptive Parallel Reasoning: The Next Paradigm in Efficient Inference Scaling",
       "url": "http://bair.berkeley.edu/blog/2026/05/08/adaptive-parallel-reasoning/",
-      "summary": "Panoramica del ragionamento parallelo adattivo. E se un modello di ragionamento potesse decidere da solo quando scomporre e parallelizzare sottoattività indipendenti, quanti thread simultanei generare e come coordinarli in base al problema in...",
+      "summary": "Overview of adaptive parallel reasoning. What if a reasoning model could decide for itself when to decompose and parallelize independent subtasks, how many concurrent threads to spawn, and how to coordinate them based on the problem at...",
       "summary_en": "Overview of adaptive parallel reasoning. What if a reasoning model could decide for itself when to decompose and parallelize independent subtasks, how many concurrent threads to spawn, and how to coordinate them based on the problem at...",
       "image": "https://bair.berkeley.edu/static/blog/adaptive-parallel-reasoning/cover.png",
       "source": "BAIR Berkeley",
@@ -16,7 +16,7 @@
       "lang": "en",
       "published_at": "2026-05-08T11:00:00+02:00",
       "date": "2026-05-08",
-      "translated": true
+      "translated": false
     }
   ]
 }

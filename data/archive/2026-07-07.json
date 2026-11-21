@@ -1,14 +1,14 @@
 {
   "date": "2026-07-07",
-  "updated_at": "2026-11-20T21:39:28.015274+01:00",
+  "updated_at": "2026-11-21T01:02:20.484977+01:00",
   "count": 1,
   "articles": [
     {
       "id": "95808a680e9a2770",
-      "title": "L'intelligenza è gratuita, e adesso? Sistemi di dati per, di e da parte degli agenti",
+      "title": "Intelligence is Free, Now What? Data Systems for, of, and by Agents",
       "title_en": "Intelligence is Free, Now What? Data Systems for, of, and by Agents",
       "url": "http://bair.berkeley.edu/blog/2026/07/07/intelligence-is-free-now-what/",
-      "summary": "... governo del popolo, dal popolo, per il popolo... - Abraham Lincoln, Discorso di Gettysburg (1863) Il costo dell'intelligenza artificiale sta diminuendo rapidamente. Le funzionalità di classe GPT-4 costano circa 30 dollari per milione di token all’inizio del 2023; oggi lo stesso...",
+      "summary": "... government of the people, by the people, for the people ... — Abraham Lincoln, Gettysburg Address (1863) The cost of AI is dropping rapidly. GPT-4-class capabilities cost roughly $30 per million tokens in early 2023; today the same...",
       "summary_en": "... government of the people, by the people, for the people ... — Abraham Lincoln, Gettysburg Address (1863) The cost of AI is dropping rapidly. GPT-4-class capabilities cost roughly $30 per million tokens in early 2023; today the same...",
       "image": "https://bair.berkeley.edu/static/blog/intelligence-is-free-now-what/image6.png",
       "source": "BAIR Berkeley",
@@ -16,7 +16,7 @@
       "lang": "en",
       "published_at": "2026-07-07T11:00:00+02:00",
       "date": "2026-07-07",
-      "translated": true
+      "translated": false
     }
   ]
 }
