@@ -1,14 +1,14 @@
 {
   "date": "2026-11-20",
-  "updated_at": "2026-11-21T01:02:20.484977+01:00",
+  "updated_at": "2026-11-21T15:46:37.057030+01:00",
   "count": 64,
   "articles": [
     {
       "id": "ae5a204aaba705d5",
-      "title": "Google rolls out new search homepage with AI chat history and no search button",
+      "title": "Google lancia una nuova home page di ricerca con cronologia chat AI e nessun pulsante di ricerca",
       "title_en": "Google rolls out new search homepage with AI chat history and no search button",
       "url": "https://arstechnica.com/ai/2026/11/googles-latest-search-page-redesign-drops-the-search-button-adds-ai-sidebar/",
-      "summary": "Google search is making it even easier to access AI tools on the search page.",
+      "summary": "La ricerca di Google rende ancora più semplice l'accesso agli strumenti di intelligenza artificiale nella pagina di ricerca.",
       "summary_en": "Google search is making it even easier to access AI tools on the search page.",
       "image": "https://cdn.arstechnica.net/wp-content/uploads/2026/06/google-sign-logo-1152x648.jpg",
       "source": "Ars Technica AI",
@@ -16,14 +16,14 @@
       "lang": "en",
       "published_at": "2026-11-20T22:58:29+01:00",
       "date": "2026-11-20",
-      "translated": false
+      "translated": true
     },
     {
       "id": "85d0c5a4a983edfb",
-      "title": "Meta reconsiders 2030 net-zero goal amid record emissions from AI data centers",
+      "title": "Meta riconsidera l’obiettivo di zero emissioni nette entro il 2030 tra le emissioni record dei data center IA",
       "title_en": "Meta reconsiders 2030 net-zero goal amid record emissions from AI data centers",
       "url": "https://arstechnica.com/ai/2026/11/meta-reconsiders-2030-net-zero-goal-amid-record-emissions-from-ai-data-centers/",
-      "summary": "Meta is “re-evaluating” 2030 sustainability goals. Will others follow?",
+      "summary": "Meta sta “rivalutando” gli obiettivi di sostenibilità del 2030. Ne seguiranno altri?",
       "summary_en": "Meta is “re-evaluating” 2030 sustainability goals. Will others follow?",
       "image": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/Meta-El-Paso-data-center-1152x648.jpg",
       "source": "Ars Technica AI",
@@ -31,14 +31,14 @@
       "lang": "en",
       "published_at": "2026-11-20T22:47:10+01:00",
       "date": "2026-11-20",
-      "translated": false
+      "translated": true
     },
     {
       "id": "35c2239500f319c9",
-      "title": "Q&A: Enabling more human-like interactions and understanding in multimodal foundation models",
+      "title": "Domande e risposte: consentire interazioni e comprensione più simili a quelle umane nei modelli di base multimodali",
       "title_en": "Q&A: Enabling more human-like interactions and understanding in multimodal foundation models",
       "url": "https://news.mit.edu/2026/qa-enabling-more-human-interactions-understanding-multimodal-foundation-models-1120",
-      "summary": "Senior Research Scientist Jim Glass discusses how his MIT-IBM Computing Research Lab collaboration connects perception and language, and addresses the shortcoming of current models.",
+      "summary": "Il ricercatore senior Jim Glass spiega come la sua collaborazione tra il MIT e l'IBM Computing Research Lab collega percezione e linguaggio e affronta le lacune dei modelli attuali.",
       "summary_en": "Senior Research Scientist Jim Glass discusses how his MIT-IBM Computing Research Lab collaboration connects perception and language, and addresses the shortcoming of current models.",
       "image": "https://news.mit.edu/sites/default/files/styles/news_article__cover_image__original/public/images/202610/mit-ibm-multimodal.jpg?itok=5RCVRMBS",
       "source": "MIT News AI",
@@ -46,14 +46,14 @@
       "lang": "en",
       "published_at": "2026-11-20T22:00:00+01:00",
       "date": "2026-11-20",
-      "translated": false
+      "translated": true
     },
     {
       "id": "cc88c546d1214b65",
-      "title": "Researcher plants 2m canaries into the AI supply chain. A privacy disaster surfaced.",
+      "title": "Un ricercatore pianta 2 milioni di canarini nella catena di approvvigionamento dell'intelligenza artificiale. È emerso un disastro sulla privacy.",
       "title_en": "Researcher plants 2m canaries into the AI supply chain. A privacy disaster surfaced.",
       "url": "https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate/",
-      "summary": "Test using prompts with unique, trackable secrets proves that data doesn't stay private.",
+      "summary": "I test che utilizzano prompt con segreti univoci e tracciabili dimostrano che i dati non rimangono privati.",
       "summary_en": "Test using prompts with unique, trackable secrets proves that data doesn't stay private.",
       "image": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/ai-privacy-leakage-1152x648.jpg",
       "source": "Ars Technica AI",
@@ -61,14 +61,14 @@
       "lang": "en",
       "published_at": "2026-11-20T21:59:08+01:00",
       "date": "2026-11-20",
-      "translated": false
+      "translated": true
     },
     {
       "id": "b2926e8e7f4e634a",
-      "title": "New approach enables physically consistent AI models of chaotic systems",
+      "title": "Il nuovo approccio consente modelli di intelligenza artificiale fisicamente coerenti di sistemi caotici",
       "title_en": "New approach enables physically consistent AI models of chaotic systems",
       "url": "https://news.mit.edu/new-approach-enables-physically-consistent-ai-models-chaotic-systems-1120",
-      "summary": "Enforcing physics-based constraints prevents AI models from generating unreliable predictions for complex nonlinear systems in weather, climate, and turbulent flows.",
+      "summary": "L’applicazione di vincoli basati sulla fisica impedisce ai modelli di intelligenza artificiale di generare previsioni inaffidabili per sistemi non lineari complessi in condizioni meteorologiche, climatiche e flussi turbolenti.",
       "summary_en": "Enforcing physics-based constraints prevents AI models from generating unreliable predictions for complex nonlinear systems in weather, climate, and turbulent flows.",
       "image": "https://news.mit.edu/sites/default/files/styles/news_article__cover_image__original/public/images/202611/mit-lids-stable_chaos.jpg?itok=yDuaaSB5",
       "source": "MIT News AI",
@@ -76,7 +76,7 @@
       "lang": "en",
       "published_at": "2026-11-20T21:00:00+01:00",
       "date": "2026-11-20",
-      "translated": false
+      "translated": true
     },
     {
       "id": "05d06a2ae37185a1",
@@ -950,10 +950,10 @@
     },
     {
       "id": "8145fefb47ff1ca9",
-      "title": "Hebbia sees improvements in financial research with GPT-6 Astra",
+      "title": "Hebbia vede miglioramenti nella ricerca finanziaria con GPT-6 Astra",
       "title_en": "Hebbia sees improvements in financial research with GPT-6 Astra",
       "url": "https://openai.com/business/customer-stories/hebbia",
-      "summary": "Hebbia tested GPT-6 Astra for financial research. Its prerelease evaluations found gains in source coverage, citation relevance, and presentation quality.",
+      "summary": "Hebbia ha testato GPT-6 Astra per la ricerca finanziaria. Le sue valutazioni preliminari hanno riscontrato miglioramenti nella copertura delle fonti, nella pertinenza delle citazioni e nella qualità della presentazione.",
       "summary_en": "Hebbia tested GPT-6 Astra for financial research. Its prerelease evaluations found gains in source coverage, citation relevance, and presentation quality.",
       "image": "",
       "source": "OpenAI News",
@@ -961,7 +961,7 @@
       "lang": "en",
       "published_at": "2026-11-20T01:00:00+01:00",
       "date": "2026-11-20",
-      "translated": false
+      "translated": true
     }
   ]
 }

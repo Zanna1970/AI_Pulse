@@ -1,6 +1,6 @@
 {
   "date": "2026-11-10",
-  "updated_at": "2026-11-21T01:02:20.484977+01:00",
+  "updated_at": "2026-11-21T15:46:37.057030+01:00",
   "count": 12,
   "articles": [
     {
@@ -19,10 +19,10 @@
     },
     {
       "id": "c0101f36ad82bf91",
-      "title": "Gemini Intelligence: New features, on more devices",
+      "title": "Gemini Intelligence: nuove funzionalità, su più dispositivi",
       "title_en": "Gemini Intelligence: New features, on more devices",
       "url": "https://blog.google/products-and-platforms/platforms/android/gemini-intelligence-november-features-devices/",
-      "summary": "A man speaks into a phone. Text on the screen reads 'Gemini Intelligence'",
+      "summary": "Un uomo parla al telefono. Il testo sullo schermo recita \"Gemini Intelligence\"",
       "summary_en": "A man speaks into a phone. Text on the screen reads 'Gemini Intelligence'",
       "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_Intelligence_Signature27.max-600x600.format-webp.webp",
       "source": "Google AI Blog",
@@ -30,11 +30,11 @@
       "lang": "en",
       "published_at": "2026-11-10T20:00:00+01:00",
       "date": "2026-11-10",
-      "translated": false
+      "translated": true
     },
     {
       "id": "6d8eb3bcd497222d",
-      "title": "Gemini 4 Carbon is now available",
+      "title": "Gemini 4 Carbon è ora disponibile",
       "title_en": "Gemini 4 Carbon is now available",
       "url": "https://deepmind.google/blog/gemini-4-carbon-is-now-available/",
       "summary": "",
@@ -45,7 +45,7 @@
       "lang": "en",
       "published_at": "2026-11-10T17:03:47+01:00",
       "date": "2026-11-10",
-      "translated": false
+      "translated": true
     },
     {
       "id": "59a8a5dd3afc5312",
@@ -93,10 +93,10 @@
     },
     {
       "id": "f321c904268bcef2",
-      "title": "Introducing AlphaProof Code: a breakthrough in verifying complex software at depth",
+      "title": "Presentazione di AlphaProof Code: una svolta nella verifica approfondita di software complessi",
       "title_en": "Introducing AlphaProof Code: a breakthrough in verifying complex software at depth",
       "url": "https://deepmind.google/blog/introducing-alphaproof-code/",
-      "summary": "AlphaProof Code agents wrote three million lines of proofs in Lean to verify Signal’s core encryption.",
+      "summary": "Gli agenti di AlphaProof Code hanno scritto tre milioni di righe di prove in Lean per verificare la crittografia principale di Signal.",
       "summary_en": "AlphaProof Code agents wrote three million lines of proofs in Lean to verify Signal’s core encryption.",
       "image": "https://lh3.googleusercontent.com/hn6AiI6lYFo6chi1mL6uJ9nOW9UXfsAKnSyOApiie2urHNU2tmSPUmGn0hNfWyYLRcsWCGjCIrBZSCt1ihZmvW-LDJPfyolsr5w-yvzlknZVzmaH=w528-h297-n-nu-rw-lo",
       "source": "Google DeepMind",
@@ -104,7 +104,7 @@
       "lang": "en",
       "published_at": "2026-11-10T13:02:28+01:00",
       "date": "2026-11-10",
-      "translated": false
+      "translated": true
     },
     {
       "id": "0f0020abcf733229",
@@ -122,10 +122,10 @@
     },
     {
       "id": "d0f9bf46fa9dba7c",
-      "title": "Opening the datasets behind our AI weather models",
+      "title": "Apertura dei set di dati dietro i nostri modelli meteorologici AI",
       "title_en": "Opening the datasets behind our AI weather models",
       "url": "https://deepmind.google/blog/opening-the-datasets-behind-our-ai-weather-models/",
-      "summary": "Foundational precipitation and geostationary satellite datasets to observe the planet clearly.",
+      "summary": "Precipitazioni fondamentali e set di dati satellitari geostazionari per osservare chiaramente il pianeta.",
       "summary_en": "Foundational precipitation and geostationary satellite datasets to observe the planet clearly.",
       "image": "https://lh3.googleusercontent.com/ggsqfaBnOayx-i7z9Kj8AeZruz8BSo0N7tsnqwH8Z3REnHcDKBt-QSA3DR4UUM8lcwklWihSARoEN2AyQFhoRFGFlk2-0-xGuKt_rtGoFwpJg8LHVQ=w528-h297-n-nu-rw-lo",
       "source": "Google DeepMind",
@@ -133,7 +133,7 @@
       "lang": "en",
       "published_at": "2026-11-10T12:13:04+01:00",
       "date": "2026-11-10",
-      "translated": false
+      "translated": true
     },
     {
       "id": "ec52a02e1b50c5bf",

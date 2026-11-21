@@ -1,11 +1,11 @@
 {
   "date": "2026-11-05",
-  "updated_at": "2026-11-21T01:02:20.484977+01:00",
+  "updated_at": "2026-11-21T15:46:37.057030+01:00",
   "count": 2,
   "articles": [
     {
       "id": "f09d7876c1e95fca",
-      "title": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips",
+      "title": "Gemini Omni 1.2 Flash: veloce ed economico con clip più lunghe",
       "title_en": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips",
       "url": "https://deepmind.google/blog/gemini-omni-12-flash-fast-and-cost-effective-with-longer-clips/",
       "summary": "",
@@ -16,7 +16,7 @@
       "lang": "en",
       "published_at": "2026-11-05T18:05:16+01:00",
       "date": "2026-11-05",
-      "translated": false
+      "translated": true
     },
     {
       "id": "27b87d65d3f99406",
